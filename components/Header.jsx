@@ -17,10 +17,11 @@ const Header = () => {
       <div className="border-b w-full inline-block border-blue-400 py-8">
         <div className="md:float-left block">
           <Link href="/">
-            <span className="cursor-pointer font-bold text-4xl text-white">
-              Dialectics
-              <span dangerouslySetInnerHTML={"&"} />
-              Horistics
+            <span
+              style="color:gold;"
+              className="cursor-pointer font-bold text-4xl text-white"
+            >
+              Dialectics and Horistics
             </span>
           </Link>
         </div>
