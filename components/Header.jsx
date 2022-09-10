@@ -18,8 +18,11 @@ const Header = () => {
         <div className="md:float-left block">
           <Link href="/">
             <span className="cursor-pointer font-bold text-4xl text-white">
-              <span style={{ color: "gold", fontSize: "12pt" }}>
-                Horistics ( CVR: 43 10 93 24 )
+              <span style={{ color: "gold", fontSize: "11pt" }}>
+                HORISTICS{" "}
+                <span style={{ color: "white", fontSize: "9pt" }}>
+                  CVR: 43 10 93 24
+                </span>
               </span>
             </span>
           </Link>
