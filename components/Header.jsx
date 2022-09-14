@@ -22,10 +22,10 @@ const Header = () => {
                 HORISTICS{" "}
                 <span style={{ color: "white", fontSize: "9pt" }}>
                   CVR: 43 10 93 24
-                  <br />
+                  {/*<br />
                   <Link href="/dansk">
                     <a style={{ color: "lime" }}>Dansk</a>
-                  </Link>
+                  </Link>*/}
                 </span>
               </span>
             </span>
