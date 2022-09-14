@@ -26,6 +26,11 @@ const Header = () => {
                   <Link href="/dansk">
                     <a style={{ color: "lime" }}>Dansk</a>
                   </Link>*/}
+                  <br />
+                  <span style={{ color: "lime" }}>
+                    On a cellphone, scroll all the way down to see the
+                    categories list.
+                  </span>
                 </span>
               </span>
             </span>
