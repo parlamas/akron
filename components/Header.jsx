@@ -24,9 +24,9 @@ const Header = () => {
                   CVR: 43 10 93 24 •{" "}
                   <span style={{ color: "cyan" }}>Currently: 16 Posts</span> •{" "}
                   <span style={{ color: "lime", fontSize: "9pt" }}>
-                    On a desktop or laptop, the list of categories is on top of
-                    the screen; on a cellphone, scroll all the way down to the
-                    bottom to see the list of categories.
+                    On a desktop or laptop, the list of categories is on the top
+                    part of the screen; on a cellphone, scroll all the way down
+                    to the bottom to see the list of categories.
                   </span>
                 </span>
               </span>
