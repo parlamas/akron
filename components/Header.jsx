@@ -33,6 +33,12 @@ const Header = () => {
                         conditionals
                       </a>
                     </Link>
+                    <br />
+                    <a
+                      target="_blank"
+                      href="https://dialectics.education/"
+                      rel="noopener noreferrer"
+                    ></a>
                   </span>
                 </span>
               </span>
