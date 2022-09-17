@@ -28,8 +28,8 @@ const Header = () => {
                     part of the screen; to see the list of categories on a
                     cellphone, scroll all the way down to the bottom.
                     <br />
-                    <Link href="https://dialectics.education" target="_blank">
-                      <a>conditionals</a>
+                    <Link href="https://dialectics.education/" passHref>
+                      <a target="_blank">conditionals</a>
                     </Link>
                   </span>
                 </span>
