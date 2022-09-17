@@ -27,14 +27,6 @@ const Header = () => {
                     On a desktop or laptop, the list of categories is on the top
                     part of the screen; to see the list of categories on a
                     cellphone, scroll all the way down to the bottom.
-                    <br />
-                    <Link
-                      target="_blank"
-                      href="https://dialectics.education/"
-                      passHref
-                    >
-                      <button>conditionals</button>
-                    </Link>
                   </span>
                 </span>
               </span>
