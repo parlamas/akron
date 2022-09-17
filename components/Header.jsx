@@ -38,7 +38,9 @@ const Header = () => {
                       target="_blank"
                       href="https://dialectics.education/"
                       rel="noopener noreferrer"
-                    ></a>
+                    >
+                      here
+                    </a>
                   </span>
                 </span>
               </span>
