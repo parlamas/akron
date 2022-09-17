@@ -29,7 +29,7 @@ const Header = () => {
                     cellphone, scroll all the way down to the bottom.
                     <br />
                     <Link href="https://dialectics.education" target="_blank">
-                      conditionals
+                      <a>conditionals</a>
                     </Link>
                   </span>
                 </span>
