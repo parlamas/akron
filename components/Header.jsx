@@ -29,7 +29,9 @@ const Header = () => {
                     cellphone, scroll all the way down to the bottom.
                     <br />
                     <Link href="https://dialectics.education/" passHref>
-                      <a target="_blank">conditionals</a>
+                      <a target="_blank" rel="noopener noreferrer">
+                        conditionals
+                      </a>
                     </Link>
                   </span>
                 </span>
