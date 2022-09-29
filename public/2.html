@@ -1,0 +1,7575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordforråd</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .l {color:beige;}
+</style>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+
+            <tr>
+                <th width=10%>number<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>Dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        	<tr valign=top>
+            <td>00001<br>108-<br>
+            expr-</td>
+            <td>lige meget om det er let eller tungt</td>
+            <td>no matter whether it is light or heavy</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00002<br>108-<br>dir-</td>
+            <td>Lav objektet om til et pronomen (et let led), og placer centraladverbier efter det lette led.</td>
+            <td>Turn the object into a pronoun (a light clause) and place central adverbs after the light clause.</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00003<br>index-</td>
+            <td>inhold</td>
+            <td>index</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00004<br>index-</td>
+            <td>præsentation</td>
+            <td>presentation</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00005<br>index-</td>
+            <td>pauser</td>
+            <td>breaks</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00006<br>index-</td>
+            <td>hverdagsliv</td>
+            <td>everyday life</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00007<br>index-</td>
+            <td>arbejder og praktik</td>
+            <td>work and internship</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00008<br>index-</td>
+            <td>sprogskole og uddannelse</td>
+            <td>language school and education</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00009<br>index-</td>
+            <td>mere begynderdansk</td>
+            <td>more beginners' Danish</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00010<br>index-</td>
+            <td>penge og priser</td>
+            <td>money and prices</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00011<br>index-</td>
+            <td>transport</td>
+            <td>transportation</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00012<br>index-</td>
+            <td>Danmark og din by</td>
+            <td>Denmark and your town</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00013<br>index-</td>
+            <td>small talk</td>
+            <td>small talk</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00014<br>et-</td>
+            <td>Du lærer alfabetet, tallene fra 1-100 og at fortælle kort om dig selv.</td>
+            <td>You learn the alphabet, the numbers from 1-100 and to tell a short story about yourself (to talk briefly about yourself).</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00015<br>på-<br>med-<br>hos-<br>i-</td>
+            <td>Du kan lære (lidt) dansk på mobil med appen Duolingo. Hent den hos Google Play eller i App Store.</td>
+            <td>You can learn (a little) Danish on your cell with the app Duolingo. Download it from Google Play or the App Store.</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00016<br>af-<br>på-<br>om-</td>
+            <td>Du kan øve din udtale af danske ord på www.dansk.nu. Spørg din lærer om brugerhavn og adgangskode.</td> 
+            <td>You can practice your pronunciation of Danish words at www.dansk.nu. Ask your teacher for username and password.</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00017<br>sådan-<br>adv-</td>
+            <td>Sådan lyder vokalerne</td>
+            <td>This is how the vowels sound</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00018<br>noun-</td>
+            <td>is / isen / is / isene</td>
+            <td>ice cream</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00019<br>et-<br>noun-</td>
+            <td>lys / lyset / lys / lysene</td>
+            <td>light</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00020<br>et-<br>noun-</td>
+            <td>hus / huset / huse / husene</td>
+            <td>house</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00021<br>r-<br>noun-</td>
+            <td>te /teen / teerne</td>
+            <td>tea</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00022<br>noun-</td>
+            <td>øl / øllen / øllene</td>
+            <td>beer</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00023<br>noun-</td>
+            <td>sol / solen / solene</td>
+            <td>sun</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00024<br>et-<br>noun-</td>
+            <td>æg / ægget / æggene</td>
+            <td>egg</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00025<br>et-<br>noun-</td>
+            <td>brød / brødet / brødene</td>
+            <td>bread</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00026<br>adj-</td>
+            <td>blå</td>
+            <td>blue</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00027<br>noun-</td>
+            <td>hat / hatten / hattene</td>
+            <td>hat</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00028<br>et-<br>noun-</td>
+            <td>barn / barnet / børn / børnene</td>
+            <td>child</td>
+        </tr>
+ 
+        <tr valign=top>
+            <td>00029<br>et-<br>noun-</td>
+            <td>får / fåret / fårene</td>
+            <td>sheep</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00030<br>noun-</td>
+            <td>arm/armen/armene</td>
+            <td>arm</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00031<br>r-<br>noun-</td>
+            <td>kop / koppen / kopperne</td>
+            <td>cup</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00032<br>r-<br>noun-</td>
+            <td>vokal / vokalen / vokalerne</td>
+            <td>vowel</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00033<br>r-<br>noun-</td>
+            <td>udtale / udtalen/&mdash;</td>
+            <td>pronunciation</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00034<br>adj-</td>
+            <td>blød(t)</td>
+            <td>soft</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00035<br>adj-</td>
+            <td>stum(t)</td>
+            <td>dumb</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00036<br>r-<br>noun-</td>
+            <td>konsonant / konsonanten / konsonanterne</td>
+            <td>consonant</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00037<br>verb-</td>
+            <td>hedde</td>
+            <td>call, name</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00038<br>et-<br>noun-</td>
+            <td>land / landet / landene</td>
+            <td>country</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00039<br>verb-</td>
+            <td>komme</td>
+            <td>come</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00040<br>adj-</td>
+            <td>gammel / gamle</td>
+            <td>old</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00041<br>adv-</td>
+            <td>lige</td>
+            <td>just</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00042<br>r-<br>noun-</td>
+            <td>måde / måden</td>
+            <td>manner, way</b>
+            </td>
+        </tr>
+	
+	    <tr valign=top>
+            <td>00043<br>phr-</td>
+            <td>Lige måde!</td>
+            <td>Just the same!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00044<br>cou-</td>
+            <td>Danmark</td>
+            <td>Denmark</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00045<br>cou-</td>
+            <td>Rusland</td>
+            <td>Russia</td>
+        </tr>
+        
+        <tr valign=top>
+            <td><br>noun-</td>
+            <td>tryk / trykken / trykkene</td>
+            <td>stress (in pronunciation)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00047<br>-r<br>noun-</td>
+            <td>rytme / rytmen / rytmerne</td>
+            <td>rhythm</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00048<br>sent-</td>
+            <td>Jeg taler ar<b>a</b>bisk og <b>lidt dansk</b>.</td>
+            <td>I speak Arabic and a bit of Danish.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00049<br>noun-</td>
+            <td>sammensætning</td>
+            <td>(original) makeup / composition</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00050<br>noun-</td>
+            <td>sammensmeltning</td>
+            <td>amalgamation</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00051<br>et-<br>noun-</td>
+            <td>brev / brevet / brevene</td>
+            <td>letter (text)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00052<br>et-<br>noun-<br>r-</td>
+            <td>bogstav / bostavet / bogstaverne</td>
+            <td>letter (alphabet)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00053<br>noun-</td>
+            <td>duetlæsning</td>
+            <td>duet reading</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00054<br>noun-</td>
+            <td>opgave / opgaven / opgaver / opgaverne</td>
+            <td>task</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00055</td>
+            <td><i>phr-</i> to et halvt år</td>
+            <td>two and a half years (30 months)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00056</td>
+            <td><i>noun-</i> hverdag, e</td>
+            <td>weekday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00057</td>
+            <td><i>phr-</i> en måned</td>
+            <td>one month</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00058</td>
+            <td><i>expr-</i> farvel</td>
+            <td>good-bye</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00059</td>
+            <td><i>expr-</i> hej-hej</td>
+            <td>bye bye</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00060</td>
+            <td><i>expr-</i> Vi ses!</td>
+            <td>See you!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00061</td>
+            <td><i>expr-</i> På gensyn!</td>
+            <td>See you!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00062</td>
+            <td><i>sent-</i> i dag er det mandag</td>
+            <td>today is Monday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00063</td>
+            <td><i>sent-</i> i morgen et det tirsdag</td>
+            <td>tomorrow is Tuesday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00064</td>
+            <td><i>sent-</i> i overmorgen er det onsdag</td>
+            <td>the day after tomorrow is Wednesday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00065</td>
+            <td><i>noun-</i> år et-, &mdash;</td>
+            <td>year</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00066</td>
+            <td><i>phr-</i> et halvt år</td>
+            <td>half a year</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00067</td>
+            <td><i>phr-</i> 12 måneder</td>
+            <td>12 months</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00068</td>
+            <td><i>expr-</i> det går ikke noget</td>
+            <td>it does not work/it's not going well</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00069</td>
+            <td><i>expr-</i> det er okay</td>
+            <td>it is OK</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00070</td>
+            <td><i>expr-</i> Tak!</td>
+            <td>Thanks!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00071</td>
+            <td><i>expr-</i> Tusind tak!</td>
+            <td>A thousand thanks!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00072</td>
+            <td><i>expr-</i> Mange tak!</td>
+            <td>Many thanks!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00073</td>
+            <td><i>sent-</i> i forgårs var det lørdag</td>
+            <td>the day before yesterday was Saturday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00074</td>
+            <td><i>expr-</i> Tak skal du have!</td>
+            <td>Thank you!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00075</td>
+            <td><i>expr-</i> Tak for det!</td>
+            <td>Thanks for that!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00076</td>
+            <td><i>expr-</i> Selv tak!</td>
+            <td>Thank you, too!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00077</td>
+            <td><i>expr-</i> Tak for i dag!</td>
+            <td>Thanks for today!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00078</td>
+            <td><i>expr-</i> Værsgo!</td>
+            <td>There/Here you are! - There/Here you go!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00079</td>
+            <td><i>expr-</i> Velbekomme!</td>
+            <td>Enjoy your food! * Bon appetite!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00080</td>
+            <td><i>expr-</i> Velkommen!</td>
+            <td>Welcome!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00081</td>
+            <td><i>expr-</i> Det var så lidt!</td>
+            <td>You are welcome! * Don't mention it!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00082</td>
+            <td><i>phr-</i> halvandet år (pronunciation &rarr; helenor)</td>
+            <td>one year and a half</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00083</td>
+            <td><i>expr-</i> Undskyld!</td>
+            <td>Excuse me! * Pardon!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00084</td>
+            <td><i>expr-</i> Det er bare i orden!</td>
+            <td>That's alright!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00085</td>
+            <td><i>expr-</i> Tak for hjælpen!</td>
+            <td>Thanks for the help/helping!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00086</td>
+            <td><i>expr-</i> (Hav en) god dag!</td>
+            <td>Have a nice day!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00087</td>
+            <td><i>expr-</i> Tak i lige måde!</td>
+            <td>Thanks and the same to you!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00088</td>
+            <td><i>expr-</i> God weekend!</td>
+            <td>Have a nice weekend!</td>
+        </tr>
+        
+        
+        <tr valign=top>
+            <td>00089</td>
+            <td><i>num-</i> nul</td>
+            <td>0</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00090</td>
+            <td><i>num-</i> en / et</td>
+            <td>1</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00091</td>
+            <td><i>num-</i> to</td>
+            <td>2</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00092</td>
+            <td><i>num-</i> tre</td>
+            <td>3</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00093</td>
+            <td><i>num-</i> fire</td>
+            <td>4</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00094</td>
+            <td><i>num-</i> fem</td>
+            <td>5</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00095</td>
+            <td><i>num-</i> seks</td>
+            <td>6</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00097</td>
+            <td><i>num-</i> syv</td>
+            <td>7</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00098</td>
+            <td><i>num-</i> otte</td>
+            <td>8</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00099</td>
+            <td><i>num-</i> ni</td>
+            <td>9</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00100</td>
+            <td><i>num-</i> ti</td>
+            <td>ten</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00101</td>
+            <td><i>num-</i> elleve</td>
+            <td>11</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00102</td>
+            <td><i>num-</i> tolv</td>
+            <td>12</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00103</td>
+            <td><i>num-</i> tretten</td>
+            <td>13</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00104</td>
+            <td><i>num-</i> fjorten</td>
+            <td>14</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00105</td>
+            <td><i>num-</i> femten</td>
+            <td>15</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00106</td>
+            <td><i>num-</i> seksten</td>
+            <td>16</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00107</td>
+            <td><i>num-</i> sytten</td>
+            <td>17</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00108</td>
+            <td><i>num-</i> atten</td>
+            <td>18</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00109</td>
+            <td><i>num-</i> nitten</td>
+            <td>19</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00110</td>
+            <td><i>num-</i> tyve</td>
+            <td>20</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00111</td>
+            <td><i>num-</i> enogtyve</td>
+            <td>21</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00112</td>
+            <td><i>num-</i> tootyve</td>
+            <td>22</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00113</td>
+            <td><i>num-</i> treotyve</td>
+            <td>23</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00114</td>
+            <td><i>num-</i> fireogtyve</td>
+            <td>24</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00115</td>
+            <td><i>num-</i> femogtyve</td>
+            <td>25</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00116</td>
+            <td><i>num-</i> seksogtyve</td>
+            <td>26</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00117</td>
+            <td><i>num-</i> syvogtyve</td>
+            <td>27</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00118</td>
+            <td><i>num-</i> otteogtyve</td>
+            <td>28</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00119</td>
+            <td><i>num-</i> niogtyve</td>
+            <td>29</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00120</td>
+            <td><i>num-</i> tredive</td>
+            <td>30</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00121</td>
+            <td><i>num-</i> enogtredive</td>
+            <td>31</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00122</td>
+            <td><i>num-</i> fyrre</td>
+            <td>40</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00123</td>
+            <td><i>num-</i> halvtreds</td>
+            <td>50</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00124</td>
+            <td><i>num-</i> tres</td>
+            <td>60</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00125</td>
+            <td><i>num-</i> halvfjerds</td>
+            <td>70</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00126</td>
+            <td><i>num-</i> firs</td>
+            <td>80</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00127</td>
+            <td><i>num-</i> halvfems</td>
+            <td>90</td>
+        </tr>
+
+        <tr valign=top>
+            <td>00128</td>
+            <td><i>num-</i> (et*) hundrede</td>
+            <td>100</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00129</td>
+            <td><i>num-</i> (et*) tusind</td>
+            <td>1000</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00130</td>
+            <td><i>num-</i> (en) million</td>
+            <td>1,000,000</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00131</td>
+            <td><i>num-</i> (en) milliard</td>
+            <td>1,000,000,000</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00132</td>
+            <td><i>noun-</i> tallene</td>
+            <td>the numbers</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00133</td>
+            <td><i>expr-</i> en lille smule dansk</td>
+            <td>a little bit of Danish</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00134</td>
+            <td><i>noun-</i> fornavn</td>
+            <td>first name</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00135</td>
+            <td><i>noun-</i> efternavn</td>
+            <td>last name</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00136</td>
+            <td><i>sent-</i> Hvad hedder du til fornavn?</td>
+            <td>What's your first name?</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00137</td>
+            <td><i>sent-</i> Hvad hedder du til efternavn?</td>
+            <td>What's your last name?</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00138</td>
+            <td><i>sent-</i> Hvordan staver du det?</td>
+            <td>How do you spell this/that/it?</td>
+        </tr>
+        
+         <tr valign=top>
+            <td>00139</td>
+            <td><i>sent-</i> Spørg dine klassekammerater!</td>
+            <td>Ask your calssmates!</td>
+        </tr>
+        
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td><i>adj-</i> husvild</td>
+            <td>homeless</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00141</td>
+            <td><i>pron-</i> hvad</td>
+            <td><b>what</b><p>
+                <b>what?</b><p>
+                 <ol>
+                 <li>~ siger du? &bull; I beg
+your pardon?<p>
+    <li>~ siger du
+til det? &bull; what do you think of that?<p>
+    
+<li>~ hedder du? &bull; what is your name?<p>
+    
+<li>~ hedder det på engelsk &bull; What is it in
+English;<p>
+    <li>~ er der? &bull; what is it?<p>
+        <li>gøre ~ der bliver sagt &bull; do as one is told;<p>
+            
+<li>~ gør det? &bull; What is wrong with that?<p>
+    
+<li>~ skulle det være? (i forretning) &bull; Can
+I help you? (in business)<p>
+    <li>~ er det for ngt? &bull; What
+is that?<p>
+    <li>~ for ngt? &bull; what?<p>
+        <li>~ med en drink? &bull; how about a drink?<p>
+            <li>og ~ så? &bull; 
+so what?<p> 
+<li>~ dag det skal være &bull; any day
+</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00142</td>
+            <td><i>pron-</i> hvem</td>
+            <td>who/which<p>
+                
+                <ol>
+                <li>~ er det?<br>Who is it?<p>
+                    
+                    
+<li>~ af jer?<br>Which (one) of you?<p>
+    
+    <li>~ der bare havde en million!<br>If only I had
+a million!<p>
+    
+    <li>~ som helst kan gøre det.<br>
+Anybody can do it.<p>
+    
+    <li>~ har du sagt
+det til?<br>Who did you tell (say it to)?</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00143</td>
+            <td><i>pron-</i> hver</td>
+            <td>every/each<p>
+                
+                <ol>
+                <li>(~ af aile)<br>every<p>
+                    
+                    <li>(~ af enkelte,
+af bestemt antal)<br>each<p>
+    
+    <li>~ dag<br>
+every day<p>
+    
+    <li>~ anden dag<br>every other
+(,second) day<p>
+    
+    <li>~ eneste dag<br>every
+single day<p>
+    
+    <li>~ og en<br>one and all<p>
+        
+        <li></li>~ for sig<br>separately<p>
+            
+            <li></li>de fik en cykel ~<br>they
+got a bike each;<p>
+    
+    <li>~t øjeblik (det
+skal være)<br>any moment</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00144</td>
+            <td><i>noun-</i> hverdag<p><i>adj-</i> hverdags-</td>
+            <td>weekday<p>
+                
+                <ol>
+                <li>om ~en<br>(on)
+weekdays<p>
+    
+    <li>til ~<br>usually<p>
+        
+        <li><b>hverdags-</b><br>everyday-
+(fx tøj clothes)</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00145</td>
+            <td><i>conj-</i> hverken</td>
+            <td>~ a eller b neither a nor
+b; (efter nægtelse) either a or b; han
+kan ~ synge eller spille he can
+neither sing nor play; jeg har aldrig
+været ~ i London eller Liverpool I
+have never been to either London
+or Liverpool.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00146</td>
+            <td><i>pron-</i> hvilken, hvilket, hvilke</td>
+            <td>what<p>(ud at bestemt antal &rarr; out of a certain number) whom/which;<p>
+    
+    <ol>
+    <li>På hvilket
+tidspunkt?<br>At what time?<p>
+    
+    <li>Hvilke at
+disse ting er dine?<br>Which of these
+things belong to you?<p>
+    
+    <li>Der kom 50
+at hvilke en del var udlændinge.<br>50
+people came, some of whom were
+foreigners.<p>
+    
+    <li>~ som helst<br>any</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00147</td>
+            <td><ol type=a>
+                <li><i>pron-</i> hvis<p>
+                <li><i>conj-</i> hvis (dersom)</ol></td>
+            <td><ol type=a><li>whose<p><li>if</ol><p>
+                
+                
+                <i>pron-</i> hvis &rarr; whose;<p>
+                <ol>
+                    
+                    
+                <li>~ bil er det?<br>whose
+car is it?<p>
+    
+    <li>den mand ~ bil vi har lant<br>
+the man whose car we borrowed</ol><p>
+
+<i>conj-</i> hvis (dersom) &rarr; if;<p>
+    
+    <ol start=3>
+    <li>~ bare<br>if only;<p>
+        <li>~ ikke<br>
+if not</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00148</td>
+            <td><i>adv-</i> hvor</td>
+            <td>(am sted) where;<br>(am tid)
+when;<br>(am grad, mængde etc) how;<p>
+    
+    <ol>
+<li>~ bor du?<br>Where do you live?<p>
+    
+<li>en dag ~ vi har tid<br>some day when we
+have time<p>
+    <li>~ meget (koster
+det)?<br>how much (is it)?<p>
+    
+    <li>~ er det
+rart!<br>How nice!<p>
+    
+    <li>~ meget vi end arbejder<br>
+... no matter how much we
+work ...<p>
+    
+    <li>~ kan det være at ... ?<br>How
+it is that ... ?<br>
+    (F) How come that ... ?<p>
+        
+<li>~ sam helst<br>anywhere</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00149</td>
+            <td><i>adv-</i> hvoraf</td>
+            <td>How ...?<p>
+                <ol>
+                <li>~ kammer det at ... ?<br>How
+is it that ... ?<p>
+    
+    <li>100 passagerer ~ de 14
+er børn.<br>100 passengers, 14 of whom
+[which] are children.</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00150</td>
+            <td><i>adv-</i> hvordan</td>
+            <td>how<p>
+                
+                <ol>
+                <li>~ har du det?<br>How
+are you?<p>
+    <li>~ er han sam lærer?<br>What
+is he like as a teacher?<p>
+    <li>~ kunne du
+gøre det?<br>How could you do it?<p>
+    <li>~ kan det være at ... ?<br>How is it that ... ?
+    </ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00151</td>
+            <td><i>adv-</i> hvorefter</td>
+            <td>after which, whereupon.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00152</td>
+            <td><i>adv-</i> hvorfor</td>
+            <td>why;<p>
+                
+                <ol>
+                    <li>~ kam du ikke?<br>Why
+did you not come?<p>
+    <li>~ ikke?<br>Why
+not?<p>
+    <li>~ det?<br>Why?<p>
+        <li>~ i al verden?<br>
+Why on earth?</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00153</td>
+            <td><i>adv-</i>hvorhen</td>
+            <td>where; ~ ferer denne
+vej? where does this road lead.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00154</td>
+            <td><i>adv-</i> hvori</td>
+            <td>wherein, where.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00155</td>
+            <td><i>conj-</i> hvorimod</td>
+            <td>whereas</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00156</td>
+            <td><i>adv-</i> hvornår</td>
+            <td>when</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00157</td>
+            <td><i>adv-</i> hvorom</td>
+            <td>~ alting er how'ever
+that may be; ~ drejer det sig? what
+is it about?</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00158</td>
+            <td><i>adv-</i> hvortil</td>
+            <td>(spørgende) where ... to?<p>
+(dvs. hvar langt?) &rarr; how far?<p>(am farmal)
+what for? &rarr; (relativt) to which,
+where;<p>
+    <ol><li>~ kam vi?<br>How far did we
+get?<p>
+    <li>~ anvendes den?<br>What is it
+used for?<p>
+    
+    <li>Huset ~ de kam.<br>The house
+which they came to.</ol></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00159</td>
+            <td><i>conj-</i> hvorvidt</td>
+            <td>whether</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00160</td>
+            <td><i>noun-</i> hverdag, e</td>
+            <td>daily routine</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00161</td>
+            <td><i>expr-</i> på mandag</td>
+            <td>on Monday (next Monday)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00162</td>
+            <td><i>expr-</i> i mandag</td>
+            <td>last Monday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00163</td>
+            <td><i>expr-</i> om mandag</td>
+            <td>on Monday (general)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00164</td>
+            <td><i>expr-</i> om mandagen</td>
+            <td>on Mondays</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00165</td>
+            <td><i>sent-</i> Jeg er græk.</td>
+            <td>I am Greek.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00166</td>
+            <td><i>sent-</i> Jeg taler græsk.</td>
+            <td>I speak Greek.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00167</td>
+            <td><i>phr-</i> det græske sprog</td>
+            <td>the Greek language</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00168</td>
+            <td><i>expr-</i> i morges</td>
+            <td>this morning (it is past morning now)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00169</td>
+            <td><i>expr-</i> i morgen</td>
+            <td>tomorrow</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00170</td>
+            <td><i>expr-</i> i overmorgen</td>
+            <td>the day after tomorrow</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00171</td>
+            <td><i>expr-</i> i går</td>
+            <td>yesterday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00172</td>
+            <td><i>sent-</i> I morges drak jeg kaffe.</td>
+            <td>This morning I had coffee.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00173</td>
+            <td><i>expr-</i> i mandags</td>
+            <td>last Monday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00174</td>
+            <td><i>expr-</i> fridag</td>
+            <td>day off</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00175</td>
+            <td><i>day-</i> tirsdag</td>
+            <td>Tuesday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00176</td>
+            <td><i>day-</i> onsdag</td>
+            <td>Wednesday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00177</td>
+            <td><i>day-</i> torsdag</td>
+            <td>Thursday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00178</td>
+            <td><i>day-</i> fredag</td>
+            <td>Friday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00179</td>
+            <td><i>day-</i> lørdag</td>
+            <td>Saturday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00180</td>
+            <td><i>day-</i> søndag</td>
+            <td>Sunday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00181</td>
+            <td><i>noun-</i> weekend</td>
+            <td>weekend</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00182</td>
+            <td><i>adv-</i> igen</td>
+            <td>again</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00183</td>
+            <td><i>expr-</i> i går morges</td>
+            <td>yesterday morning</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00184</td>
+            <td><i>expr-</i> om morgenen</td>
+            <td>in the morning(s) (in general)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00185</td>
+            <td><i>phr-</i> hver dag</td>
+            <td>every day</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00186</td>
+            <td><i>expr-</i> i næste ugen</td>
+            <td>next week</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00187</td>
+            <td><i>expr-</i> i sidste uge</td>
+            <td>last week</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00188</td>
+            <td><i>phr-</i> ting i klassen</td>
+            <td>things/objects in class</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00189</td>
+            <td><i>noun-</i> stol, en</td>
+            <td>chair</td>
+        </tr>
+ 
+            <td>00190</td>
+            <td><i>noun-</i> bord et*, e</td>
+            <td>table</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00191</td>
+            <td><i>noun-</i> tavle</td>
+            <td>board (black, white etc.)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00192</td>
+            <td><i>noun-</i> papir et*, er</td>
+            <td>paper</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00193</td>
+            <td><i>adj-</i> gammel, gamle</td>
+            <td>old</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00194</td>
+            <td><i>noun-</i> taske, er</td>
+            <td>bag</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00195</td>
+            <td><i>noun-</i> vindue</td>
+            <td>window</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00196</td>
+            <td><i>noun-</i> dør, e</td>
+            <td>door</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00197</td>
+            <td><i>noun-</i> skab et*, e</td>
+            <td>wardrobe, closet</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00198</td>
+            <td><i>noun-</i> kuglepen</td>
+            <td>pen</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00199</td>
+            <td><i>noun-</i> landkort et*, &mdash;</td>
+            <td>map</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00200</td>
+            <td><i>noun-</i> jakke, r</td>
+            <td>jacket</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00201</td>
+            <td><i>phr-</i> andre ting i klassen</td>
+            <td>other things in class</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00202</td>
+            <td><i>dir-</i> Repeter derefter ordene på tavlen.</td>
+            <td>Then repeat the words on the board.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00203</td>
+            <td><i>dir-</i> Peg igen på de samme ting og spørg.</td>
+            <td>Point to the same things again and ask.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00204</td>
+            <td><i>dir-</i> Denne gang svares med en hel sætning og med en rytmegruppe, els.</td>
+            <td>This time answer with a whole sentence observing the intonation/prosody.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00205</td>
+            <td><i>dir-</i> husk udtalen</td>
+            <td>remember the pronunciation</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00206</td>
+            <td><i>dir-</i> bemærk udtalen</td>
+            <td>note the pronunciation</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00207</td>
+            <td><i>sent-</i> Det ved jeg ikke.</td>
+            <td>I don't know</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00208</td>
+            <td><i>noun-</i> pung, e</td>
+            <td>coin wallet</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00209</td>
+            <td><i>noun-</i> kam, me</td>
+            <td>comb</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00210</td>
+            <td><i>noun-</i> parbriller et*, to parbriller</td>
+            <td>a pair of glasses</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00211</td>
+            <td><i>noun-</i> tegnebog, tegnebøger</td>
+            <td>wallet, purse</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00212</td>
+            <td><i>noun-</i> mobiltelefon, er</td>
+            <td>cell phone</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00213</td>
+            <td><i>noun-</i> æble et*, r</td>
+            <td>apple</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00214</td>
+            <td><i>noun-</i> penalhus et, e</td>
+            <td>pencil case</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00215</td>
+            <td><i>noun-</i> kalender, e</td>
+            <td>calendar</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00216</td>
+            <td><i>noun-</i> nøgle, r</td>
+            <td>key</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00217</td>
+            <td><i>noun-</i> ordbog, ordbøger</td>
+            <td>dictionary</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00218</td>
+            <td><i>noun-</i> brille etui et*, er</td>
+            <td>glasses case</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00219</td>
+            <td><i>noun-</i> blyant, er</td>
+            <td>pencil</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00220</td>
+            <td><i>dir-</i> Gå rundt i klassen sammen.</td>
+            <td>Walk around the class together.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00221</td>
+            <td><i>dir-</i> Peg på skift på alle de ting i klassen, du kan huske og sig:</td>
+            <td>Point alternately at all the things in the class that you can remember and say:</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00222</td>
+            <td><i>dir-</i> Skift partner og prøv igen.</td>
+            <td>Change partner and try again</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00223</td>
+            <td><i>dir-</i> Spørg og svar nu.</td>
+            <td>Now ask and answer</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00224</td>
+            <td><i>noun-</i> et par sko, &mdash;</td>
+            <td>a pair of shoes</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00225</td>
+            <td><i>noun-</i> et par bukser, &mdash;</td>
+            <td>a pair of pants/slacks/trousers</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00226</td>
+            <td><i>noun-</i> et* stykke slik, to stykker slik</td>
+            <td>a piece of candy</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00227</td>
+            <td><i>noun-</i> kage</td>
+            <td>cake</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00228</td>
+            <td><i>verb-</i> lære</td>
+            <td>learn, study</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00229</td>
+            <td><i>verb-</i> fortælle</td>
+            <td>talk</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00229</td>
+            <td><i>verb-</i> spørge</td>
+            <td>ask</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00230</td>
+            <td><i>verb-</i> læse</td>
+            <td>read</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00231</td>
+            <td><i>verb-</i> lytte</td>
+            <td>listen</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00232</td>
+            <td><i>verb-</i> be called</td>
+            <td>hedde</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00233</td>
+            <td><i>verb-</i> kommer</td>
+            <td>come</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00234</td>
+            <td><i>verb-</i> bore</td>
+            <td>live, reside</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00235</td>
+            <td><i>verb-</i> være</td>
+            <td>be</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00236</td>
+            <td><i>verb-</i> have</td>
+            <td>have</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00237</td>
+            <td><i>verb-</i> skrive</td>
+            <td>write</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00238</td>
+            <td><i>verb-</i> undervise</td>
+            <td>teacher</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00239</td>
+            <td><i>verb-</i> udstrege</td>
+            <td>cross out</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00240</td>
+            <td><i>verb-</i> gentage</td>
+            <td>repeat</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00241</td>
+            <td><i>verb-</i> kryds sætte</td>
+            <td>tick</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00242</td>
+            <td><i>verb-</i> gå</td>
+            <td>go</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00243</td>
+            <td><i>verb-</i> gøre</td>
+            <td>do</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00244</td>
+            <td><i>verb-</i> lave</td>
+            <td>make</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00245</td>
+            <td><i>verb-</i> snakke</td>
+            <td>speak</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00246</td>
+            <td><i>verb-</i> tale</td>
+            <td>speak</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00247</td>
+            <td><i>verb-</i> svare</td>
+            <td>reply</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00248</td>
+            <td><i>verb-</i> mangle</td>
+            <td>miss (sth is missing)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00249</td>
+            <td><i>verb-</i> arbejde</td>
+            <td>work</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00250</td>
+            <td><i>verb-</i> huske</td>
+            <td>remember</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00251</td>
+            <td><i>verb-</i> stave</td>
+            <td>spell</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00252</td>
+            <td><i>verb-</i> bruge</td>
+            <td>use</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00253</td>
+            <td><i>verb-</i> siger</td>
+            <td>say</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00254</td>
+            <td><i>verb-</i> se</td>
+            <td>see</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00255</td>
+            <td><i>verb-</i> betyde</td>
+            <td>mean</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00256</td>
+            <td><i>verb-</i> peger</td>
+            <td>point to</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00257</td>
+            <td><i>verb-</i> udfylde</td>
+            <td>fill out</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00258</td>
+            <td><i>verb-</i> få</td>
+            <td>get</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00259</td>
+            <td><i>sent-</i> Hvor mange har du spist?</td>
+            <td>How many have you eaten?</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00260</td>
+            <td><i>sent-</i> Hvor længe har du kendt hende?</td>
+            <td>How long have you known her?</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00261</td>
+            <td><i>verb-</i> tjeke</td>
+            <td>check</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00262</td>
+            <td><i>verb-</i> indsætte</td>
+            <td>insert, fill in</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00263</td>
+            <td><i>noun-</i> bil, biler</td>
+            <td>car</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00264</td>
+            <td><i>noun-</i> musik</td>
+            <td>music</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00265</td>
+            <td><i>verb-</i> tand, tænder</td>
+            <td>tooth</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00266</td>
+            <td><i>noun-</i> hår</td>
+            <td>hair</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00267</td>
+            <td><i>noun-</i> vare, varer</td>
+            <td>product, merchandise</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00268</td>
+            <td><i>noun-</i> guitar, guitarer</td>
+            <td>guitar</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00269</td>
+            <td><i>noun-</i> bus, busser</td>
+            <td>bus</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00270</td>
+            <td><i>noun-</i> barn et, børn</td>
+            <td>child</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00271</td>
+            <td><i>noun-</i> hus et*, huse</td>
+            <td>house</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00272</td>
+            <td><i>adj-</i> ren(t)</td>
+            <td>clean</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00273</td>
+            <td><i>verb-</i> gøre rent, gøre ngt ren</td>
+            <td>clean up, clean sth up</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00274</td>
+            <td><i>noun-</i> bog, bøger</td>
+            <td>book</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00275</td>
+            <td><i>noun-</i> butiksejer, butiksejere</td>
+            <td>store owner</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00276</td>
+            <td><i>noun-</i> voksen, voksne</td>
+            <td>adult</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00277</td>
+            <td><i>adj-</i> klassisk</td>
+            <td>classic, classical</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00278</td>
+            <td><i>noun-</i> græsk</td>
+            <td>Greek language</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00279</td>
+            <td><i>noun-</i> lærer, lærere</td>
+            <td>teacher</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00280</td>
+            <td><i>verb-</i> lave mad</td>
+            <td>prepare a meal</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00281</td>
+            <td><i>verb-</i> spille musik</td>
+            <td>play music</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00282</td>
+            <td><i>verb-</i> reparere bil</td>
+            <td>repair cars</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00283</td>
+            <td><i>verb-</i> klibbe hår</td>
+            <td>cut hair</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00284</td>
+            <td><i>verb-</i> ordne tænder</td>
+            <td>fix teeth</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00285</td>
+            <td><i>verb-</i> sælge varer</td>
+            <td>sell merchandise</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00286</td>
+        <td><i>verb-</i> passe ældre/børn</td>
+        <td>take care of old people/children</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00287</td>
+            <td><i>verb-</i> bygge huse</td>
+            <td>build houses</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00288</td>
+            <td><i>verb-</i> servere maden</td>
+            <td>serve meals</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00289</td>
+            <td><i>verb-</i> køre busser</td>
+            <td>drive buses</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00290</td>
+            <td><i>verb-</i> kigge</td>
+            <td>look</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00291</td>
+            <td><i>verb-</i> spise</td>
+            <td>eat</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00292</td>
+            <td><i>noun-</i> murer</td>
+            <td>(wall) builder</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00293</td>
+            <td><i>noun-</i> frisør</td>
+            <td>hairdresser</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00294</td>
+            <td><i>noun-</i> sygeplejerske, sygeplejersker</td>
+            <td>nurse</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00295</td>
+            <td><i>verb-</i> give</td>
+            <td>give</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00296</td>
+            <td><i>verb-</i> lytter (til en) historie</td>
+            <td>listen to stories</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00297</td>
+            <td><i>noun-</i> historie, historier</td>
+            <td>story</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00298</td>
+            <td><i>noun-</i> vin, vine</td>
+            <td>wine</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00299</td>
+            <td><i>noun-</i> revisor, er</td>
+            <td>accountant</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00300</td>
+            <td><i>noun-</i> regnskab</td>
+            <td>financial accounting</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00301</td>
+            <td><i>noun-</i> indsprøjtning, er</td>
+            <td>injection</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00302</td>
+            <td><i>verb-</i> blive klippet</td>
+            <td>have one's hair cut (have-causative)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00303</td>
+            <td><i>verb-</i> sidde ned</td>
+            <td>sit down</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00304</td>
+            <td><i>verb-</i> stå op</td>
+            <td>stand up</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00305</td>
+            <td><i>verb-</i> få hjælp</td>
+            <td>get help</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00306</td>
+            <td><i>verb-</i> ligge ned</td>
+            <td>lie down</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00307</td>
+            <td><i>verb-</i> lege</td>
+            <td>play</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00308</td>
+            <td><i>noun-</i> tur guide</td>
+            <td>tour guide</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00309</td>
+            <td><i>verb-</i> oversætte (til)</td>
+            <td>translate</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00310</td>
+            <td><i>verb-</i> betyde</td>
+            <td>mean</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00311</td>
+            <td><i>adj-</i> dejlig(t)</td>
+            <td>nice</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00312</td>
+            <td><i>noun-</i> vejr</td>
+            <td>weather</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00313</td>
+            <td><i>adv-</i> som regel</td>
+            <td>usually, as a rule</td>
+        </tr>
+        
+        <tr valign=bottom>
+            <td>00314</td>
+            <td><i>dial-</i><p>
+                &mdash; Vil du have kaffe?<br>
+&mdash; Ja, det vil jeg.</td>
+            <td>&mdash; Do you want coffee?<br>
+&mdash; Yes, I do.<p></td>
+        </tr>
+        
+        <tr valign=bottom>
+            <td>00315</td>
+            <td><i>dir-</i> 
+                A spørger og B svarer. Byt så roller. Skriv svarene hjemme.</td>
+            <td>A ask and B answer. Then switch roles. Write the answers at home.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00316</td>
+            <td><i>verb-</i> byte</td>
+            <td>exchange, switch</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00317</td>
+            <td><i>noun-</i> rolle, er</td>
+            <td>part, role</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00318</td>
+            <td><i>phr-</i> hjemme</td>
+            <td>at home</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00319</td>
+            <td><i>noun-</i> kortsvar, kortesvar</td>
+            <td>short answer</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00320</td>
+            <td><i>noun-</i> øvelse, r</td>
+            <td>exercise</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00321</td>
+            <td><i>noun-</i> parøvelse, r</td>
+            <td>pair exercise</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00322</td>
+            <td><i>noun-</i> kæreste, r</td>
+            <td>lover, partner</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00323</td>
+            <td><i>adj-</i> gift, e</td>
+            <td>married</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00324</td>
+            <td><i>noun-</i> kone, r</td>
+            <td>wife</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00325</td>
+            <td><i>dir-</i> gerne hjemme</td>
+            <td>at home please</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00326</td>
+            <td><i>dir-</i> Lyt og udfyld teksten.</td>
+            <td>Listen and fill in the [missing] text.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00327</td>
+            <td><i>dir-</i> Tjek selv bagefter på www.synope.dk</td>
+            <td>Then check [the key] at www.synope.dk</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00328</td>
+            <td><i>dir-</i> Læs teksten sammen.</td>
+            <td>Read the text together.</td>
+        </tr>
+
+        <tr valign=bottom>
+            <td>00329</td>
+            <td><i>dial-</i><p>
+                &mdash; Du må gerne være med.<br>
+&mdash; Ja, så gerne.</td>
+            <td>&mdash; You may join us if you like.<br>
+&mdash; Certainly./Yes, sir (madam)!<p></td>
+        </tr>
+        
+        <tr valign=bottom>
+            <td>00330</td>
+            <td><i>dial-</i><p>
+                &mdash; Må jeg få et æble?<br>
+&mdash; Nej, du må ikke!</td>
+            <td>&mdash; Can/May I have an apple?<br>
+&mdash; No, you cannot!<p></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00331</td>
+            <td><i>sent-</i> Jeg må gøre det.</td>
+            <td>I must do it.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00332</td>
+            <td><i>verb-</i> kage</td>
+            <td>bake</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00333</td>
+            <td><i>verb-</i> øve</td>
+            <td>practice</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00334</td>
+            <td><i>sent-</i> Hvad er klokken?</td>
+            <td>What time is it?</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00335</td>
+            <td><i>col-</i> hvid</td>
+            <td>white</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00336</td>
+            <td><i>col-</i> sort</td>
+            <td>black</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00337</td>
+            <td><i>col-</i> rød</td>
+            <td>red</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00338</td>
+            <td><i>col-</i> grøn</td>
+            <td>green</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00339</td>
+            <td><i>col-</i> gul</td>
+            <td>yellow</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00340</td>
+            <td><i>col-</i> blå</td>
+            <td>blue</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00341</td>
+            <td><i>col-</i> lyserød</td>
+            <td>pink</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00342</td>
+            <td><i>col-</i> grå</td>
+            <td>grey/gray</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00343</td>
+            <td><i>col-</i> brun</td>
+            <td>brown</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00344</td>
+            <td><i>col-</i> beige</td>
+            <td>beige</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00345</td>
+            <td><i>col-</i> guld</td>
+            <td>gold</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00346</td>
+            <td><i>col-</i> sølv</td>
+            <td>silver</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00347</td>
+            <td><i>noun-</i> farve, r</td>
+            <td>color</td>
+        </tr>
+        
+        
+        <tr valign=top>
+            <td>00348</td>
+            <td><i>mo-</i> januar</td>
+            <td>January</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00349</td>
+            <td><i>mo-</i> februar</td>
+            <td>February</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00350</td>
+            <td><i>mo-</i> marts</td>
+            <td>March</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00351</td>
+            <td><i>mo-</i> april</td>
+            <td>April</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00352</td>
+            <td><i>mo-</i> maj</td>
+            <td>May</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00353</td>
+            <td><i>mo-</i> juni</td>
+            <td>June</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00354</td>
+            <td><i>mo-</i> juli</td>
+            <td>July</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00355</td>
+            <td><i>mo-</i> august</td>
+            <td>August</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00356</td>
+            <td><i>mo-</i> september</td>
+            <td>September</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00357</td>
+            <td><i>mo-</i> oktober</td>
+            <td>October</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00358</td>
+            <td><i>mo-</i> november</td>
+            <td>November</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00359</td>
+            <td><i>mo-</i> december</td>
+            <td>December</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00360</td>
+            <td><i>noun-</i> måned, er</td>
+            <td>month</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00361</td>
+            <td><i>day-</i> mondag</td>
+            <td>Monday</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00362</td>
+            <td><i>abbr-</i> fx [for eksempel]</td>
+            <td>e.g./for example</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00363</td>
+            <td><i>noun-</i> dag, e</td>
+            <td>day</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00364</td>
+            <td><i>adj-</i> god(t)</td>
+            <td>good</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00365</td>
+            <td><i>adj-</i> dårligt</td>
+            <td>bad</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00366</td>
+            <td><i>adj-</i> høj</td>
+            <td>tall</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00367</td>
+            <td><i>adj-</i> en lav mand/en kort pind</td>
+            <td>short</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00368</td>
+            <td><i>adj-</i> høj(t)</td>
+            <td>high</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00369</td>
+            <td><i>adj-</i> lav</td>
+            <td>low</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00370</td>
+            <td><i>adj-</i> en nem opave/et let sprog</td>
+            <td>easy</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00371</td>
+            <td><i>adj-</i> svær, e</td>
+            <td>difficult/hard</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00372</td>
+            <td><i>adj-</i> uhøflig</td>
+            <td>rude</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00373</td>
+            <td><i>adj-</i> venlig</td>
+            <td>kind</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00374</td>
+            <td><i>adj-</i> billig</td>
+            <td>cheap</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00375</td>
+            <td><i>adj-</i> dyr</td>
+            <td>expensive</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00376</td>
+            <td><i>adj-</i> varmt</td>
+            <td>warm</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00377</td>
+            <td><i>adj-</i> lunkent</td>
+            <td>lukewarm</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00378</td>
+            <td><i>adj-</i> kold(t)</td>
+            <td>cold</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00379</td>
+            <td><i>adj-</i> iskold(t)</td>
+            <td>ice-cold</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00380</td>
+            <td><i>adj-</i> let</td>
+            <td>light</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00381</td>
+            <td><i>noun-</i> lys</td>
+            <td>light</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00382</td>
+            <td><i>verb-</i> tænde</td>
+            <td>light</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00383</td>
+            <td><i>adj-</i> tung(t)</td>
+            <td>heavy</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00384</td>
+            <td><i>adj-</i> rigtigt</td>
+            <td>true/right</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00385</td>
+            <td><i>adj-</i> snavset</td>
+            <td>dirty</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00386</td>
+            <td><i>adj-</i> korrekt</td>
+            <td>correct</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00387</td>
+            <td><i>adj-</i> forker(t)</td>
+            <td>wrong</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00388</td>
+            <td><i>adj-</i> nærig</td>
+            <td>stingy</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00389</td>
+            <td><i>adj-</i> våd</td>
+            <td>wet</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00390</td>
+            <td><i>adj-</i> tør</td>
+            <td>dry</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00391</td>
+            <td><i>adj-</i> bred</td>
+            <td>wide</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00392</td>
+            <td><i>adj-</i> smal</td>
+            <td>narrow</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00393</td>
+            <td><i>adj-</i> lang</td>
+            <td>long</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00394</td>
+            <td><i>adj-</i> </td>
+            <td>fat</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00395</td>
+            <td><i>adj-</i> fed</td>
+            <td>skinny</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00396</td>
+            <td><i>adj-</i> stærk</td>
+            <td>strong</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00397</td>
+            <td><i>adj-</i> svag</td>
+            <td>weak</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00398</td>
+            <td><i>adj-</i> dum</td>
+            <td>stupid</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00399</td>
+            <td><i>adj-</i> intelligent</td>
+            <td>intelligent</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00400</td>
+            <td><i>adj-</i> bitter</td>
+            <td>bitter</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00401</td>
+            <td><i>adj-</i> sød</td>
+            <td>sweet</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00402/td>
+            <td><i>adj-</i> sur</td>
+            <td>sour</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00403</td>
+            <td><i>adj-</i> salt</td>
+            <td>salty</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00404</td>
+            <td><i>adj-</i> tæt</td>
+            <td>dense</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00405</td>
+            <td><i>adj-</i> tynd</td>
+            <td>thin</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00406</td>
+            <td><i>verb-</i> drikke</td>
+            <td>drink</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00407</td>
+            <td><i>dir-</i> Lyt og gentag og vær opmærksom på udtalen.</td>
+            <td>Listen and repeat and pay attention to the pronunciation.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00408</td>
+            <td><i>phr-</i> ugedage</td>
+            <td>days of the week</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00409</td>
+            <td><i>abbr-</i> eks. [eksempler]</td>
+            <td>examples</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00410</td>
+            <td><i>dir-</i> Sig på skift ugedagene. Hjælp hinanden med udtalen.</td>
+            <td>Say in turn the days of the week. Help each other with the pronunciation.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00411</td>
+            <td><i>dir-</i> Lyt og gentag. Bemærk stumt g i "dag", eks.: mandag ['manda].</td>
+            <td>Listen and repeat. Note the mute g in "dag", e.g.: Monday [<i>'manda</i>].</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00412</td>
+            <td><i>phr-</i> i skole</td>
+            <td>at school</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00413</td>
+            <td><i>noun-</i> morgen, er</td>
+            <td>morning</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00414</td>
+            <td><i>sent-</i> Vi taber vores planet!</td>
+            <td>We're losing our planet!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00415</td>
+            <td><i>noun-</i> bælte et*, r</td>
+            <td>belt</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00416</td>
+            <td><i>noun-</i> negl, e</td>
+            <td>nail (fingernail)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00417</td>
+            <td><i>noun-</i> hoved et*, er</td>
+            <td>head</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00418</td>
+            <td><i>noun-</i> knæ et*, &mdash;</td>
+            <td>knee</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00419</td>
+            <td><i>noun-</i> tå, tæer</td>
+            <td>toe</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00420</td>
+            <td><i>noun-</i> øje et*, øjne</td>
+            <td>eye</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00421</td>
+            <td><i>noun-</i> øre et*, r</td>
+            <td>ear</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00422</td>
+            <td><i>noun-</i> næse, r</td>
+            <td>nose</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00423</td>
+            <td><i>noun-</i> mund, e</td>
+            <td>mouth</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00424</td>
+            <td><i>noun-</i> skridt et*, &mdash;</td>
+            <td>step</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00425</td>
+            <td><i>adj- adv-</i> højre</td>
+            <td>right</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00426</td>
+            <td><i>adj- adv-</i> venstre</td>
+            <td>left</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00427</td>
+            <td><i>noun-</i> arm, r</td>
+            <td>arm</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00428</td>
+            <td><i>verb-</i> bøje</td>
+            <td>bend</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00429</td>
+            <td><i>verb-</i> strække</td>
+            <td>stretch</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00430</td>
+            <td><i>verb-</i> klappe</td>
+            <td>clap</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00431</td>
+            <td><i>adj-</i> hele</td>
+            <td>whole</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00432</td>
+            <td><i>noun-</i> vers et*, &mdash;</td>
+            <td>verse</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00433</td>
+            <td><i>phr-</i> op på tærene</td>
+            <td>up on your toes</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00434</td>
+            <td><i>phr-</i> ned i knæene</td>
+            <td>down to the knees</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00435</td>
+            <td><i>noun-</i> mave</td>
+            <td>stomach</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00436</td>
+            <td><i>verb-</i> elske</td>
+            <td>love</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00437</td>
+            <td><i>noun-</i> bryst et*, er</td>
+            <td>breast</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00438</td>
+            <td><i>noun-</i> pande, r</td>
+            <td>forehead</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00439</td>
+            <td><i>noun-</i> skulder, skuldre</td>
+            <td>shoulder</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00440</td>
+            <td><i>adj-</i> polsk</td>
+            <td>Polish</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00441</td>
+            <td><i>noun-</i> Polen</td>
+            <td>Poland</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00442</td>
+            <td><i>noun-</i> Grækenland</td>
+            <td>Greece</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00443</td>
+            <td><i>noun-</i> polak</td>
+            <td>Pole (Polish national)</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00444</td>
+            <td><i>noun-</i> sprog et*, &mdash;</td>
+            <td>language</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00445</td>
+            <td><i>noun-</i> tongue, r</td>
+            <td>tongue</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00446</td>
+            <td><i>verb-</i> forstå</td>
+            <td>understand</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00447</td>
+            <td><i>adj-</i> engelsk</td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00448</td>
+            <td><i>noun-</i> englænder, e</td>
+            <td>Englishman/Englishwoman</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00449</td>
+            <td><i>noun-</i> England</td>
+            <td>England</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00450</td>
+            <td><i>noun-</i> amerikaner, e</td>
+            <td>American</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00451</td>
+            <td><i>adj-</i> amerikansk, e</td>
+            <td>American</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00452</td>
+            <td><i>adv-</i> uden</td>
+            <td>without</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00453</td>
+            <td><i>adv-</i> kun</td>
+            <td>only</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00454</td>
+            <td><i>conj-</i> men</td>
+            <td>but</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00455</td>
+            <td><i>prep-</i> med</td>
+            <td>with</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00456</td>
+            <td><i>adv-</i> tit</td>
+            <td>often</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00457</td>
+            <td><i>dir-</i> Spørgsmål uden hv-ord kan besvares med:</td>
+            <td>Questions without hv-words can be answered with:</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00458</td>
+            <td><i>dir-</i> Lav sætningerne om til spørgsmål. Subjekt og verbum skifter plads.</td>
+            <td>Turn the sentences into questions. Subject and verb change places.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00459</td>
+            <td><i>adj-</i> dygtig</td>
+            <td>capable, smart</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00460</td>
+            <td><i>noun-</i> datter, døtre</td>
+            <td>daughter</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00461</td>
+            <td><i>noun-</i> søn, ner</td>
+            <td>son</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00462</td>
+            <td><i>noun-</i> ske, er</td>
+            <td>spoon</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00463</td>
+            <td><i>noun-</i> kniv, e</td>
+            <td>knife</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00464</td>
+            <td><i>noun-</i> gaffel, gafler</td>
+            <td>fork</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00465</td>
+            <td><i>noun-</i> is, &mdash;</td>
+            <td>ice</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00466</td>
+            <td><i>noun-</i> te, er</td>
+            <td>tea</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00467</td>
+            <td><i>noun-</i> lys et*, &mdash;</td>
+            <td>light</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00468</td>
+            <td><i>noun-</i> øl, &mdash;</td>
+            <td>beer</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00469</td>
+            <td><i>noun-</i> sol, e</td>
+            <td>sun</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00470</td>
+            <td><i>noun-</i> æg et*, &mdash;</td>
+            <td>egg</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00471</td>
+            <td><i>noun-</i> brød et*</td>
+            <td>bread</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00472</td>
+            <td><i>noun-</i> hat, te</td>
+            <td>hat</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00473</td>
+            <td><i>noun-</i> får et*, &mdash;</td>
+            <td>sheep</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00474</td>
+            <td><i>noun-</i> kop, per;</td>
+            <td>cup</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00475</td>
+            <td><i>sent-</i> Sådan lyder vokalerne.</td>
+            <td>That's how vowels sound!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00476</td>
+            <td><i>sent-</i> Fortæl om dig selv!</td>
+            <td>Talk about yourself!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00477</td>
+            <td><i>sent-</i> Hvordan går det?</td>
+            <td>How is it going?</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00478</td>
+            <td><i>expr-</i> stille og roligt</td>
+            <td>smooth and quiet</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00479</td>
+            <td><i>sent-</i> Undskyld, jeg kommer for sent!</td>
+            <td>Sorry I'm late!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00480</td>
+            <td><i>sent-</i> Det er i orden!</td>
+            <td>That's alright!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00481</td>
+            <td><i>sent-</i> Det går fint!</td>
+            <td>It's going well!</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00482</td>
+            <td><i>sent-</i> Vil du sige det igen?</td>
+            <td>Can/Could you say that again?</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00483</td>
+            <td><i>sent-</i> Jeg har et spørgsmål:</td>
+            <td>I have a question:</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00484</td>
+            <td><i>sent-</i> Hvad betyder "skole"?</td>
+            <td>What does "skole" mean?</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00485</td>
+            <td><i>sent-</i> Hvordan siger man "school"?</td>
+            <td>How do you say "school?"</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00486</td>
+            <td><i>sent-</i> Her kører du op og ned.</td>
+            <td>Here you go up and down.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00487</td>
+            <td><i>sent-</i> Her køber du mad.</td>
+            <td>Here you buy meals.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00488</td>
+            <td><i>sent-</i> Her ryger du en cigaret.</td>
+            <td>Here you smoke a cigarette.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00489</td>
+            <td><i>sent-</i> Her sidder du timerne.</td>
+            <td>Here you spend time sitting.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00490</td>
+            <td><i>sent-</i> Her tisser du.</td>
+            <td>Here you pee.</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00491</td>
+            <td><i>adv-</i> udenfor</td>
+            <td>outside</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00492</td>
+            <td><i>adv-</i> inde</td>
+            <td>inside</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00493</td>
+            <td><i>noun-</i> kantine, r</td>
+            <td>canteen</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00494</td>
+            <td><i>noun-</i> toilet et*, ter</td>
+            <td>toilet</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00495</td>
+            <td><i>noun-</i> elevator, er</td>
+            <td>elevator</td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00496</td>
+            <td><i>sent-</i> Hvem laver hvad?</td>
+            <td>Who does what?</td>
+        </tr>
+        
+        <!--
+        
+        <tr valign=top>
+            <td>00497</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr valign=top>
+            <td>00140</td>
+            <td></td>
+            <td></td>
+        </tr>
+        -->
+        
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Number</th>
+                <th>Dansk</th>
+                <th>English</th>
+                
+            </tr>
+        </tfoot>
+    </table>
+        
+        
+            <table style="background-color:brown; color:yellow;">
+                <tr align=center><td colspan=5>Practical Search:</td></tr>
+                <tr>
+                    <td>et- <span class="l">et-words</span></td>
+                    <td>index- <span class="l">book index</span></td>
+                    <td>på- <span class="l">preposition</span></td>
+                    <td>i- <span class="l">preposition</span></td>
+                    <td>hos- <span class="l">preposition</span></td>
+                    </tr>
+                    <tr>
+                    <td>med- <span class="l">preposition</span></td>
+                    <td>af- <span class="l">preposition</span></td>
+                    <td>om- <span class="l">preposition</span></td>
+                    <td>sådan- <span class="l">adverb</span></td>
+                    <td>r- <span class="l">"r" in plural</span></td>
+                    </tr>
+                    <tr>
+                    <td>adj- <span class="l">adjectives</span></td>
+                    <td>noun- <span class="l">nouns</span></td>
+                    <td>verb- <span class="l">verbs</span></td>
+                    <td>adv- <span class="l">adverbs</span></td>
+                    <td>phr- <span class="l">phrases</span></td>
+                    </tr>
+                    <tr>
+                    <td>conj- <span class="l">conjunction</span></td>
+                    <td>cou- <span class="l">country</span></td>
+                    <td>sent- <span class="l">sentence</span></td>
+                    <td>til- <span class="l">preposition</span></td>
+                    <td>expr- <span class="l">expressions</span></td>
+                    </tr>
+                    <tr>
+                    <td>instr- <span class="l">instructions</span></td>
+                    <td><span class="l"></span></td>
+                    <td><span class="l"></span></td>
+                    <td><span class="l"></span></td>
+                    <td><span class="l"></span></td>
+                    </tr>
+            </table>
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
