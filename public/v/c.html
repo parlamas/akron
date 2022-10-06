@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordforråd</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="tooltip"><span style="font-size:11pt; color:beige;">Isidoros Parlamas</span> &rarr; How-to-use instructions...
+  <span class="tooltiptext">
+  <center><span class="l">2-</span> 2-letter verb <span style="color:white;">&bull;</span> 
+                    <span class="l">irr-</span> irregular <span style="color:white;">&bull;</span> 
+                    <span class="l">er-</span> perfect with "være"<hr></center>
+                
+                        
+                        <span class="c">To find a verb, type <span style="color:beige;">-infinitive-</span>, using either only English letters or Danish letters. For example, to find READ, you can type either <span style="color:beige;">-laese-</span> or <span style="color:beige;">-læse-</span> or <span style="color:beige;">-read-</span>; to find UNDERSTAND, type <span style="color:beige;">-forsta-</span> or <span style="color:beige;">-forstå-</span> or <span style="color:beige;">-understand-</span>; to find DO, type <span style="color:beige;">-gore-</span> or <span style="color:beige;">-gøre-</span> or <span style="color:beige;">-do-</span>.</span><p>
+
+                            To find 2-letter verbs, type <span style="color:white;">2-</span>; to find irregular verbs, type <span style="color:white;">-irr-</span>; to find regular verbs, type <span style="color:white;">-reg-</span>; to find verbs that take <span style="color:white;">være</span> in the perfect tenses, type <span style="color:white;">er-</span>.<p>
+                        To see which, if any, verbs start with the same 3 letters, type <span style="color:white;">3 first letters-</span>; for example, <span style="color:white;">bet-</span> will filter out <span style="color:white;">betyle</span> and <span style="color:white;">betale</span>.<p>
+                            <span style="color:cyan; font-size:12pt;">Click to the right to access dictionary entries.</span> &rarr; 
+</span> 
+<a style="text-decoration:none; color:gold; background-color:green; padding:8px; font-size:10pt;" href="https://horistics.com/v/vi.html" target="_parent">with dictionary entries</a>
+</div><p>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=8%>number<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=40%>dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=52%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr valign=top>
+            <td>001<br>-bare-</td>
+            <td>-if only-</td>
+            <td>
+                <ol>
+                <li>Bare rolig!<br>
+                    <span class="b">Take it easy!<br>
+                    Don't worry!</span>
+                <li>Du kan bare vente dig!<br>
+                    <span class="b">You just wait!</span>
+                <li>Det var bare for sjov.<br>
+                    <span class="b">It was only for fun.</span>
+                <li>Hvis bare vi kan nå det.<br>
+                    <span class="b">if only we can make it.</span>
+                <li>Bare tanken om det ...<br>
+                    <span class="b">The mere thought of it ...</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>002<br>-da-</td>
+            <td>-when- -back then- (-since- -as- =fordi)</td>
+            <td>
+                <ol>
+                <li>degang da<br>
+                    <span class="b">when</span>
+                <li>Nu og da!<br>
+                    <span class="b">Now and then!</span>
+                <li>fra da af<br>
+                    <span class="b">since then</span>
+                <li>Det var da godt de kom.<br>
+                    <span class="b">I'm so glad they came!</span>
+                <li>Ja, ja da!<br>
+                    <span class="b">Well, alright then!</span>
+                <li>Da du nu spørger ...<br>
+                    <span class="b">Since you ask ...</span>
+                <li>Da vi skulle til at gå ...<br>
+                    <span class="b">As we were leaving ...</span>
+                    
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>003<br>-eftersom-</td>
+            <td>-since-</td>
+            <td>
+                <ol>
+                <li>eftersom<br>
+                    <span class="b">since</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>004<br>-eller-</td>
+            <td>-or-</td>
+            <td>
+                <ol>
+                <li>enten a eller b<br>
+                    <span class="b">either a or b</span>
+                <li>hverken a eller b<br>
+                    <span class="b">neither a nor b</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>005<br>-end-</td>
+            <td>-than- -except- = -but-</td>
+            <td>
+                <ol>
+                <li>han er større end sin bror<br>
+                    <span class="b">he is bigger than his brother</span>
+                <li>hun er alt andet  end dum<br>
+                    <span class="b">she is anything but stupid</span>
+                <li>der var ikke andre end mig<br>
+                    <span class="b">there was no-one but me</span>
+                <li>hvor gerne vi end ville<br>
+                    <span class="b">no matter how much we wanted to</span>
+                <li>end ikke<br>
+                    <span class="b">not even</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>006<br>-for- = -fordi-</td>
+            <td>-because- = -for-</td>
+            <td>
+                <ol>
+                <li>hun råbte højt, for hun var vred<br>
+                    <span class="b">she yelled, for she was angry</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>007<br>-fordi-</td>
+            <td>-because-</td>
+            <td>
+                <ol>
+                <li>det erikke fordi han er dum, men ...<br>
+                    <span class="b">it is not that he is stupid, but ...</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>008<br>-fra-</td>
+            <td>-since-</td>
+            <td>
+                <ol>
+                <li>hun har talt engelsk fra hun var lille<br>
+                    <span class="b">she has been speaking English since she was a child</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>009<br>-før-</td>
+            <td>-when- -phrase-</td>
+            <td>
+                <ol>
+                <li>ikke før*<br>
+                    <span class="b">-not until- -not before-</span>
+                <li>før eller senere*<br>
+                    <span class="b">sooner or later</span>
+                <li>jo før jo bedre*<br>
+                    <span class="b">the sooner the better</span>
+                <li>næppe var vi kommet før ...<br>
+                    <span class="b">we had hardly arrived when ...</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>010<br>-hverken-</td>
+            <td>-neither- -nor- (-either- -or- = after refusal)</td>
+            <td>
+                <ol>
+                <li>han kan hverken synge eller spille<br>
+                    <span class="b">he can neither sing nor play</span>
+                <li>jeg har aldrig været hverken i London eller Liverpool<br>
+                    <span class="b">I have never been to either London or Liverpool</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>011<br>-hvis-</td>
+            <td>-if-</td>
+            <td>
+                <ol>
+                <li>hvis bare<br>
+                    <span class="b">if only</span>
+                <li>hvis ikke<br>
+                    <span class="b">if not</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>012<br>-hvorimod-</td>
+            <td>-whereas-</td>
+            <td>
+                <ol>
+                <li>hvorimod<br>
+                    <span class="b">whereas</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>013<br>-hvorvidt-</td>
+            <td>-whether-</td>
+            <td>
+                <ol>
+                <li>hvorvidt<br>
+                    <span class="b">whether</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>014<br>-idet-</td>
+            <td>-as- (=while OR =because)</td>
+            <td>
+                <ol>
+                <li>vi mødtes idet vi var på vej ud<br>
+                    <span class="b">we met as we were going out (while)</span>
+                <li>han kom ikke idet han var syg<br>
+                    <span class="b">he did not come as he was ill (because)</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>015<br>-imens-</td>
+            <td>-while- (-whereas- =hvorimod)</td>
+            <td>
+                <ol>
+                <li>imens<br>
+                    <span class="b">-while -whereas-</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>016<br>-indtil- (conj. / prep.)</td>
+            <td>-until- -till- (-as far as- -to- =for distance / om afstand)</td>
+            <td>
+                <ol>
+                <li>indtil da<br>
+                    <span class="b">until then</span>
+                <li>indtil nu<br>
+                    <span class="b">until now</span>
+                <li>indtil videre<br>
+                    <span class="b">so far</span>
+                </ol>
+            </td>
+        </tr>
+
+
+        
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Number</th>
+                <th>dansk</th>
+                <th>English</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
