@@ -22,7 +22,7 @@ const Header = () => {
                 HORISTICS{" "}
                 <span style={{ color: "white", fontSize: "9pt" }}>
                   CVR: 43 10 93 24 •{" "}
-                  <span style={{ color: "cyan" }}>Currently: 16 Posts</span> •{" "}
+                  <span style={{ color: "cyan" }}>Currently: 17 Posts</span> •{" "}
                   <span style={{ color: "lime", fontSize: "9pt" }}>
                     On a desktop or laptop, the list of categories is on the top
                     part of the screen; to see the list of categories on a
