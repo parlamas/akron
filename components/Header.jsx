@@ -25,7 +25,7 @@ const Header = () => {
                   <span style={{ color: "cyan" }}>Currently: 17 Posts</span> •{" "}
                   <span style={{ color: "lime", fontSize: "9pt" }}>
                     On a desktop or laptop, the list of categories is on the top
-                    part of the screen; to see the list of categories on a
+                    part of the screen; to see the list of categories on a&nbsp;
                     <span style={{ color: "beige", fontSize: "9pt" }}>
                       cellphone
                     </span>
