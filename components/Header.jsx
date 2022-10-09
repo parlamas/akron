@@ -26,7 +26,10 @@ const Header = () => {
                   <span style={{ color: "lime", fontSize: "9pt" }}>
                     On a desktop or laptop, the list of categories is on the top
                     part of the screen; to see the list of categories on a
-                    <span style={{ color: "beige", fontSize: "9pt" }}></span>cellphone</span>, scroll all the way down to the bottom.
+                    <span style={{ color: "beige", fontSize: "9pt" }}>
+                      cellphone
+                    </span>
+                    , scroll all the way down to the bottom.
                   </span>
                 </span>
               </span>
