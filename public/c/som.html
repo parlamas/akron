@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>som</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="tooltip"><span style="font-size:11pt; color:beige;">Isidoros Parlamas</span> &rarr; How-to-use instructions...
+  <span class="tooltiptext">
+  <center><span class="l">2-</span> 2-letter verb <span style="color:white;">&bull;</span> 
+                    <span class="l">irr-</span> irregular <span style="color:white;">&bull;</span> 
+                    <span class="l">er-</span> perfect with "være"<hr></center>
+                
+                        
+                        <span class="c">To find a verb, type <span style="color:beige;">-infinitive-</span>, using either only English letters or Danish letters. For example, to find READ, you can type either <span style="color:beige;">-laese-</span> or <span style="color:beige;">-læse-</span> or <span style="color:beige;">-read-</span>; to find UNDERSTAND, type <span style="color:beige;">-forsta-</span> or <span style="color:beige;">-forstå-</span> or <span style="color:beige;">-understand-</span>; to find DO, type <span style="color:beige;">-gore-</span> or <span style="color:beige;">-gøre-</span> or <span style="color:beige;">-do-</span>.</span><p>
+
+                            To find 2-letter verbs, type <span style="color:white;">2-</span>; to find irregular verbs, type <span style="color:white;">-irr-</span>; to find regular verbs, type <span style="color:white;">-reg-</span>; to find verbs that take <span style="color:white;">være</span> in the perfect tenses, type <span style="color:white;">er-</span>.<p>
+                        To see which, if any, verbs start with the same 3 letters, type <span style="color:white;">3 first letters-</span>; for example, <span style="color:white;">bet-</span> will filter out <span style="color:white;">betyle</span> and <span style="color:white;">betale</span>.<p>
+                            <span style="color:cyan; font-size:12pt;">Click to the right to access dictionary entries.</span> &rarr; 
+</span> 
+<a style="text-decoration:none; color:gold; background-color:green; padding:8px; font-size:10pt;" href="https://horistics.com/v/vi.html" target="_parent">with dictionary entries</a>
+</div><p>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=20%>number<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=40%>dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=40%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr valign=top>
+            <td>001
+                <span class="y">-bare-</span>
+                <ol type=i>
+                    
+                    <li>-conj-<p>
+                    <li>-adv-<p>
+                    <li>-phr-
+                </ol>
+                    </td>
+
+            
+                    <td>
+                        <span class="w">conjunction</span><p>
+
+                        <span class="w">adverb</span><p>
+
+                        <span class="w">phrases</span><p>
+                    </td>
+
+                <td>
+                <ol>
+                    <span class="w">conjunction</span><p>
+                <li><span class="b"><span class="r">If only</span> we can make it!</span><br>
+                    Hvis <span class="r">bare</span> vi kan nå det!<p>
+                <li><span class="b">There are some things we can change <span class="r">if</span> we <span class="r">only</span> try.</span><br>
+                    Der er nogle ting vi kan ændre, hvis vi <span class="r">bare</span> prøver.<hr>
+                </ol>
+
+                
+
+                <ol start=3>
+                    <span class="w">adverb</span><p>
+                <li><span class="b">Du kan <span class="r">bare</span> vente dig!</span><br>
+                    <span class="b">You <span class="r">just</span> wait!</span><p>
+                <li><span class="b">It's not you, it's the <span class="r">mere</span> thought of being naked on these sheets in this room with, like, whatever's crawling around in here. </span><br>
+                     Det er ikke dig, det er <span class="r">bare</span> tanken om at være nøgen på disse lagner i dette rum med, hvad der nu end kravler rundt herinde.<p>
+                <li>Det var bare for sjov.<br>
+                    <span class="b">It was only for fun.</span><hr>
+                </ol>
+
+                <ol start=6>
+                    <span class="w">phrases</span><p>
+
+                <li><span class="b">Take it easy! &bull; Don't worry!</span><br>
+                    <span class="r">Bare</span> rolig!<br>
+                    
+                
+                
+        
+                </ol>
+
+
+            
+
+            
+            
+            </td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>002<br>-da-</td>
+            <td>-when- -back then- (-since- -as- =fordi)</td>
+            <td>
+                <ol>
+                <li>degang da<br>
+                    <span class="b">when</span>
+                <li>Nu og da!<br>
+                    <span class="b">Now and then!</span>
+                <li>fra da af<br>
+                    <span class="b">since then</span>
+                <li>Det var da godt de kom.<br>
+                    <span class="b">I'm so glad they came!</span>
+                <li>Ja, ja da!<br>
+                    <span class="b">Well, alright then!</span>
+                <li>Da du nu spørger ...<br>
+                    <span class="b">Since you ask ...</span>
+                <li>Da vi skulle til at gå ...<br>
+                    <span class="b">As we were leaving ...</span>
+                    
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>003<br>-eftersom-</td>
+            <td>-since-</td>
+            <td>
+                <ol>
+                <li>eftersom<br>
+                    <span class="b">since</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>004<br>-eller-</td>
+            <td>-or-</td>
+            <td>
+                <ol>
+                <li>enten a eller b<br>
+                    <span class="b">either a or b</span>
+                <li>hverken a eller b<br>
+                    <span class="b">neither a nor b</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>005<br>-end-</td>
+            <td>-than- -except- = -but-</td>
+            <td>
+                <ol>
+                <li>han er større end sin bror<br>
+                    <span class="b">he is bigger than his brother</span>
+                <li>hun er alt andet  end dum<br>
+                    <span class="b">she is anything but stupid</span>
+                <li>der var ikke andre end mig<br>
+                    <span class="b">there was no-one but me</span>
+                <li>hvor gerne vi end ville<br>
+                    <span class="b">no matter how much we wanted to</span>
+                <li>end ikke<br>
+                    <span class="b">not even</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>006<br>-for- = -fordi-</td>
+            <td>-because- = -for-</td>
+            <td>
+                <ol>
+                <li>hun råbte højt, for hun var vred<br>
+                    <span class="b">she yelled, for she was angry</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>007<br>-fordi-</td>
+            <td>-because-</td>
+            <td>
+                <ol>
+                <li>det erikke fordi han er dum, men ...<br>
+                    <span class="b">it is not that he is stupid, but ...</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>008<br>-fra-</td>
+            <td>-since-</td>
+            <td>
+                <ol>
+                <li>hun har talt engelsk fra hun var lille<br>
+                    <span class="b">she has been speaking English since she was a child</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>009<br>-før-</td>
+            <td>-when- -phrase-</td>
+            <td>
+                <ol>
+                <li>ikke før*<br>
+                    <span class="b">-not until- -not before-</span>
+                <li>før eller senere*<br>
+                    <span class="b">sooner or later</span>
+                <li>jo før jo bedre*<br>
+                    <span class="b">the sooner the better</span>
+                <li>næppe var vi kommet før ...<br>
+                    <span class="b">we had hardly arrived when ...</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>010<br>-hverken-</td>
+            <td>-neither- -nor- (-either- -or- = after refusal)</td>
+            <td>
+                <ol>
+                <li>han kan hverken synge eller spille<br>
+                    <span class="b">he can neither sing nor play</span>
+                <li>jeg har aldrig været hverken i London eller Liverpool<br>
+                    <span class="b">I have never been to either London or Liverpool</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>011<br>-hvis-</td>
+            <td>-if-</td>
+            <td>
+                <ol>
+                <li>hvis bare<br>
+                    <span class="b">if only</span>
+                <li>hvis ikke<br>
+                    <span class="b">if not</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>012<br>-hvorimod-</td>
+            <td>-whereas-</td>
+            <td>
+                <ol>
+                <li>hvorimod<br>
+                    <span class="b">whereas</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>013<br>-hvorvidt-</td>
+            <td>-whether-</td>
+            <td>
+                <ol>
+                <li>hvorvidt<br>
+                    <span class="b">whether</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>014<br>-idet-</td>
+            <td>-as- (=while OR =because)</td>
+            <td>
+                <ol>
+                <li>vi mødtes idet vi var på vej ud<br>
+                    <span class="b">we met as we were going out (while)</span>
+                <li>han kom ikke idet han var syg<br>
+                    <span class="b">he did not come as he was ill (because)</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>015<br>-imens-</td>
+            <td>-while- (-whereas- =hvorimod)</td>
+            <td>
+                <ol>
+                <li>imens<br>
+                    <span class="b">-while -whereas-</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>016<br>-indtil- (conj. / prep.)</td>
+            <td>-until- -till- (-as far as- -to- =for distance / om afstand)</td>
+            <td>
+                <ol>
+                <li>indtil da<br>
+                    <span class="b">until then</span>
+                <li>indtil nu<br>
+                    <span class="b">until now</span>
+                <li>indtil videre<br>
+                    <span class="b">so far</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>017<br>-ligesom-</td>
+            <td>-like- -just as-</td>
+            <td>
+                <ol>
+                <li>hun er blond ligesom du<br>
+                    <span class="b">she is blonde just like you</span>
+                <li>gør ligesom jeg<br>
+                    <span class="b">do as I do</span>
+                <li>ligesom om<br>
+                    <span class="b">just as if</span>
+                <li>ligesom vi skulle til at gå ...<br>
+                    <span class="b">just as we were leaving ...</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>018<br>-medens-</td>
+            <td>-while- -where as-</td>
+            <td>
+                <ol>
+                <li>medens<br>
+                    <span class="b">while; whereas</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>019<br>-menmindre-</td>
+            <td>-unless-</td>
+            <td>
+                <ol>
+                <li>menmindre<br>
+                    <span class="b">unless</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>020<br>-men-</td>
+            <td>-but-</td>
+            <td>
+                <ol>
+                <li>men alligevel ...<br>
+                    <span class="b">but stil ...</span>
+                <li>&mdash; Skøn fest, ikke?<br>
+                    &mdash; Jo, men lidt vild! <br>
+                    <span class="b">&mdash; Great party, don't you think?<br>
+&mdash; Yes, a bit wild though.</span>
+                <li>Men John dog!<br>
+                    <span class="b">Really John!</span>
+                <li>Men dog!<br>
+                    <span class="b">Dear me!</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>021<br>-når-</td>
+            <td>-when-</td>
+            <td>
+                <ol>
+                <li>når bare<br>
+                    <span class="b">if only</span>
+                <li>når først de kommer<br>
+                    <span class="b">once they come</span>
+                <li>når som helst<br>
+                    <span class="b">whenever, anytime</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>022<br>-og-</td>
+            <td>-and-</td>
+            <td>
+                <ol>
+                <li>vi skal ud og købe ind<br>
+                    <span class="b">we are going shopping</span>
+                <li>Gå hjem og sov!<br>
+                    <span class="b">Go home and sleep!</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>023<br>-om-</td>
+            <td>-if- -whether-</td>
+            <td>
+                <ol>
+                <li>som om<br>
+                    <span class="b">as if</span>
+                <li>jeg ved ikke om de kommer<br>
+                    <span class="b">I don't know whether they will come</span>
+                <li>og jeg så må sige<br>
+                    <span class="b">if I may say so</span>
+                <li>&mdsh; Kan du lide ham?<br>
+                    &mdash; Og ja, om!<br>
+                    <span class="b">&mdash; Do you like him?<br>
+                    &mdash; You bet I do!</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>024<br>-samt-</td>
+            <td>-and- -plus-</td>
+            <td>
+                <ol>
+                <li>samt<br>
+                    <span class="b">and, plus</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>025<br>-selvom-</td>
+            <td>-though- -even though-</td>
+            <td>
+                <ol>
+                <li>selvom<br>
+                    <span class="b">though, even though</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>026<br>-også hvis-</td>
+            <td>-even if-</td>
+            <td>
+                <ol>
+                <li>også hvis<br>
+                    <span class="b">even if</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>027<br>-siden-</td>
+            <td>-since-</td>
+            <td>
+                <ol>
+                <li>siden du nu vil have det<br>
+                    <span class="b">since you want it</span>
+                <li>siden sidst<br>
+                    <span class="b">since last time</span>
+                </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>028<br>-skønt-</td>
+            <td>-though-</td>
+            <td>
+                <ol>
+                <li>skønt<br>
+                    <span class="b">though</span>
+                </ol>
+            </td>
+        </tr>
+
+
+        
+        <tr valign=top>
+            <td>029
+                <span class="y">-som-</span>
+                <ol type=i>
+                    
+                    <li>-conj-<p>
+                    <li>-pron-<p>
+                    <li>-adv-<p>
+                    <li>-prep-<p>
+                    <li>-phr-
+                </ol>
+                    </td>
+
+                    <!--2nd column-->
+
+            <td>
+                <span class="w">conjunction</span>
+            <ol type=a>
+            <li><span class="b">-as-</span>
+            <li><span class="b">-just-</span>
+            <li><span class="b">-like- -just like- -exactly like-</span>
+            <li><span class="b">-such as-</span>
+            <li><span class="b">-just as-</span>
+            <li><span class="b">-as if-</span>
+            <li><span class="b">-at the same time that-</span> -efterhånden som-
+            <li><span class="b">-as ... as-</span>
+            <li>indledende en sætning<br>
+                <span class="b">introductory sentences</span> &rarr; -som- = <span class="b">-as-</span>
+            <li>ikke indledende en sætning<br>
+                <span class="b">nonintoductory sentences</span> &rarr; -lige som- = <span class="b">-just like-</span><hr>
+            </ol>
+
+            <span class="w">pronoun</span>
+            <ol type=a start=11>
+                <li>(om person, som subjekt) <span class="b">-who-</span>
+                <li>(om person, som objekt) <span class="b">-who(m)- -whom-</span>
+                <li>(efter præp) <span class="b">-whom-</span>
+                <li>(om alt andet end personer) <span class="b">-which-</span><hr>
+            </ol>
+
+            <span class="w">adverb</span>
+                <ol type=a start=15>
+                    <li>-som- <span class="b">-how-</span><hr>
+                </ol>
+
+            <span class="w">preposition</span>
+                <ol type=a start=16>
+                    <li>-af-<span class="r">*</span> (-i ens egenskab af-) <span class="b">-in one's capacity as-</span>
+                    <li>-såsom- <span class="b">-such as-</span><hr>
+                </ol>
+
+            <span class="w">phrase</span>
+                <ol type=a start=18>
+                    <li>-som- <span class="b">-as ... as-</span>
+                    <li>-som sådan- <span class="b">-as such- -per se-</span>
+                </ol>
+            </td>
+
+            <!--3rd column-->
+
+            <td>
+                <span class="w">conjunction</span>
+                <ol>
+                    <li><span class="b">Tom died <span class="r">just as</span> he was trying to say something to Mary.</span><br>
+                        Tom døde <span class="r">ligesom</span> han skulle til at sige noget til Mary.<p>
+                        <span class="g">time, manner, circumstances</span><p>
+
+                    <li><span class="b">You've got to take people and the weather <span class="r">as</span> they come.</span><br>
+                        Folk og vejr må man tage <span class="r">som</span> de er.<p>
+                        <span class="g">inevitability, opinion</span><p>
+
+                    <li><span class="b">Tom and Mary got divorced, <span class="r">just like</span> you had predicted.</span><br>
+                        Tom og Mary blev skilt, <span class="r">ligesom</span> du havde forudsagt.<p>
+                            <span class="g">vindication or apposite prediction</span><p>
+
+                    <li><span class="b"><span class="r">Just as</span> I suspected, the door is locked.</span><br>
+                        <span class="r">Lige som</span> jeg havde mistanke om, er døren låst.<p>
+                            <span class="g">in the same way as &bull; på samme måde som</span><p>
+
+                    <li><span class="b">Being a mother isn't <span class="r">as</span> bad <span class="r">as</span> I thought at first!</span><br>
+                        At være mor er ikke <span class="r">så</span> slemt, <span class="r">som</span> jeg troede i starten!<p>
+                            <span class="g">comparison</span><p>
+
+                    <li><span class="b">It seemed <span class="r">as if</span> the day would never end.</span><br>
+                        Det virkede <span class="r">som om</span> dagen aldrig ville ende.<p>
+                            <span class="g">impossibility</span><p>
+
+                    <li><span class="b"><span class="r">As</span> the wood decays, it secretes fragrant oil and resin.</span><br>
+                        <span class="r">Efterhånden som</span> træet nedbrydes, afgiver det en velduftende olie og harpiks.<p>
+                            <span class="g">progressing in parallel</span><p>
+
+                    <li>Han reagerede præcis <span class="r">som</span> jeg gør, når jeg blev forskrækket.<br>
+                <span class="b">He reacted <span class="r">exactly/just like</span> I do when I am startled.<p>
+                    <span class="g">sameness or similarity</span><p><hr>
+                </ol>
+                
+                <span class="w">pronoun</span>
+                <ol start=9>
+                    <li>den dame <span class="r">som</span> kommer i morgen<br>
+                        <span class="b">the lady <span class="r">who</span> is coming tomorrow</span><p>
+                    <li>den mand <span class="r">som</span> du bad feje gården<br>
+                        <span class="b">the man (<span class="r">who(m)</span>) you asked to sweep the yard</span><p>
+                    <li>det brev <span class="r">som</span> kom i går<br>
+                        <span class="b">the letter <span class="r">which</span> arrived yesterday</span><p>
+                    <li>Tom spiste æblet <span class="r">som</span> Mary havde efterladt på spisebordet.<br>
+                        <span class="b">Tom ate the apple (<span class="r">that</span>) Mary had left on the dining room table.</span><p>
+                    <li>det samme <span class="r">som</span> vi fik i går<br>
+                        <span class="b">the same as <span class="r">what</span> we had yesterday</span><hr>
+                </ol>
+
+                <span class="w">adverb</span>
+                <ol start=14>
+                    <li><span class="r">Som</span> det dog regner og blæser i Danmark!<br>
+                    <span class="b"><span class="r">How</span> it rains and how windy it is in Denmark!</span><hr>
+                </ol>
+
+                <span class="w">preposition</span>
+                <ol start=15>
+                    <li>få ngt <span class="r">som</span> belønning<br>
+                <span class="b">get sth <span class="r">as</span> a reward</span><p>
+
+                <li>få ngt <span class="r">som</span> belønning<br>
+                <span class="b">get sth <span class="r">as</span> a reward</span><p>
+
+                <li>Han anser stille tidsfordriv, <span class="r">såsom</span> læsning og skak, for kedeligt.<br>
+                <span class="b">He considers quiet pastimes, <span class="r">such as</span> reading and chess, boring.</span><p>
+
+                <li>Han arbejder <span class="r">som</span> diplomat i Danmark.<br>
+                <span class="b">He works <span class="r">as</span> a diplomat in Denmark.</span><p>
+
+                <li><span class="r">I min egenskab af</span> formand for Udenrigsudvalget skal jeg hermed fremsende udtalelsen.<br>
+                <span class="b"><span class="r">In my capacity as</span> Chair of the Committee on Foreign Affairs, I am pleased to forward you this opinion.</span><hr>
+                </ol>
+
+                <span class="w">phrase</span>
+                <ol start=20>
+                <li>som sådan &rarr; <span class="b">per se / as such</span><br>
+                    Denne forordning vedrører forvaltningen af ålebestanden <span class="r">som sådan</span>.<br>
+                    <span class="b">The present regulation addresses the management of the eel stocks <span class="r">per se</span>.</span><p>
+
+                <li>Hvorfor virker det <span class="r">som sådan</span> et chok på mange af os når vi taber?<br>
+                    <span class="b">Why does losing come <span class="r">as such</span> a shock to many of us?</span>
+
+                </ol>
+
+            </td>
+        </tr>
+
+
+        
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Number</th>
+                <th>dansk</th>
+                <th>English</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
