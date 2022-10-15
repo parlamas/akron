@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=10%>number<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr valign=top>
+            <td>001</td>
+
+            <td><span class="y">14:00</span><p></td>
+
+            <td>(klokken) to</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>002</td>
+
+            <td><span class="y">14:05</span><p></td>
+
+            <td>fem (minutter) over to</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>003</td>
+
+            <td><span class="y">14:10</span><p></td>
+
+            <td>ti (minutter) over to</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>004</td>
+
+            <td><span class="y">14:15</span><p></td>
+
+            <td>kvart over to</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>005</td>
+
+            <td><span class="y">14:20</span><p></td>
+
+            <td>tyve (minutter) over to</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>006</td>
+
+            <td><span class="y">14:25</span><p></td>
+
+            <td>fem (minutter) i halv tre (<span class="r">five to two thirty</span>)</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>007</td>
+
+            <td><span class="y">14:30</span><p></td>
+
+            <td>halv tre</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>008</td>
+
+            <td><span class="y">14:35</span><p></td>
+
+            <td>fem (minutter) over halv tre (<span class="r">five past two thirty</span>)</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>009</td>
+
+            <td><span class="y">14:40</span><p></td>
+
+            <td>tyve (minutter) i tre</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>010</td>
+
+            <td><span class="y">14:45</span><p></td>
+
+            <td>kvart i tre</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>011</td>
+
+            <td><span class="y">14:50</span><p></td>
+
+            <td>ti (minutter) i tre</td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>012</td>
+
+            <td><span class="y">14:55</span><p></td>
+
+            <td>fem (minutter) i tre</td>
+
+        </tr>
+        
+ 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Number</th>
+                <th>dansk</th>
+                <th>English</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
