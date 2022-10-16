@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordforråd</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .l {color:lime;}
+    .c {color:gold;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=8%>number<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=17%>a(n) ...<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=17%>the + singular<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=17%>(some) + plural<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=17%>the + plural<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=24%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr valign=top>
+            <td>01<br>-søskende-<br>-siblings-</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>(nogle) søskende<br>(some) siblings</td>
+            <td>søskende<br>the siblings</td>
+            <td>-siblings-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>02<br>-mor-<br>-mother-</td>
+            <td>en mor<br>a mother</td>
+            <td>moderen<br>the mother</td>
+            <td>(nogle) mødre<br>(some) mothers</td>
+            <td>mødrene<br>the mothers</td>
+            <td>-mother-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>03<br>-far-<br>-father-</td>
+            <td>en far<br>a father</td>
+            <td>faderen<br>the father</td>
+            <td>(nogle) fædre<br>(some) fathers</td>
+            <td>fædrene<br>the fathers</td>
+            <td>-father-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>04<br>-forældre-<br>-parents-</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>(nogle) forældre<br>(some) parents</td>
+            <td>forældrene<br>the parents</td>
+            <td>-parents-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>05<br>-mand-<br>-husband-</td>
+            <td>en mand<br>a husband</td>
+            <td>manden<br>the husband</td>
+            <td>(nogle) ægtemænd<br>(some) husbands</td>
+            <td>ægtemændene<br>the husbands</td>
+            <td>-husband-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>06<br>-kone-<br>-wife-</td>
+            <td>en kone<br>a wife</td>
+            <td>konen<br>the wife</td>
+            <td>(nogle) koner<br>(some) wives</td>
+            <td>konerne<br>the wives</td>
+            <td>-wife-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>07<br>-søn-<br>-son-</td>
+            <td>en søn<br>a son</td>
+            <td>sønnen<br>the son</td>
+            <td>(nogle) sønner<br>(some) sons</td>
+            <td>sønnerne<br>the sons</td>
+            <td>-son-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>08<br>-datter-<br>-daughter-</td>
+            <td>en datter<br>a daughter</td>
+            <td>datteren<br>the daughter</td>
+            <td>(nogle) døtre<br>(some) daughters</td>
+            <td>døtrene<br>the daughters</td>
+            <td>-daughter-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>09<br>-søster-<br>-sister-</td>
+            <td>en søster<br>a sister</td>
+            <td>søsteren<br>the sister</td>
+            <td>(nogle) søstre<br>(some) sisters</td>
+            <td>søstrene<br>the sisters</td>
+            <td>-sister-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>10<br>-bror-<br>-brother-</td>
+            <td>en bror<br>a brother</td>
+            <td>broderen<br>the brother</td>
+            <td>(nogle) brødre<br>(some) brothers</td>
+            <td>brødre<br>the brothers</td>
+            <td>-brother-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>11<br>-bedstemor-<br>-grandmother-</td>
+            <td>en bedstemor<br>a grandmother</td>
+            <td>bedstemoderen<br>the grandmother</td>
+            <td>(nogle) bedstemødre<br>(some) grandmothers</td>
+            <td>bedstemødrene<br>the grandmothers</td>
+            <td>-grandmother-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>12<br>-bedstefar-<br>-grandfather-</td>
+            <td>en bedstefar<br>a grandfather</td>
+            <td>bedstefaderen<br>the grandfather</td>
+            <td>(nogle) bedstefædre<br>(some) grandfathers</td>
+            <td>bedstefædrene<br>the grandfathers</td>
+            <td>-grandfather-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>13<br>-oldemor-<br>-great grandmother-</td>
+            <td>en oldemor<br>a great grandmother</td>
+            <td>oldemoren<br>the great grandmother</td>
+            <td>(nogle) oldemødre<br>(some) great grandmothers</td>
+            <td>oldemødrene<br>the great grandmothers</td>
+            <td>-great grandmother-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>14<br>-oldemor-<br>-great grandfather-</td>
+            <td>en oldefar<br>a great grandfather</td>
+            <td>oldefaren<br>the great grandfather</td>
+            <td>(nogle) oldefædre<br>(some) great grandfathers</td>
+            <td>oldefædrene<br>the great grandfathers</td>
+            <td>-great grandfather-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>15<br>-bedsteforældre-<br>-great grandparents-</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>(nogle) bedsteforældre<br>(some) great grandparents</td>
+            <td>bedsteforældrene<br>the great grandparents</td>
+            <td>-great grandparents-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>16<br>-tante-<br>-aunt-</td>
+            <td>en tante<br>an aunt</td>
+            <td>tanten<br>the aunt</td>
+            <td>(nogle) tanter<br>(some) aunts</td>
+            <td>tanterne<br>the aunts</td>
+            <td>-aunt-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>17<br>-moster-<br>-aunt-<br>-maternal-</td>
+            <td>en moster<br>an aunt</td>
+            <td>mosteren<br>the aunt</td>
+            <td>(nogle) mosterer<br>(some) aunts</td>
+            <td>mosterne<br>the aunts</td>
+            <td>-aunt-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>18<br>-faster-<br>-aunt-<br>-paternal-</td>
+            <td>en faster<br>en aunt</td>
+            <td>fasteren<br>the aunt</td>
+            <td>(nogle) fasterer<br>(some) aunts</td>
+            <td>fasterne<br>the aunts</td>
+            <td>-aunt-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>19<br>-onkel-<br>-uncle-</td>
+            <td>en onkel<br>an uncle</td>
+            <td>onklen<br>the uncle</td>
+            <td>(nogle) onkler<br>(some) uncles</td>
+            <td>onklerne<br>the uncles</td>
+            <td>-uncle-<br></td>
+        </tr>
+
+        <tr valign=top>
+            <td>20<br>-morbror-<br>-uncle-<br>-maternal-</td>
+            <td>en morbror<br>an uncle</td>
+            <td>morbroderen<br>the brother</td>
+            <td>(nogle) morbrødre<br>(some) brothers</td>
+            <td>morbrødrene<br>the brothers</td>
+            <td>-uncle-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>21<br>-farbror-<br>-uncle-<br>-paternal-</td>
+            <td>en farbror<br>an uncle</td>
+            <td>farbroderen<br>the brother</td>
+            <td>(nogle) farbrødre<br>(some) brothers</td>
+            <td>farbrødrene<br>the brothers</td>
+            <td>-uncle-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>22<br>-fætter-<br>-cousin-</td>
+            <td>en fætter<br>a cousin</td>
+            <td>fætteren<br>the cousin</td>
+            <td>(nogle) fætre<br>(some) cousins</td>
+            <td>fætrene<br>the cousins</td>
+            <td>-cousin-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>23<br>-kusine-<br>-cousin-<br>-female-</td>
+            <td>en kusine<br>a cousin</td>
+            <td>kusinen<br>the cousin</td>
+            <td>(nogle) kusiner<br>(some) cousins</td>
+            <td>kusinerne<br>the cousins</td>
+            <td>-cousin-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>24<br>-niece-<br>-niece-</td>
+            <td>en niece<br>a niece</td>
+            <td>niecen<br>the niece</td>
+            <td>(nogle) niecer<br>(some) nieces</td>
+            <td>niecerne<br>the nieces</td>
+            <td>-niece-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>25<br>-nevø-<br>-nephew-</td>
+            <td>en nevø<br>a nephew</td>
+            <td>nevøen<br>the nephew</td>
+            <td>(nogle) nevøer<br>(some) nephews</td>
+            <td>nevøerne<br>the nephews</td>
+            <td>-nephew-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>26<br>-svigermor-<br>-mother-in-law-</td>
+            <td>en svigermor<br>a mother-in-law</td>
+            <td>svigermoren-the mother-in-law</td>
+            <td>(nogle) svigermødre<br>(some) mothers-in-law</td>
+            <td>svigermødrene<br>the mothers-in-law</td>
+            <td>-mother-in-law-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>27<br>-svigerfar-<br>-father-in-law-</td>
+            <td>en svigerfar<br>a father-in-law</td>
+            <td>svigerfaderen<br>the father-in-law</td>
+            <td>(nogle) svigerfædre<br>(some) fathers-in-law</td>
+            <td>svigerfædrene<br>the fathers-in-law</td>
+            <td>-father-in-law-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>28<br>-svigerfar-<br>-parents-in-law-</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>nogle svigerforældre<br>(some) parents-in-law</td>
+            <td>svigerforældrene<br>the parents-in-law</td>
+            <td>-parents-in-law-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>29<br>-svoger-<br>-brother-in-law-</td>
+            <td>en svoger<br>a brother-in-law</td>
+            <td>svogeren<br>the brother-in-law</td>
+            <td>(nogle) svogre<br>(some) brothers-in-law</td>
+            <td>svogrene<br>the brothers-in-law</td>
+            <td>-brother-in-law-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>30<br>-svigerinde-<br>-sister-in-law-</td>
+            <td>en svigerinde<br>a sister-in-law</td>
+            <td>svigerinden<br>the sister-in-law</td>
+            <td>(nogle) svigerinder<br>(some) sisters-in-law</td>
+            <td>svigerinden<br>the sisters-in-law</td>
+            <td>-sister-in-law-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>31<br>-barnebarn-<br>-grandchild-</td>
+            <td>et barnebarn<br>a grandchild</td>
+            <td>barnebarnet<br>the grandchild</td>
+            <td>(nogle) børnebørn<br>(some) grandchildren</td>
+            <td>børnebørnene<br>the grandchildren</td>
+            <td>-grandchild-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>32<br>-sønnesøn-<br>-grandson-<br>one's son's son</td>
+            <td>en sønnesøn<br>a grandson</td>
+            <td>sønnesønnen<br>the grandson</td>
+            <td>(nogle) sønnesønner<br>(some) grandsons</td>
+            <td>sønnesønnerne<br>the grandsons</td>
+            <td>-grandson-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>33<br>-dattersøn-<br>-grandson-<br>one's daughter's son</td>
+            <td>en dattersøn<br>a grandson</td>
+            <td>dattersønnen<br>the grandson</td>
+            <td>(nogle) dattersønner<br>(some) grandsons</td>
+            <td>dattersønnerne<br>the grandsons</td>
+            <td>-grandson-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>34<br>-sønnedatter-<br>-granddaughter-<br>one's son's daughter</td>
+            <td>en sønnedatter<br>a granddaughter</td>
+            <td>sønnedatteren<br>the granddaughter</td>
+            <td>(nogle) sønnedøtre<br>(some) granddaughters</td>
+            <td>sønnedøtrene<br>the granddaughters</td>
+            <td>-granddaughter-</td>
+        </tr>
+
+        <tr valign=top>
+            <td>35<br>-datterdatter-<br>-granddaughter-<br>one's daughter's daughter</td>
+            <td>en datterdatter<br>a granddaughter</td>
+            <td>datterdatteren<br>the granddaughter</td>
+            <td>(nogle) datterdøtre<br>(some) granddaughters</td>
+            <td>datterdøtrene<br>the granddaughters</td>
+            <td>-granddaughter-</td>
+        </tr>
+        
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Number</th>
+                <th>infinitiv</th>
+                <th>nutid</th>
+                <th>datid</th>
+                <th>førnutid</th>
+                <th>English</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
