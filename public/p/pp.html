@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propositions</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=10%>Column 1<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>Column 2<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>Column 3<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr valign=top>
+            <td>001<p><div class="r">-adv-<p>-prep-</div></td>
+
+            <td><span class="b">-aboard-</span></td>
+
+            <td><img src="001aboard.jpg"></td>
+        </tr>
+
+        <tr valign=top>
+            <td>002<p><div class="r">-adv-<p>-prep-<p>-noun-</div></td>
+            <td>
+            <span class="b">-about-</span><p>
+
+                <ol>
+                <li><span class="b">at two o'clock</span><br>
+                ved totiden<p>
+
+                <li><span class="b">it's about here</span><br>
+                det er her et sted<p>
+
+                <li><span class="b">it's time</span><br>
+                det er på tide<p>
+
+                <li><span class="b">that's it</span><br>
+                det er vist det hele<p>
+
+                <li><span class="b">walk about the town</span><br>
+                gå rundt i byen<p>
+
+                <li><span class="b">be earnest about sth</span><br>
+                mene ngt alvorligt<p>
+
+                <li><span class="b">what are we going to do about it?</span><br>
+                havd skal vi gøre ved det?<p>
+
+                <li><span class="b">be up and about</span><br>
+                være oppe (af sengen)<br>
+                være på benene<p>
+
+                <li><span class="b">be about to cry</span><br>
+                være lige ved at græle<p>
+
+                <li><span class="b">what about a cup of tea?</span><br>
+                havd med en kop te?<p>
+
+                <li><span class="b">bring about</span><br>
+                forårsage<p>
+
+                <li><span class="b">I'm calling about the advertisement</span><br>
+                jeg rinder vedrørenden annoncen<p>
+
+                <li><span class="b">about-turn</span><br>
+                kovending <span class="r">noun</span>
+              </ol>
+              </td>
+
+            <td>
+              <img src="002about.jpg"><br>
+              <ol>
+                  <li>-omkring-<p>
+
+                  <li>-rundt-<p>
+
+                  <li>-om-<p>
+
+                  <li>-vedrørende-<p>
+
+                  <li>-omtrent-<p>
+
+                  <li>-circa-
+              </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>003<p><div class="r">-adv-<p>-prep-<p>-adj-</div></td>
+
+            <td>
+              <span class="b">-above-</span><p>
+
+                <ol>
+                <li><span class="b">above all</span><br>
+                fremfor alt<p>
+
+                <li><span class="b">be above sth</span><br>
+                være hævet over ngt<p>
+
+                <li><span class="b">it is not above him to steal</span><br>
+                han under sig ikke for at stjæle<p>
+
+                <li><span class="b">from above</span><br>
+                ovenfra<p>
+
+                <li><span class="b">it is above me</span><br>
+                der ligger over min forstand<p>
+
+                <li><span class="b">the above items</span><br>
+                ovennævnte ting<p>
+
+                <li><span class="b">over and above</span><br>
+                foruden<br>ud over<p>
+
+                <li><span class="b">be over suspicion</span><br>
+                være hævet over mistanke<p>
+
+                <li><span class="b">aboveboard</span><br>
+                ærlig <span class="r">adjective</span><br>
+                åben<p>
+
+                <li><span class="b">abovementioned</span><br>
+                ovennævnt <span class="r">adjective</span>
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="003aabove.jpg"><br><img src="003babove.jpg">
+              <br>
+              <ol>
+                  <li>-over-<p>
+
+                  <li>-overoven-<p>
+
+                  <li>-ovenpå-<p>
+
+                  <li>-mere end-
+              </ol>
+            </td>
+        </tr>
+
+         <tr valign=top>
+            <td>004<p><div class="r">-adv-<p>-prep-</div></td>
+
+            <td>
+              <span class="b">-across-</span><p>
+
+                <ol>
+                <li><span class="b">walk across the road</span><br>
+                gå over gaden<p>
+
+                <li><span class="b">a road across the wood</span><br>
+                en vej trvæs igennem skoven<p>
+
+                <li><span class="b">across from</span><br>
+                lige over for<p>
+
+                <li><span class="b">come across</span><br>
+                støde på, møde<p>
+
+                <li><span class="b">across the EU</span><br>
+                i hele EU<p>
+
+                <li><span class="b">50 m across</span><br>
+                50 m i tværsnit
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="004across.jpg">
+              <br>
+              <ol>
+                  <li>-over-<p>
+
+                  <li>-tværs over-<p>
+
+                  <li>-på den anden side af-<p>
+
+                  <li>-på tværs-<p>
+
+                  <li>-over kors-<p>
+
+                  <li>-vandret- (i krydsord)<p>
+              </ol>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>005<p><div class="r">-prep-<p>-adj-<p>-adv-<p>-conj-<p>-noun-</div></td>
+
+            <td>
+              <span class="b">-after-</span><p>
+
+                <ol>
+                <li><span class="b">what are you aftwer?</span><br>
+                havd er du ud efter?<p>
+
+                <li><span class="b">ask after sb</span><br>
+                spørge til en<p>
+
+                <li><span class="b">after all</span><br>
+                når det kommer til stykket<br>alligevel<p>
+
+                <li><span class="b">take after sb</span><br>
+                ligne en<p>
+
+                <li><span class="b">aftercare</span><br>
+                (fig) hen en vejen<p>
+
+                <li><span class="b">aftereffects</span><br>
+                <span class="r">pl</span> eftervirkninger<br>efterveer<p>
+
+                <li><span class="b">afterlife</span><br>
+                livet efter døden <span class="r">noun</span><p>
+
+                <li><span class="b">aftermath</span><br>
+                eftervirkning <span class="r">noun</span><p>
+
+                <li><span class="b">in the aftermath of the war</span><br>
+                i tiden efter krigen<p>
+
+                <li><span class="b">afternoon</span><br>
+                eftermiddag <span class="r">noun</span>
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="005aafter.jpg"><br><img src="005bafter.jpg">
+              <br>
+              <ol>
+                  <li>-efter-<p>
+
+                  <li>-baefter-<p>
+
+                  <li>-senere-<p>
+
+                  <li>-efter at- <span class="r">conjunction</span>
+              </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>006<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-against-</span><p>
+
+                <ol>
+                <li><span class="b">run against time</span><br>
+                løbe om kap med tiden<p>
+
+                <li><span class="b">as against</span><br>
+                sammenlignet med / mod
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="006against.jpg">
+              <br>
+              <ol>
+                  <li>-mod-<p>
+
+                  <li>-imod-<p>
+
+                  <li>-ud-<p>
+
+                  <li>-for<p>
+
+                  <li>-ved-
+              </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>007<p><div class="r">-prep-<p>-adv-</div></td>
+
+            <td>
+              <span class="b">-along-</span><p>
+
+                <ol>
+                <li><span class="b">is he coming along?</span><br>
+                kommer han med?<p>
+
+                <li><span class="b">along with</span><br>
+                sammen med<br>foruden<p>
+
+                <li><span class="b">all along</span><br>
+                hele tiden<p>
+
+                <li><span class="b">get along with</span><br>
+                komme godt ud af det med<br>klare sig med<p>
+
+                <li><span class="b">along the way</span><br>
+                (fig) hen ad vejen<p>
+
+                <li><span class="b">alongside</span><br>
+                ved siden af<br>langs med <span class="r">preposition</span>
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="007along.jpg">
+              <br>
+              <ol>
+                  <li>-langs (med)-<p>
+
+                  <li>-hen ad-<p>
+
+                  <li>-med-<p>
+
+                  <li>-af sted-
+              </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>008<p><div class="r">-prep-</div></td>
+
+            <td>
+              <div class="b">-amid-<p>-amidst-</div><p>
+
+               <center>&mdash;</center>
+
+            </td>
+
+            <td>
+              <img src="008amidamidst.jpg">
+              <br>
+              <ol>
+                  <li>-midt i-<p>
+
+                  <li>-blandt-
+              </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>009<p><div class="r">-prep-</div></td>
+
+            <td>
+              <div class="b">-among-<p>-amongst-</div><p>
+
+                <ol>
+                <li><span class="b">among other things</span><br>
+                blandt andet<p>
+
+                <li><span class="b">among others</span><br>
+                blandt andre<p>
+
+                <li><span class="b">among themselves</span><br>
+                indbyrdes<p>
+
+                <li><span class="b">they kept it amomg themselves</span><br>
+                de holdt det for sig selv
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="009among.jpg">
+              <br>
+              <ol>
+                  <li>-mellem-<p>
+
+                  <li>-blandt-
+              </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>010<p><div class="r">-prep-<p>-adv-</div></td>
+
+            <td>
+              <div class="b">-around-</div><p>
+
+                <ol>
+                <li><span class="b">is he around?</span><br>
+                er han her (et sted)?<p>
+
+                <li><span class="b">she's been around</span><br>
+                hun har set (,oplevet) lidt af hvert
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="010around.jpg">
+              <br>
+              <ol>
+                  <li>-rundt-<p>
+
+                  <li>-rundt om-<p>
+
+                  <li>-omkring-<p>
+
+                  <li>-omkring i-<p>
+
+                  <li>-om-
+              </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>011<p><div class="r">-prep-<p>-adv-</div></td>
+
+            <td>
+              <div class="b">-astride-</div><p>
+
+                <center>&mdash;</center>
+
+            </td>
+
+            <td>
+              <img src="011astride.jpg">
+              <br>
+              <ol>
+                  <li>-overskrævs- <span class="b">adverb</span><p>
+
+                  <li>-overskrævs på- <span class="b">preposition</span>
+              </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>012<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-at-</span><p>
+
+                <ol>
+                <li><span class="b">at the baker'r</span><br>
+                hos bageren<p>
+
+                <li><span class="b">at school</span><br>
+                i skole(n)<p>
+
+                <li><span class="b">at the table</span><br>
+                ved bordet<p>
+
+                <li><span class="b">sit at the table</span><br>
+                sidde til bords<p>
+
+                <li><span class="b">at times</span><br>
+                til tider<p>
+
+                <li><span class="b">at that</span><br>
+                oven i købet<p>
+
+                <li><span class="b">laugh at</span><br>
+                le ad<p>
+
+                <li><span class="b">throw stones at sb</span><br>
+                kasre sten efter en<p>
+
+                <li><span class="b">sell sth at $50</span><br>
+                sægle ngt for $50<p>
+
+                <li><span class="b">what are you at now?</span><br>
+                hvad laver du nu?<p>
+
+                <li><span class="b">what are you driving at?</span><br>
+                hvad hentyder du til?<p>
+
+                <li><span class="b">while you are at it...</span><br>
+                mens du nu er i gang...
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="012at.jpg"><br>
+              
+              <ol>
+                  <li>-på-<p>
+
+                  <li>-i-<p>
+
+                  <li>-ved-<p>
+
+                  <li>-hos-<p>
+
+                  <li>-ad-<p>
+
+                  <li>-til-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>013<p><div class="r">-prep-<p>-verb-<p>-noun-</div></td>
+
+            <td>
+              <span class="b">-bar-</span><p>
+
+                <ol>
+                <li><span class="b">behind bars</span><br>
+                bag tremmer<p>
+
+                <li><span class="b">the Bar (jur)</span><br>
+                advokatsstanden<p>
+
+                <li><span class="b">block</span><br>
+                spærre <span class="r">verb</span><p>
+
+                <li><span class="b">close</span><br>
+                stænge <span class="r">verb</span><p>
+
+                <li><span class="b">exclude</span><br>
+                udelukke <span class="r">verb</span><p>
+
+                <li><span class="b">forbid</span><br>
+                forbyde <span class="r">verb</span><p>
+
+                <li><span class="b">bar none / without exception</span><br>
+                uden undtagelse
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="013bar.jpg"><br>
+              
+              <ol>
+                  <li>-stang-<p>
+
+                  <li>-tremme-<p>
+
+                  <li>-vinduessprosse-<p>
+
+                  <li>-stykke- (chokolade)<p>
+
+                  <li>-bom-<p>
+
+                  <li>-hindring-<p>
+
+                  <li>-bar-<p>
+
+                  <li>-bardisk-<p>
+
+                  <li>-takt- (mus)<p>
+
+                  <li>(på mål) -overligger-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>014<p><div class="r">-prep-</div></td>
+
+            <td>
+              <div class="b">-barring-</div><p>
+
+                <center>&mdash;</center>
+
+            </td>
+
+            <td>
+              <img src="014barring.jpg">
+              <br>
+              <ol>
+                  <li>-undtagen-<p>
+
+                  <li>-med mindre
+              </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>015<p><div class="r">-prep-<p>-adverb-</div></td>
+
+            <td>
+              <span class="b">-before-</span><p>
+
+                <ol>
+                <li><span class="b">the week before</span><br>
+                ugen før<p>
+
+                <li><span class="b">I've seen it before</span><br>
+                jeg har set det før<p>
+
+                <li><span class="b">before long</span><br>
+                inden længe<p>
+
+                <li><span class="b">sit before the mirror</span><br>
+                sidde foran spejlet<p>
+
+                <li><span class="b">beforehand</span><br>
+                forvejen <span class="r">adverb</span><br>
+                på forhånd <span class="r">adverb</span>
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="015before.jpg"><br>
+              
+              <ol>
+                  <li>-før-<p>
+
+                  <li>-inden-<p>
+
+                  <li>-foran-<p>
+
+                  <li>-forud-<p>
+
+                  <li>-forud for-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>016<p><div class="r">-prep-<p>-adverb-</div></td>
+
+            <td>
+              <span class="b">-below-</span><p>
+
+                <ol>
+                <li><span class="b">from below</span><br>
+                nedefra
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="016below.jpg"><br>
+              
+              <ol>
+                  <li>-nedenunder-<p>
+
+                  <li>-nede-<p>
+
+                  <li>-nedenfor-<p>
+
+                  <li>-under-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>017<p><div class="r">-prep-<p>-adverb-</div></td>
+
+            <td>
+              <span class="b">-beneath-</span><p>
+
+                <ol>
+                <li><span class="b">beneath contempt</span><br>
+                under al kritik<br>uværdig<p>
+
+                <li><span class="b">it was beneath him...</span><br>
+                det var under hans værdighed at...
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="017beneath.jpg"><br>
+              
+              <ol>
+                  <li>-nedenunder-<p>
+
+                  <li>-nedenfor-<p>
+
+                  <li>-under-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>018<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-beside-</span><p>
+
+                <ol>
+                <li><span class="b">be beside oneself with anger</span><br>
+                være ude af sig selv af vrede
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="018beside.jpg"><br>
+              
+              <ol>
+                  <li>-ved siden af-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>019<p><div class="r">-prep-<p>-adv-</div></td>
+
+            <td>
+              <span class="b">-besides-</span><p>
+
+                <center>&mdash;</center>
+
+
+            </td>
+
+            <td>
+              <img src="019besides.jpg"><br>
+              
+              <ol>
+                  <li>-desuden-<p>
+                  <li>-for øvrigt-<p>
+                  <li>-foruden-
+                  </ol>
+            </td>
+        </tr>
+
+
+          <tr valign=top>
+            <td>020<p><div class="r">-prep-<p>-adv-</div></td>
+
+            <td>
+              <span class="b">-between-</span><p>
+
+                <ol>
+                <li><span class="b">in between</span><br>
+                ind imellem<p>
+
+                <li><span class="b">between you and me</span><br>
+                mellem os sagt<p>
+
+                <li><span class="b">between the two of them</span><br>
+                tilsammen<p>
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="020between.jpg"><br>
+              
+              <ol>
+                  <li>-mellem-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>021<p><div class="r">-prep-<p>-adverb-</div></td>
+
+            <td>
+              <span class="b">-beyond-</span><p>
+
+                <ol>
+                <li><span class="b">it's beyond control</span><br>
+                det er ude af kontrol<p>
+
+                <li><span class="b">beyond doubt</span><br>
+                uden for enhver tvivl<p>
+
+                <li><span class="b">beyond repair</span><br>
+                umulig at reparere<p>
+
+                <li><span class="b">it's beyond me</span><br>
+                det går over min forstand
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="021beyond.jpg"><br>
+              
+              <ol>
+                  <li>-hinsides-<p>
+
+                  <li>-på den anden side-<p>
+
+                  <li>-længere-<p>
+
+                  <li>-på den anden side af-<p>
+
+                  <li>-ud over-<p>
+
+                  <li>-over-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>022<p><div class="r">-prep-<p>-conj-</div></td>
+
+            <td>
+              <span class="b">-but-</span><p>
+
+                <ol>
+                <li><span class="b">nuthing but</span><br>
+                ikke andet end<br>bare<p>
+
+                <li><span class="b">but for her</span><br>
+                havde det ikke været for hende<p>
+
+                <li><span class="b">all but finished</span><br>
+                næsten færdig<p>
+
+                <li><span class="b">anything but</span><br>
+                alt andet end<br>langtfra<p>
+
+                <li><span class="b">the last but one, penultimate</span><br>
+                den næstsidste
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="022but.jpg"><br>
+              
+              <ol>
+                  <li>-men-<p>
+
+                  <li>-kun-<p>
+
+                  <li>-undtagen-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>023<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-by-</span><p>
+
+                <ol>
+                <li><span class="b">written by Plato</span><br>
+                skrevet af Plato<p>
+
+                <li><span class="b">a house by the river</span><br>
+                et hus ved floden<p>
+
+                <li><span class="b">get by</span><br>
+                klare sig<p>
+
+                <li><span class="b">pass by</span><br>
+                gå (,køre etc) forbi<p>
+
+                <li><span class="b">the train went by Madrid</span><br>
+                tiget kørte via Madrid<p>
+
+                <li><span class="b">go by bus</span><br>
+                køre med bus<p>
+
+                <li><span class="b">paid by the hour</span><br>
+                timelønnet<p>
+
+                <li><span class="b">all by oneself</span><br>
+                helt alene<p>
+
+                <li><span class="b">by the way</span><br>
+                for resten<p>
+
+                <li><span class="b">by and by</span><br>
+                om lidt<br>snart<p>
+
+                <li><span class="b">by and large</span><br>
+                stort set<p>
+
+                <li><span class="b">multiply by two</span><br>
+                gange med to<p>
+
+                <li><span class="b">divide by two</span><br>
+                dividere med to
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="023by.jpg"><br>
+              
+              <ol>
+                  <li>-af-<p>
+
+                  <li>-ved-<p>
+
+                  <li>-forbi-<p>
+
+                  <li>-via-<p>
+
+                  <li>-med-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>024<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-considering-</span><p>
+
+                  <center>&mdash;</center>
+
+            </td>
+
+            <td>
+              <img src="024considering.jpg"><br>
+              
+              <ol>
+                  <li>-betragtning af-<br>
+                      -betragtning at-<p>
+
+                  <li>-efter omstrændighelerne-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>025<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-despite-</span><p>
+
+                  <center>&mdash;</center>
+
+            </td>
+
+            <td>
+              <img src="025despite.jpg"><br>
+              
+              <ol>
+                  <li>-trods-<p>
+
+                  <li>-til trods for-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>026<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-during-</span><p>
+
+              <ol>
+                <li><span class="b">during the war</span><br>
+                under krigen
+              </ol>
+
+            </td>
+
+            <td>
+              <img src="026during.jpg"><br>
+              
+              <ol>
+                  <li>-under-<p>
+
+                  <li>-i løbet af-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>027<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-ere-</span><p>
+
+              <center>&mdash;</center>
+
+            </td>
+
+            <td>
+              <img src="027ere.jpg"><br>
+              
+              <ol>
+                  <li>-før-<p>
+
+                  <li>-inden-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>028<p><div class="r">-prep-<p>-verb-</div></td>
+
+            <td>
+              <span class="b">-except-</span><p>
+
+                <ol>
+                <li><span class="b">except for</span><br>
+                bortset fra<p>
+
+                <li><span class="b">except when</span><br>
+                undtagen når<p>
+
+                <li><span class="b">excepting</span><br>
+                undtagen<br>bortset fra
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="028except.jpg"><br>
+              
+              <ol>
+                  <li>-undtage- <span class="r">verb</span><p>
+
+                  <li>-undtagen-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>029<p><div class="r">-prep-<p>-verb-<p>-adj-<p>-noun-<p>-phr-</div></td>
+
+            <td>
+              <span class="b">-fail-</span><p>
+
+                <ol>
+                <li><span class="b">his courage failed him</span><br>
+                modet svigtede ham<p>
+
+                <li><span class="b">fail in sth</span><br>
+                være mangelfuld på en punkt<p>
+
+                <li><span class="b">faile to</span><br>
+                kunne ikke<br>undlade at<p>
+
+                <li><span class="b">without fail</span> <span class="r">phrase</span><br>
+                helt bestemt<p>
+
+                <li><span class="b">failing</span> <span class="r">noun</span><br>
+                svaghed<br>fejl<br>skavank<p>
+
+                <li><span class="b">fail-safe</span> <span class="r">adjective</span><br>
+                fejlsikret
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="029fail.jpg"><br>
+              
+              <ol>
+                  <li>-i mangel af- <span class="r">preposition</span><p>
+
+                  <li>-fejlsikret- <span class="r">adjective</span><p>
+
+                  <li>-svigte-<p>
+
+                  <li>-slå fejl-<br>-mislykkes-<p>
+
+                  <li>-fejle-<p>
+
+                  <li>-dumpe-<p>
+
+                  <li>-blive svagere-<p>
+
+                  <li>-mangle-<p>
+
+
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>030<p><div class="r">-prep-<p>-verb-<p>-adj-<p>-noun-</div></td>
+
+            <td>
+              <span class="b">-follow-</span><p>
+
+                <ol>
+                <li><span class="b">...as follows</span><br>
+                ...som følge...<br>...følgende...<p>
+
+                <li><span class="b">it follows that...</span><br>
+                heraf følger at...<p>
+
+                <li><span class="b">follow suit</span><br>
+                følge trop<br>gøre ligeså<p>
+
+                <li><span class="b">follow up</span><br>
+                følge op<br>førfolge<p>
+
+                <li><span class="b">with drink to follow</span><br>
+                med drinks oven på (,bagefter)<p>
+
+                <li><span class="b">follower</span> <span class="r">noun</span><br>
+                ledsager<br>tilhænger<p>
+
+                <li><span class="b">following</span> <span class="r">noun</span><br>
+                følge<br>tilhængere<p>
+
+                <li><span class="b">follow-up</span> <span class="r">noun</span><br>
+                opfølgning<br>efterkontrol<p>
+
+                <li><span class="b">following</span> <span class="r">adjective</span><br>
+                følgende
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="030follow.jpg"><br>
+              
+              <ol>
+                  <li>-efter- <span class="r">preposition</span><p>
+
+                  <li>-følge-<br>-følge efter-<p>
+
+                  <li>-efterfølge-<p>
+
+                  <li>-følge med-<p>
+
+                  <li>-være en følge-<br>-være en følge af- 
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>031<p><div class="r">-prep-<p>-conj-</div></td>
+
+            <td>
+              <span class="b">-for-</span><p>
+
+                <ol>
+                <li><span class="b">for all I know</span><br>
+                så vidt je ved<p>
+
+                <li><span class="b">I haven't seen him for weeks</span><br>
+                jeg har ikke set ham i flere uger<p>
+
+                <li><span class="b">leave for France</span><br>
+                tage af sted til Frankrig<p>
+
+                <li><span class="b">as for him</span><br>
+                hvad ham angår<p>
+
+                <li><span class="b">for fear of doing sth</span><br>
+                af frygt for at gøre ngt<p>
+
+                <li><span class="b">he went down for the paper</span><br>
+                han gik ned efter avisen<p>
+
+                <li><span class="b">for sale</span><br>
+                til salg<p>
+
+                <li><span class="b">you're for it! (<i>danger</i>)</span><br>
+                nu hænger du på den!
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="031afor.jpg"><br><img src="031bfor.jpg"><br>
+              
+              <ol>
+                  <li>-for-<p>
+
+                  <li>-til-<p>
+
+                  <li>-om tidsrum i-<p>
+
+                  <li>-i-<p>
+
+                  <li>-for- <span class="r">conjunction</span>
+
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>032<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-from-</span><p>
+
+                <ol>
+                <li><span class="b">from childhood</span><br>
+                fra barndommen af<p>
+
+                <li><span class="b">from what he says</span><br>
+                efter hvad han siger<p>
+
+                <li><span class="b">safe from</span><br>
+                sikker mod
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="032from.jpg"><br>
+              
+              <ol>
+                  <li>-fra-<p>
+
+                  <li>-på grund af-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>033<p><div class="r">-prep-<p>-adv-<p>-adj-</div></td>
+
+            <td>
+              <span class="b">-in-</span><p>
+
+                <ol>
+                <li><span class="b">their party is in (their party is in power)</span><br>
+                deres parti er ved magten<p>
+
+                <li><span class="b">in two weeks</span><br>
+                om to uger<p>
+
+                <li><span class="b">in a second</span><br>
+                om et sekund<br>på et sekund<p>
+
+                <li><span class="b">a man in ten</span><br>
+                en mand ud af ti<p>
+
+                <li><span class="b">in hundreds</span><br>
+                i hundredvis<p>
+
+                <li><span class="b">is he in?</span><br>
+                er han hjemme?<p>
+
+                <li><span class="b">he's in the country</span><br>
+                han er på landet<p>
+
+                <li><span class="b">in town</span><br>
+                i byen<p>
+
+                <li><span class="b">in English</span><br>
+                på engelsk<p>
+
+                <li><span class="b">in my opinion</span><br>
+                efter min mening<p>
+
+                <li><span class="b">ask sb in</span><br>
+                invitere en indenfor<p>
+
+                <li><span class="b">know the ins and outs of sth</span><br>
+                kende ngt ud og ind<p>
+
+                <li><span class="b">in that</span><br>
+                idet<br>derved at<p>
+
+                <li><span class="b">you are in for it now (be in trouble for sth you have done)</span><br>
+                nu hænger du på den<p>
+
+                <li><span class="b">sb has got in for me (someone is after me)</span><br>
+                der er ngn der er ude efter mig
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="033in.jpg"><br>
+              
+              <ol>
+                  <li>-inde- <span class="r">adjective</span><p>
+
+                  <li>-ved magten- <span class="r">adjective</span><p>
+
+                  <li>-på mode- <span class="r">adjective</span><p>
+
+                  <li>-i-<p>
+
+                  <li>-om retning ind-<p>
+
+                  <li>-ind-<p>
+
+                  <li>-om tid om-<p>
+
+                  <li>-om-<p>
+
+                  <li>-på-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>034<p><div class="r">-prep-<p>-verb-</div></td>
+
+            <td>
+              <span class="b">-including-</span><p>
+
+               <center>&mdash;</center>
+
+            </td>
+
+            <td>
+              <img src="034including.jpg"><br>
+              
+              <ol>
+                  <li>-omfatte- <span class="r">include</span><p>
+
+                  <li>-medregne- -inkludere- <span class="r">include</span><p>
+
+                  <li>-iberegnet- -inklusive- <span class="r">including</span>
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>035<p><div class="r">-prep-<p>-noun-<p>-adj-</div></td>
+
+            <td>
+              <span class="b">-inside-</span><p>
+
+                <ol>
+                <li><span class="b">within ten minutes</span><br>
+                indenfor ti minutter<p>
+
+                <li><span class="b">he's been inside</span><br>
+                (også) han har siddet inde<p>
+
+                <li><span class="b">within three weeks</span><br>
+                inden for tre uger<p>
+
+                <li><span class="b">know sth inside out</span><br>
+                kende ngt ud og ind
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="035inside.jpg"><br>
+              
+              <ol>
+                  <li>-inderside- <span class="r">noun</span><p>
+
+                  <li>-indvendig-<br>-indenfor-<br>-inder-- <span class="r">adjective</span><p>
+
+                  <li>-inde- <span class="r">preposition</span>
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>036<p><div class="r">-prep-</div></td>
+
+            <td>
+              <span class="b">-into-</span><p>
+
+                <ol>
+                <li><span class="b">translate sth into English</span><br>
+                oversætte ngt til engelsk<p>
+
+                <li><span class="b">far into the night</span><br>
+                (til) langt ud på natten<p>
+
+                <li><span class="b">turn into</span><br>
+                blive til<br>lave om til<p>
+
+                <li><span class="b">he's into computers</span><br>
+                han er interesseret i computere<br>han arbejder i computerbranchen
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="036into.jpg"><br>
+              
+              <ol>
+                  <li>-ind i-<p>
+
+                  <li>-ned i-<p>
+
+                  <li>-op i-<p>
+
+                  <li>-ud i-<p>
+
+                  <li>-til-
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>037<p><div class="r">-prep-<p>-adj-<p>-adv-</div></td>
+
+            <td>
+              <span class="b">-less- -minus-</span><p>
+
+                <ol>
+                <li><span class="b">less and less</span><br>
+                mindre og mindre<p>
+
+                <li><span class="b">more or less</span><br>
+                mere eller mindre<p>
+
+                <li><span class="b">less than</span><br>
+                mindre end<br>ringere end<p>
+
+                <li><span class="b">less than half</span><br>
+                under halvdelen<p>
+
+                <li><span class="b">the less you say the better</span><br>
+                jo mindre du siger, des bedre<p>
+
+                <li><span class="b">no less than</span><br>
+                ingen (,intet) mindre end<p>
+
+                <li><span class="b">three minus two is one</span><br>
+                tre minus to er en<p>
+
+                <li><span class="b">a year minus five days</span><br>
+                et år minus fen dage<p>
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="037lessminus.jpg"><br>
+              
+              <ol>
+                  <li>-minus- <span class="r">preposition</span><p>
+
+                  <li>-mindre- <span class="r">adj / adv</span><p>
+
+                  <li>-færre- <span class="r">adj / adv</span><p>
+
+                  <li>-ringere- <span class="r">adj / adv</span>
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>038<p><div class="r">-prep-<p>-adv-<p>-adj-<p>-noun-<p>-verb-</div></td>
+
+            <td>
+              <span class="b">-like-</span><p>
+
+                <ol>
+                <li><span class="b">the like</span> <span class="r">noun</span><br>
+                magen<p>
+
+                <li><span class="b">and the like</span> <span class="r">noun</span><br>
+                og lignende<p>
+
+                <li><span class="b">the likes of you</span> <span class="r">noun</span><br>
+                sådan nogle som du<p>
+
+                <li><span class="b">I would like to</span><br>
+                je vil(le) gerne<p>
+
+                <li><span class="b">be (,look) like sb</span><br>
+                ligne en<p>
+
+                <li><span class="b">what is it like?</span><br>
+                hvordan er det?<p>
+
+                <li><span class="b">She screamed like mad</span><br>
+                hun skreg som en gal<p>
+
+                <li><span class="b">that's just like him!</span><br>
+                hvor det ligner ham!<p>
+
+                <li><span class="b">something like</span><br>
+                omkring<br>circa<br>sådan ngt som<br>ngt lignende<p>
+
+                <li><span class="b">that's more like it!</span><br>
+                der er (,var) bedre!<br>det begynder at ligne!<p>
+
+                <li><span class="b">(as) like as not (= probably)</span><br>
+                sandsynligvis, sikkert<p>
+
+                <li><span class="b">feel like</span><br>
+                have lyst til<br>føle sig som<p>
+
+                <li><span class="b">likeable</span><br>
+                tiltalende
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="038like.jpg"><br>
+              
+              <ol>
+                  <li>-lignende- <span class="r">adj / adv / prep</span><p>
+
+                  <li>-ens- <span class="r">adj / adv / prep</span><p>
+
+                  <li>-som- -ligesom- <span class="r">adj / adv / prep</span><p>
+
+                  <li>-som om- <span class="r">adj / adv / prep</span><p>
+
+                  <li>-kunne lide- <span class="r">verb</span><p>
+
+                  <li>-holde af- <span class="r">verb</span><p>
+
+                  <li>-tiltalende- <span class="r">adjective</span>
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>039<p><div class="r">-prep-<p>-noun-</div></td>
+
+            <td>
+              <span class="b">-minus-</span><p>
+
+                <ol>
+                <li><span class="b">5 - 3 =2</span><br>
+                fem minus tre er to
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="039minus.jpg"><br>
+              
+              <ol>
+                  <li>-minus- (tegn = sign) <span class="r">noun</span><p>
+
+                  <li>-minus- <span class="r">prep</span>
+                  </ol>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>040<p><div class="r">-prep-<p>-adv-<p>-adj-<p>-noun-</div></td>
+
+            <td>
+              <span class="b">-near-</span><p>
+
+                <ol>
+                <li><span class="b">nearby</span>
+                  <br>lige ved<br>i nærheden<p>
+
+                <li><span class="b">near to</span>
+                  <br>nær ved<p>
+
+                <li><span class="b">draw near</span><br>
+                komme nærmere<p>
+
+                <li><span class="b">it's nowhere near enough</span><br>
+                det er ikke på langt nær nok<p>
+
+                <li><span class="b">it was a near thing</span><br>
+                det var på et hængende hår<br>
+                det var lige før det gik galt<p>
+
+                <li><span class="b">nearby</span><br>
+                nærliggende<br>
+                i nærheden <span class="r">adverb</span><p>
+
+                <li><span class="b">Near East</span><br>
+                Nære Østen <span class="r">noun</span>
+              </ol>
+
+
+            </td>
+
+            <td>
+              <img src="040near.jpg"><br>
+              
+              <ol>
+                  <li>-nær- <span class="r">adj / adv / prep</span><p>
+
+                  <li>-i nærheden- <span class="r">adj / adv / prep</span><p>
+
+                  <li>-næsten- <span class="r">adj / adv / prep</span><p>
+
+                  <li>-nærliggende- <span class="r">adv</span>
+                  </ol>
+            </td>
+        </tr>
+        
+ 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
