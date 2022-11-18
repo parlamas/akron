@@ -1,0 +1,4534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>irrv</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=10%>#<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=15%>inf<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=15%>imp<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=15%>pres<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=15%>past<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=15%>pp<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=15%>Eng<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+        <tr valign=top>
+            <td>001<p>-aux-</td>
+
+            <td>
+              være
+            </td>
+
+            <td>
+              vær
+            </td>
+
+            <td>
+              er
+            </td>
+
+            <td>
+              var
+            </td>
+
+            <td>
+              været
+            </td>
+
+            <td class="b">
+              -be-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>002<p>-aux-</td>
+
+            <td>
+              have
+            </td>
+
+            <td>
+              hav
+            </td>
+
+            <td>
+              har
+            </td>
+
+            <td>
+              havde
+            </td>
+
+            <td>
+              haft
+            </td>
+
+            <td class="b">
+              -have-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003<p>-er-</td>
+
+            <td>
+              komme
+            </td>
+
+            <td>
+              kom
+            </td>
+
+            <td>
+              kommer
+            </td>
+
+            <td>
+              kom
+            </td>
+
+            <td>
+              kommet
+            </td>
+
+            <td class="b">
+              -come-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>004<p></td>
+
+            <td>
+              gøre
+            </td>
+
+            <td>
+              gør
+            </td>
+
+            <td>
+              gør
+            </td>
+
+            <td>
+              gjorde
+            </td>
+
+            <td>
+              gjort
+            </td>
+
+            <td class="b">
+              -do- -make-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>005<p></td>
+
+            <td>
+              tage
+            </td>
+
+            <td>
+              tag
+            </td>
+
+            <td>
+              tager
+            </td>
+
+            <td>
+              tog
+            </td>
+
+            <td>
+              taget
+            </td>
+
+            <td class="b">
+              -take- -go-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>006<p></td>
+
+            <td>
+              sige
+            </td>
+
+            <td>
+              sig
+            </td>
+
+            <td>
+              siger
+            </td>
+
+            <td>
+              sagde
+            </td>
+
+            <td>
+              sagt
+            </td>
+
+            <td class="b">
+              -say-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>007<p></td>
+
+            <td>
+              vide
+            </td>
+
+            <td>
+              vid
+            </td>
+
+            <td>
+              ved
+            </td>
+
+            <td>
+              vidste
+            </td>
+
+            <td>
+              vidst
+            </td>
+
+            <td class="b">
+              -know-<p>(not from experience)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>008<p></td>
+
+            <td>
+              lade
+            </td>
+
+            <td>
+              lad
+            </td>
+
+            <td>
+              lader
+            </td>
+
+            <td>
+              lod
+            </td>
+
+            <td>
+              ladet
+            </td>
+
+            <td class="b">
+              -let-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>009<p></td>
+
+            <td>
+              holde
+            </td>
+
+            <td>
+              hold
+            </td>
+
+            <td>
+              holder
+            </td>
+
+            <td>
+              holdt
+            </td>
+
+            <td>
+              holdt
+            </td>
+
+            <td class="b">
+              -hold-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>010<p></td>
+
+            <td>
+              hedde
+            </td>
+
+            <td>
+              hed
+            </td>
+
+            <td>
+              hedder
+            </td>
+
+            <td>
+              hed
+            </td>
+
+            <td>
+              heddet
+            </td>
+
+            <td class="b">
+              -be called-<p>
+                -one's name be-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>011<p></td>
+
+            <td>
+              gå
+            </td>
+
+            <td>
+              gå
+            </td>
+
+            <td>
+              går
+            </td>
+
+            <td>
+              gik
+            </td>
+
+            <td>
+              gået           
+            </td>
+
+            <td class="b">
+              -go-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>012<p>-er-?</td>
+
+            <td>
+              rejse
+            </td>
+
+            <td>
+              rejs
+            </td>
+
+            <td>
+              rejser
+            </td>
+
+            <td>
+              rejste
+            </td>
+
+            <td>
+              rejst
+            </td>
+
+            <td class="b">
+              -travel-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>013<p></td>
+
+            <td>
+              bære
+            </td>
+
+            <td>
+              bær
+            </td>
+
+            <td>
+              bær
+            </td>
+
+            <td>
+              bar
+            </td>
+
+            <td>
+              båret
+            </td>
+
+            <td class="b">
+              -carry-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>014<p></td>
+
+            <td>
+              trække
+            </td>
+
+            <td>
+              træk
+            </td>
+
+            <td>
+              trækker
+            </td>
+
+            <td>
+              trak
+            </td>
+
+            <td>
+              trukket
+            </td>
+
+            <td class="b">
+              -pull- -drag-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>015<p></td>
+
+            <td>
+              liige
+            </td>
+
+            <td>
+              lig
+            </td>
+
+            <td>
+              ligger
+            </td>
+
+            <td>
+              lå
+            </td>
+
+            <td>
+              ligget
+            </td>
+
+            <td class="b">
+              -lie- (down)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>016<p></td>
+
+            <td>
+              lægge
+            </td>
+
+            <td>
+              læg
+            </td>
+
+            <td>
+              lægger
+            </td>
+
+            <td>
+              lagde
+            </td>
+
+            <td>
+              lagt
+            </td>
+
+            <td class="b">
+              -put-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>017<p></td>
+
+            <td>
+              sidde
+            </td>
+
+            <td>
+              sid
+            </td>
+
+            <td>
+              sidder
+            </td>
+
+            <td>
+              sad
+            </td>
+
+            <td>
+              sat
+            </td>
+
+            <td class="b">
+              -put-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>018<p></td>
+
+            <td>
+              slå
+            </td>
+
+            <td>
+              slå
+            </td>
+
+            <td>
+              slår
+            </td>
+
+            <td>
+              slog
+            </td>
+
+            <td>
+              slået
+            </td>
+
+            <td class="b">
+              -hit-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>019<p></td>
+
+            <td>
+              falde
+            </td>
+
+            <td>
+              fald
+            </td>
+
+            <td>
+              falder
+            </td>
+
+            <td>
+              faldt
+            </td>
+
+            <td>
+              faldet
+            </td>
+
+            <td class="b">
+              -fall-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>020<p></td>
+
+            <td>
+              spise
+            </td>
+
+            <td>
+              spis
+            </td>
+
+            <td>
+              spiser
+            </td>
+
+            <td>
+              spiste
+            </td>
+
+            <td>
+              spist
+            </td>
+
+            <td class="b">
+              -eat-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>021<p></td>
+
+            <td>
+              sove
+            </td>
+
+            <td>
+              sov
+            </td>
+
+            <td>
+              sover
+            </td>
+
+            <td>
+              sov
+            </td>
+
+            <td>
+              sovet
+            </td>
+
+            <td class="b">
+              -sleep-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>022<p></td>
+
+            <td>
+              stjæle
+            </td>
+
+            <td>
+              stjæl
+            </td>
+
+            <td>
+              stjæler
+            </td>
+
+            <td>
+              stjal
+            </td>
+
+            <td>
+              stjålet
+            </td>
+
+            <td class="b">
+              -steal-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>023<p></td>
+
+            <td>
+              græde
+            </td>
+
+            <td>
+              græd
+            </td>
+
+            <td>
+              græder
+            </td>
+
+            <td>
+              græd
+            </td>
+
+            <td>
+              grædt
+            </td>
+
+            <td class="b">
+              -cry-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>024<p></td>
+
+            <td>
+              sælge
+            </td>
+
+            <td>
+              sægl
+            </td>
+
+            <td>
+              sælger
+            </td>
+
+            <td>
+              solgte
+            </td>
+
+            <td>
+              solgt
+            </td>
+
+            <td class="b">
+              -sell-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>025<p></td>
+
+            <td>
+              vælge
+            </td>
+
+            <td>
+              vælg
+            </td>
+
+            <td>
+              vælger
+            </td>
+
+            <td>
+              valgte
+            </td>
+
+            <td>
+              valgt
+            </td>
+
+            <td class="b">
+              -choose-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>026<p></td>
+
+            <td>
+              vænne
+            </td>
+
+            <td>
+              væn
+            </td>
+
+            <td>
+              vænner
+            </td>
+
+            <td>
+              vænnende
+            </td>
+
+            <td>
+              vænnet
+            </td>
+
+            <td class="b">
+              -accustom-<p>(oneself) to
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>027<p></td>
+
+            <td>
+              sluge
+            </td>
+
+            <td>
+              slug
+            </td>
+
+            <td>
+              sluger
+            </td>
+
+            <td>
+              slugte
+            </td>
+
+            <td>
+              slugt
+            </td>
+
+            <td class="b">
+              -swallow-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>028<p></td>
+
+            <td>
+              skille
+            </td>
+
+            <td>
+              skil
+            </td>
+
+            <td>
+              skiller
+            </td>
+
+            <td>
+              slilte
+            </td>
+
+            <td>
+              sklit
+            </td>
+
+            <td class="b">
+              -separate-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>029<p></td>
+
+            <td>
+              binde
+            </td>
+
+            <td>
+              bind?
+            </td>
+
+            <td>
+              binder
+            </td>
+
+            <td>
+              bandt
+            </td>
+
+            <td>
+              bundet
+            </td>
+
+            <td class="b">
+              -bind-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>030<p></td>
+
+            <td>
+              bænde
+            </td>
+
+            <td>
+              bænd?
+            </td>
+
+            <td>
+              bænder
+            </td>
+
+            <td>
+              brændte
+            </td>
+
+            <td>
+              brændt
+            </td>
+
+            <td class="b">
+              -burn-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>031<p></td>
+
+            <td>
+              drikke
+            </td>
+
+            <td>
+              drik
+            </td>
+
+            <td>
+              drikker
+            </td>
+
+            <td>
+              drak
+            </td>
+
+            <td>
+              drukket
+            </td>
+
+            <td class="b">
+              -drink-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>032<p></td>
+
+            <td>
+              finde
+            </td>
+
+            <td>
+              find
+            </td>
+
+            <td>
+              finder
+            </td>
+
+            <td>
+              fandt
+            </td>
+
+            <td>
+              fundet
+            </td>
+
+            <td class="b">
+              -find-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>033<p></td>
+
+            <td>
+              forsvide
+            </td>
+
+            <td>
+              forsvind
+            </td>
+
+            <td>
+              forsvinder
+            </td>
+
+            <td>
+              forsvadt
+            </td>
+
+            <td>
+              forsvundet
+            </td>
+
+            <td class="b">
+              -disappear-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>034<p></td>
+
+            <td>
+              nå
+            </td>
+
+            <td>
+              nå
+            </td>
+
+            <td>
+              når
+            </td>
+
+            <td>
+              nåede
+            </td>
+
+            <td>
+              nået
+            </td>
+
+            <td class="b">
+              -manage-<p>-not miss-<p>-reach-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>035<p></td>
+
+            <td>
+              løbe
+            </td>
+
+            <td>
+              løb
+            </td>
+
+            <td>
+              løber
+            </td>
+
+            <td>
+              løb
+            </td>
+
+            <td>
+              læbet
+            </td>
+
+            <td class="b">
+              -run-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>036<p></td>
+
+            <td>
+              sidder
+            </td>
+
+            <td>
+              sid
+            </td>
+
+            <td>
+              sidder
+            </td>
+
+            <td>
+              sad
+            </td>
+
+            <td>
+              siddet
+            </td>
+
+            <td class="b">
+              -sit-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>037<p></td>
+
+            <td>
+              slippe
+            </td>
+
+            <td>
+              slip
+            </td>
+
+            <td>
+              slipper
+            </td>
+
+            <td>
+              slap
+            </td>
+
+            <td>
+              sluppet
+            </td>
+
+            <td class="b">
+              -get out-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>038<p></td>
+
+            <td>
+              stikke
+            </td>
+
+            <td>
+              stik
+            </td>
+
+            <td>
+              stikker
+            </td>
+
+            <td>
+              stak
+            </td>
+
+            <td>
+              stukket
+            </td>
+
+            <td class="b">
+              -stick-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>039<p></td>
+
+            <td>
+              vinde
+            </td>
+
+            <td>
+              vind
+            </td>
+
+            <td>
+              vinder
+            </td>
+
+            <td>
+              vandt
+            </td>
+
+            <td>
+              vundet
+            </td>
+
+            <td class="b">
+              -win-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>040<p></td>
+
+            <td>
+              bide
+            </td>
+
+            <td>
+              bid
+            </td>
+
+            <td>
+              bider
+            </td>
+
+            <td>
+              bed
+            </td>
+
+            <td>
+              bidt
+            </td>
+
+            <td class="b">
+              -bite-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>041<p></td>
+
+            <td>
+              gribe
+            </td>
+
+            <td>
+              grib
+            </td>
+
+            <td>
+              griber
+            </td>
+
+            <td>
+              greb
+            </td>
+
+            <td>
+              grebet
+            </td>
+
+            <td class="b">
+              -grip-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>042<p></td>
+
+            <td>
+              lide
+            </td>
+
+            <td>
+              lide
+            </td>
+
+            <td>
+              lider
+            </td>
+
+            <td>
+              led
+            </td>
+
+            <td>
+              lidt
+            </td>
+
+            <td class="b">
+              -suffer-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>043<p></td>
+
+            <td>
+              ride
+            </td>
+
+            <td>
+              rid
+            </td>
+
+            <td>
+              rider
+            </td>
+
+            <td>
+              red
+            </td>
+
+            <td>
+              redet
+            </td>
+
+            <td class="b">
+              -ride-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>044<p></td>
+
+            <td>
+              skinne
+            </td>
+
+            <td>
+              skin
+            </td>
+
+            <td>
+              skinner
+            </td>
+
+            <td>
+              skinnede
+            </td>
+
+            <td>
+              skinnet
+            </td>
+
+            <td class="b">
+              -shine-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>045<p></td>
+
+            <td>
+              skrive
+            </td>
+
+            <td>
+              skriv
+            </td>
+
+            <td>
+              skriver
+            </td>
+
+            <td>
+              skrev
+            </td>
+
+            <td>
+              skrevet
+            </td>
+
+            <td class="b">
+              -write-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>046<p></td>
+
+            <td>
+              slide
+            </td>
+
+            <td>
+              slid
+            </td>
+
+            <td>
+              slider
+            </td>
+
+            <td>
+              sled
+            </td>
+
+            <td>
+              slidt
+            </td>
+
+            <td class="b">
+              -wear-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>047<p></td>
+
+            <td>
+              stige
+            </td>
+
+            <td>
+              stig
+            </td>
+
+            <td>
+              stiger
+            </td>
+
+            <td>
+              steg
+            </td>
+
+            <td>
+              steget
+            </td>
+
+            <td class="b">
+              -rise-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>048<p></td>
+
+            <td>
+              tie
+            </td>
+
+            <td>
+              tie?
+            </td>
+
+            <td>
+              tier
+            </td>
+
+            <td>
+              teg
+            </td>
+
+            <td>
+              tiet
+            </td>
+
+            <td class="b">
+              -be silent-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>049<p></td>
+
+            <td>
+              vride
+            </td>
+
+            <td>
+              vrid
+            </td>
+
+            <td>
+              vrider
+            </td>
+
+            <td>
+              vred
+            </td>
+
+            <td>
+              vredet
+            </td>
+
+            <td class="b">
+              -turn-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>050<p></td>
+
+            <td>
+              byde
+            </td>
+
+            <td>
+              byd
+            </td>
+
+            <td>
+              byder
+            </td>
+
+            <td>
+              bød
+            </td>
+
+            <td>
+              budt
+            </td>
+
+            <td class="b">
+              -invite-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>051<p></td>
+
+            <td>
+              lyve
+            </td>
+
+            <td>
+              lyv
+            </td>
+
+            <td>
+              lyver
+            </td>
+
+            <td>
+              løg
+            </td>
+
+            <td>
+              løget
+            </td>
+
+            <td class="b">
+              -lie-<p>(tell a lie)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>052<p></td>
+
+            <td>
+              synge
+            </td>
+
+            <td>
+              syng
+            </td>
+
+            <td>
+              synger
+            </td>
+
+            <td>
+              sang
+            </td>
+
+            <td>
+              sunget
+            </td>
+
+            <td class="b">
+              -sing-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>053<p></td>
+
+            <td>
+              skyde
+            </td>
+
+            <td>
+              skyd
+            </td>
+
+            <td>
+              skyder
+            </td>
+
+            <td>
+              skød
+            </td>
+
+            <td>
+              skudt
+            </td>
+
+            <td class="b">
+              -shoot-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>054<p></td>
+
+            <td>
+              bryde
+            </td>
+
+            <td>
+              bryd
+            </td>
+
+            <td>
+              bryder
+            </td>
+
+            <td>
+              brød
+            </td>
+
+            <td>
+              brudt
+            </td>
+
+            <td class="b">
+              -break-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>055<p></td>
+
+            <td>
+              flyve
+            </td>
+
+            <td>
+              flyv
+            </td>
+
+            <td>
+              flyver
+            </td>
+
+            <td>
+              fløj
+            </td>
+
+            <td>
+              fløjet
+            </td>
+
+            <td class="b">
+              -fly-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>056<p></td>
+
+            <td>
+              flyde
+            </td>
+
+            <td>
+              flyd
+            </td>
+
+            <td>
+              flyder
+            </td>
+
+            <td>
+              flød
+            </td>
+
+            <td>
+              flydt
+            </td>
+
+            <td class="b">
+              -float-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>057<p></td>
+
+            <td>
+              fryse
+            </td>
+
+            <td>
+              frys
+            </td>
+
+            <td>
+              fryser
+            </td>
+
+            <td>
+              frøs
+            </td>
+
+            <td>
+              frosset
+            </td>
+
+            <td class="b">
+              -freeze-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>058<p></td>
+
+            <td>
+              binde
+            </td>
+
+            <td>
+              bind
+            </td>
+
+            <td>
+              binder
+            </td>
+
+            <td>
+              bandt
+            </td>
+
+            <td>
+              bundet
+            </td>
+
+            <td class="b">
+              -tie-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>059<p></td>
+
+            <td>
+              krybe
+            </td>
+
+            <td>
+              kryb
+            </td>
+
+            <td>
+              kryber
+            </td>
+
+            <td>
+              krøb
+            </td>
+
+            <td>
+              krøbet
+            </td>
+
+            <td class="b">
+              -crawl-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>060<p></td>
+
+            <td>
+              tro
+            </td>
+
+            <td>
+              tro
+            </td>
+
+            <td>
+              tror
+            </td>
+
+            <td>
+              troede
+            </td>
+
+            <td>
+              troet
+            </td>
+
+            <td class="b">
+              -believe- -think-
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>300<p></td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td>
+              
+            </td>
+
+            <td class="b">
+              
+            </td>
+        </tr>
+
+
+
+        
+ 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>inf</th>
+                <th>imp</th>
+                <th>pres</th>
+                <th>past</th>
+                <th>pp</th>
+                <th>Eng</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
