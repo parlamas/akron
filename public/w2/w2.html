@@ -1,0 +1,2615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w2</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=10%>#<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+        <tr valign=top>
+            <td>0001<p><div class="r">-01-</div></td>
+
+            <td>
+              &mdash; I'm glad to meet you.<p>
+              &mdash; I'm glad to meet you, too.
+            </td>
+
+            <td>
+              <span class="b">
+                &mdash; Jeg er glad for at møde dig.<p>
+                &mdash; Jeg er også glad for at møde dig.  
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0002<p><div class="r">-01-</div></td>
+
+            <td>
+              &mdash; Where are you living now?<p>
+              &mdash; On Columbus Avenue in an apartment.
+            </td>
+
+            <td>
+              <span class="b">
+               &mdash; Hvor bor du nu?<p>
+               &mdash; På Columbus Avenue i en lejlighed.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0003<p><div class="r">-01-</div></td>
+
+            <td>
+              &mdash; I'm living in a dorm.<p>
+              &mdash; How long have you been in this city?
+            </td>
+
+            <td>
+              <span class="b">
+               &mdash; Jeg bor på et kollegium.<p>
+               &mdash; Hvor længe har du været i denne by?
+
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0004<p><div class="r">-01-</div></td>
+
+            <td>
+              &mdash; Why did you come here?<p>
+              &mdash; To study English at this school before I go to another school to study computer programming.
+            </td>
+
+            <td>
+              <span class="b">
+                &mdash; Hvorfor kom du?<p>
+                &mdash; At studere engelsk på denne skole, før jeg går på en anden skole for at studere computerprogrammering.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0005<p><div class="r">-01-</div></td>
+
+            <td>
+              I came here two months ago. Right now I'm studying English. Later, I'm going to study engineering at this school.
+            </td>
+
+            <td>
+              <span class="b">
+                Jeg kom her for to måneder siden. Lige nu studerer jeg engelsk. Senere går jeg at læse ingeniør på denne skole.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0006<p><div class="r">-01-</div></td>
+
+            <td>
+              &mdash; What do you do in your free time?<p>
+              &mdash; I read a lot. How about you?<p>
+              &mdash; I like to get on the Internet.<p>
+              &mdash; Really? What do you do when you're online?<p>
+              &mdash; I visit many different Web sites. It's a good way to practice my English.<p>
+              &mdash; That's interesting. I like to get on the Internet, too.
+            </td>
+
+            <td>
+              <span class="b">
+               &mdash; Hvad laver du i din fritid?<p>
+               &mdash; Jeg læser meget. Hvad med dig?<p>
+               &mdash; Jeg kan godt lide at komme på internettet.<p>
+               &mdash; Virkelig? Hvad gør du, når du er online?<p>
+               &mdash; Jeg besøger mange forskellige websteder. Det er en god måde at øve mit engelsk på.<p>
+               &mdash; Det er interessant. Jeg kan også godt lide at komme på internettet.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0007<p><div class="r">-01-</div></td>
+
+            <td>
+              &mdash; I have to write your full name on the board when I introduce you to the class. How do you spell your name?<p>
+              &mdash; My first name is Steve. S-T-E-V-E. My family name is Church.<p>
+              &mdash; Steve Church. Is that right?<p>
+              &mdash; Yes, it is. And what is your name again?<p>
+              &mdash; My first name is Maria. M-A-R-I-A. My last name is Lopez.<p>
+              &mdash; Thanks. It's been nice talking with you.<p>
+              &mdash; I enjoyed it, too.
+            </td>
+
+            <td>
+              <span class="b">
+               &mdash; Jeg skal skrive dit fulde navn på tavlen, når jeg præsenterer dig for klassen. Hvordan staver du dit navn?<p>
+               &mdash; Mit fornavn er Steve. S-T-E-V-E. Mit efternavn er Church.<p>
+               &mdash; Steve Church. Er det rigtigt?<p>
+               &mdash; Ja det er. Og hvad er dit navn igen?<p>
+               &mdash; Mit fornavn er Maria. M-A-R-I-A. Mit efternavn er Lopez.<p>
+               &mdash; Tak. Det har været rart at tale med dig.<p>
+               &mdash; Jeg nød det også.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0008<p><div class="r">-01-</div></td>
+
+            <td>
+              <ol>
+              <li>I'm a student at this school.<p>
+<li>I am not living at home right now.<p>
+<li>I'm living in this city.<p>
+<li>I study English.<p>
+<li>I do not know my teacher's name.<p>
+<li>Jill teaches our Danish class.<p>
+<li>She expects us to be in class on time.<p>
+<li>We always come to class on time.<p>
+<li>Does Jane go to school?<p>
+<li>Tom does not go to school.<p>
+<li>My sister doesn't have a job.<p>
+<li>Does he have a job?
+</ol>
+            </td>
+
+            <td>
+              <span class="b">
+                <ol>
+               <li>Jeg er elev på denne skole.<p>
+<li>Jeg bor ikke hjemme lige nu.<p>
+<li>Jeg bor i denne by.<p>
+<li>Jeg studerer engelsk.<p>
+<li>Jeg kender ikke min lærers navn.<p>
+<li>Jill underviser i vores danskklasse.<p>
+<li>Hun forventer, at vi kommer i klassen til tiden.<p>
+<li>Vi kommer altid til time til tiden.<p>
+<li>Går Jane i skole?<p>
+<li>Tom går ikke i skole.<p>
+<li>Min søster har ikke noget arbejde.<p>
+<li>Har han et arbejde?
+</ol>
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0009<p><div class="r">-01-</div></td>
+
+            <td>
+              They take a shower every day.
+            </td>
+
+            <td>
+              <span class="b">De går i bad hver dag.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0010<p><div class="r">-01-</div></td>
+
+            <td>
+              I usually read the newspaper in the morning.
+            </td>
+
+            <td>
+              <span class="b">Jeg plejer at læse avisen morgenen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0011<p><div class="r">-01-</div></td>
+
+            <td>
+              Babies cry. Birds fly.
+            </td>
+
+            <td>
+              <span class="b">Babyer græder. Fugle flyver.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0012<p><div class="r">-01-</div></td>
+
+            <td>
+              It doesn't snow in Cairo.
+            </td>
+
+            <td>
+              <span class="b">Det sner ikke i Cairo.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0013<p><div class="r">-01-</div></td>
+
+            <td>
+              Does the teacher speak slowly?
+            </td>
+
+            <td>
+              <span class="b">Taler læreren langsomt?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0014<p><div class="r">-01-</div></td>
+
+            <td>
+              Ann can't come to the phone right now because she is taking a shower.
+            </td>
+
+            <td>
+              <span class="b">Ann kan ikke komme til telefonen rigtigt nu fordi hun tager en bruser.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0015<p><div class="r">-01-</div></td>
+
+            <td>
+              I am reading my grammar book right now.
+            </td>
+
+            <td>
+              <span class="b">Jeg læser min grammatikbog lige nu.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0016<p><div class="r">-01-</div></td>
+
+            <td>
+              Jimmy and Susie are babies. They are crying. I can hear them right
+              now. Maybe they are hungry.
+            </td>
+
+            <td>
+              <span class="b">Jimmy og Susie er babyer. De græder. Jeg kan høre dem lige nu. Måske er de sultne.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0017<p><div class="r">-01-</div></td>
+
+            <td>
+              It isn't snowing right now.
+            </td>
+
+            <td>
+              <span class="b">Det sner ikke lige nu.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0018<p><div class="r">-01-</div></td>
+
+            <td>
+              Is the teacher speaking right now?
+            </td>
+
+            <td>
+              <span class="b">Taler læreren lige nu?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0019<p><div class="r">-01-</div></td>
+
+            <td>
+              It's 7:30 A.M., and the Wilsons are in their kitchen. Mrs. Wilson is sitting at the breakfast table. She is reading a newspaper. She reads the newspaper every morning.<p>
+
+Mr. Wilson is pouring a cup of coffee. He drinks two cups of coffee every morning before he goes to work.<p>
+
+There is a cartoon on TV, but the children aren't watching it. They are playing with their toys instead.<p>
+
+They usually watch cartoons in the morning, but this morning they aren't paying any attention to the TV.<p>
+
+Mr. and Mrs. Wilson aren't watching TV either. They often watch the news in the evening, but they don't watch cartoons.
+            </td>
+
+            <td>
+              <span class="b">
+                Klokken er 7:30, og familien Wilson er i deres køkken. Fru. Wilson sidder ved morgenbordet. Hun læser en avis. Hun læser avisen hver morgen.<p>
+
+Hr. Wilson skænker en kop kaffe. Han drikker to kopper kaffe hver morgen, inden han går på arbejde.<p>
+
+Der er en tegneserie på tv, men børnene ser den ikke. De leger med deres legetøj i stedet.<p>
+
+De ser normalt tegnefilm om morgenen, men denne morgen er de ikke opmærksomme på fjernsynet.<p>
+
+Hr. og Fru. Wilson ser heller ikke tv. De ser ofte nyheder om aftenen, men de ser ikke tegnefilm.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0020<p><div class="r">-01-</div></td>
+
+            <td>
+              The baby is sleeping. The baby sleeps for ten hours every night.
+            </td>
+
+            <td>
+              <span class="b">Babyen sover. Barnet sover i ti timer hver nat.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0021<p><div class="r">-01-</div></td>
+
+            <td>
+              Right now I'm in class. I am sitting at my desk. I usually sit at the same desk in class every day.
+            </td>
+
+            <td>
+              <span class="b">Lige nu er jeg i klassen. Jeg sidder ved mit skrivebord. Jeg plejer at sidde ved det samme skrivebord i klassen hver dag.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0022<p><div class="r">-01-</div></td>
+
+            <td>
+              Hanna speaks Arabic. Arabic is her native language, but
+right now she is speaking English.
+            </td>
+
+            <td>
+              <span class="b">Hanna taler arabisk. Arabisk er hendes modersmål, men
+lige nu taler hun engelsk.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0023<p><div class="r">-01-</div></td>
+
+            <td>
+              It does not rain a lot in southern California. The weather is  usually warm and sunny.
+            </td>
+
+            <td>
+              <span class="b">Det regner ikke meget i det sydlige Californien. Vejret er normalt varmt og solrigt.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0024<p><div class="r">-01-</div></td>
+
+            <td>
+              Look out the window. Is it raining? Should I take my umbrella? Or is it just sprinkling?
+            </td>
+
+            <td>
+              <span class="b">Kig ud af vinduet. Regner det? Skal jeg tage min paraply? Eller er det bare drys?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0025<p><div class="r">-01-</div></td>
+
+            <td>
+              Look over there. It is Jill walking out of the bakery.
+            </td>
+
+            <td>
+              <span class="b">Se der ovre. Det er Jill, der går ud af bageriet.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0026<p><div class="r">-01-</div></td>
+
+            <td>
+              Louis usually walks to work. Do you walk to work every day, too?
+            </td>
+
+            <td>
+              <span class="b">Louis går normalt på arbejde. Går du også på arbejde hver dag?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0027<p><div class="r">-01-</div></td>
+
+            <td>
+              &mdash; Does Marta walk to work with you?<p>
+              &mdash; Sometimes.
+            </td>
+
+            <td>
+              <span class="b">
+               &mdash; Går Marta på arbejde med dig?<p>
+               &mdash; Sommetider.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0028<p><div class="r">-01-</div></td>
+
+            <td>
+              &mdash; Flowers! Flowers for sale!<p>
+              &mdash; Yes, sir! Can I help you?<p>
+              &mdash; I'll take those&mdash;the yellow ones.<p>
+              &mdash; Here you are, mister. Are they for a special occasion?<p>
+              &mdash; I am buying them for my wife. I buy her flowers on the first day of every month.
+            </td>
+
+            <td>
+              <span class="b">
+               &mdash; Blomster! Blomster til salg!<p>
+               &mdash; Ja Hr! Kan jeg hjælpe dig?<p>
+               &mdash; Jeg tager de&mdash;de gule.<p>
+               &mdash; Her er du, Hr. Er de til en særlig lejlighed?<p>
+               &mdash; Jeg køber dem til min kone. Jeg køber hendes blomster den første dag i hver måned.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0029<p><div class="r">-01-</div></td>
+
+            <td>
+              Stand up and salute!
+            </td>
+
+            <td>
+              <span class="b">
+                Stå op og hils!
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0030<p><div class="r">-01-</div></td>
+
+            <td>
+              He's smiling.
+            </td>
+
+            <td>
+              <span class="b">
+                Han smiler.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0031<p><div class="r">-01-</div></td>
+
+            <td>
+              She's whistling.
+            </td>
+
+            <td>
+              <span class="b">
+               Hun fløjter.
+               </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0032<p><div class="r">-01-</div></td>
+
+            <td>
+              Open the door and close the window.
+            </td>
+
+            <td>
+              <span class="b">
+               Åbn døren og luk vinduet.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0033<p><div class="r">-01-</div></td>
+
+            <td>
+              Joe, stop humming!
+            </td>
+
+            <td>
+              <span class="b">
+               Joe, stop med at nynne!
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0034<p><div class="r">-01-</div></td>
+
+            <td>
+              Stop biting your fingernails!
+            </td>
+
+            <td>
+              <span class="b">
+               Stop med at bide dine negle!
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0035<p><div class="r">-01-</div></td>
+
+            <td>
+              Today we're going to read from the new grammar book.
+            </td>
+
+            <td>
+              <span class="b">
+               I dag skal vi læse fra den nye grammatikbog.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0036<p><div class="r">-01-</div></td>
+
+            <td>
+              Please, erase the board!
+            </td>
+
+            <td>
+              <span class="b">
+               Slet venligst tavlen!
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0037<p><div class="r">-01-</div></td>
+
+            <td>
+              Why are you looking ta the ceiling?
+            </td>
+
+            <td>
+              <span class="b">
+              Hvorfor kigger du til loftet?
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0038<p><div class="r">-01-</div></td>
+
+            <td>
+              You're holding your pen in your left hand. Are you left handed?
+            </td>
+
+            <td>
+              <span class="b">
+              Du holder din kuglepen i din venstre hånd. Er du venstrehåndet?
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0039<p><div class="r">-01-</div></td>
+
+            <td>
+              Why are you rubbing your palms together?
+            </td>
+
+            <td>
+              <span class="b">
+               Hvorfor gnider du dine håndflader sammen?
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0040<p><div class="r">-01-</div></td>
+
+            <td>
+              Will you stop kicking your desk?
+            </td>
+
+            <td>
+              <span class="b">
+               Vil du holde op med at sparke til dit skrivebord?
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0041<p><div class="r">-01-</div></td>
+
+            <td>
+              Someone's knocking on the door.
+            </td>
+
+            <td>
+              <span class="b">
+               Nogen banker på døren.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0042<p><div class="r">-01-</div></td>
+
+            <td>
+              Let us sit on the floor.
+            </td>
+
+            <td>
+              <span class="b">
+               Lad os sidde på gulvet.
+              </span>
+            </td>
+        </tr>
+
+        
+        <tr valign=top>
+            <td>0043<p><div class="r">-01-</div></td>
+
+            <td>
+              In some countries,people do not shake hands.
+            </td>
+
+            <td>
+              <span class="b">
+                I nogle lande giver folk ikke hånden.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0044<p><div class="r">-01-</div></td>
+
+            <td>
+              He likes looking at his new watch.
+            </td>
+
+            <td>
+              <span class="b">Han kan lide at se på sit nye ur.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0045<p><div class="r">-01-</div></td>
+
+            <td>
+              They're counting aloud the number of people in the room.
+            </td>
+
+            <td>
+              <span class="b">De tæller højt antallet af mennesker i lokalet.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0046<p><div class="r">-01-</div></td>
+
+            <td>
+              He nodded "no."
+            </td>
+
+            <td>
+              <span class="b">Han nikkede "nej".</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0047<p><div class="r">-01-</div></td>
+
+            <td>
+              Why are scratching your head? Does it feel itchy?
+            </td>
+
+            <td>
+              <span class="b">
+                Hvorfor klør du dig i hovedet? Føles det kløende?
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0048<p><div class="r">-01-</div></td>
+
+            <td>
+              You can perform any action you choose. Use objects in the classroom if you wish.
+            </td>
+
+            <td>
+              <span class="b">
+                Du kan udføre enhver handling, du vælger. Brug genstande i klasseværelset, hvis du ønsker det.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0049<p><div class="r">-01-</div></td>
+
+            <td>
+              You are conducting an orchestra.
+            </td>
+
+            <td>
+              <span class="b">Du dirigerer et orkester.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0050<p><div class="r">-01-</div></td>
+
+            <td>
+              Are you washing a window?
+            </td>
+
+            <td>
+              <span class="b">Vasker du et vindue?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0051<p><div class="r">-01-</div></td>
+
+            <td>
+              Maja is petting a dog.
+            </td>
+
+            <td>
+              <span class="b">Maja klapper en hund.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0052<p><div class="r">-01-</div></td>
+
+            <td>
+              The children are climbing a tree.
+            </td>
+
+            <td>
+              <span class="b">Børnene klatrer i et træ.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0053<p><div class="r">-01-</div></td>
+
+            <td>
+              I play the paino.
+            </td>
+
+            <td>
+              <span class="b">Jeg spiller klaver.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0054<p><div class="r">-01-</div></td>
+
+            <td>
+              They're diving into a swimming pool.
+            </td>
+
+            <td>
+              <span class="b">De dykker ned i en swimmingpool.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0055<p><div class="r">-02-</div></td>
+
+            <td>
+              Are they driving a car?
+            </td>
+
+            <td>
+              <span class="b">Kører de bil?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0056<p><div class="r">-02-</div></td>
+
+            <td>
+              We're watching a tennis match.
+            </td>
+
+            <td>
+              <span class="b">Vi ser en tenniskamp.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0057<p><div class="r">-02-</div></td>
+
+            <td>
+              They are pitching a baseball.
+            </td>
+
+            <td>
+              <span class="b">
+                De spiller en baseball.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0058<p><div class="r">-02-</div></td>
+
+            <td>
+              Jean always tells the truth.
+            </td>
+
+            <td>
+              <span class="b">
+                Jean fortæller altid sandheden.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0059<p><div class="r">-02-</div></td>
+
+            <td>
+              Do you always eat breakfast?
+            </td>
+
+            <td>
+              <span class="b">Spiser du altid morgenmad?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0060<p><div class="r">-02-</div></td>
+
+            <td>
+              She usually doesn't have breaakfast.
+            </td>
+
+            <td>
+              <span class="b">Hun spiser normalt ikke morgenmad.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0061<p><div class="r">-02-</div></td>
+
+            <td>
+              I never eat meat.
+            </td>
+
+            <td>
+              <span class="b">Jeg spiser aldrig måltid.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0062<p><div class="r">-02-</div></td>
+
+            <td>
+              Do you ever eat chicken?
+            </td>
+
+            <td>
+              <span class="b">
+                Spiser du nogensinde kylling?
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0063<p><div class="r">-02-</div></td>
+
+            <td>
+              I eat veal once a week.
+            </td>
+
+            <td>
+              <span class="b">Jeg spiser kalvekød en gang om ugen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0064<p><div class="r">-02-</div></td>
+
+            <td>
+              I like eating lamb.
+            </td>
+
+            <td>
+              <span class="b">Jeg kan godt lide at spise lam.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0065<p><div class="r">-02-</div></td>
+
+            <td>
+              I don't like beef.
+            </td>
+
+            <td>
+              <span class="b">Jeg kan ikke lide oksekød.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0066<p><div class="r">-01-</div></td>
+
+            <td>
+              Do you ever take the bus to work?
+            </td>
+
+            <td>
+              <span class="b">Tager du nogensinde bussen til arbejde?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0067<p><div class="r">-01-</div></td>
+
+            <td>
+              I don't ever walk to work.
+            </td>
+
+            <td>
+              <span class="b">Jeg går aldrig på arbejde.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0068<p><div class="r">-01-</div></td>
+
+            <td>
+              I seldom wake up late.
+            </td>
+
+            <td>
+              <span class="b">Jeg vågner sjældent sent.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0069<p><div class="r">-01-</div></td>
+
+            <td>
+              I often read before I go to bed.
+            </td>
+
+            <td>
+              <span class="b">Jeg læser ofte før jeg går i seng.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0070<p><div class="r">-01-</div></td>
+
+            <td>
+              She is a polite person.
+            </td>
+
+            <td>
+              <span class="b">Hun er en høflig person.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0071<p><div class="r">-01-</div></td>
+
+            <td>
+              I occasionally have some beer.
+            </td>
+
+            <td>
+              <span class="b">Jeg har indimellem noget øl.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0072<p><div class="r">-01-</div></td>
+
+            <td>
+              I always study at home in the evening.
+            </td>
+
+            <td>
+              <span class="b">Jeg studerer altid hjemme om aftenen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0073<p><div class="r">-01-</div></td>
+
+            <td>
+              The mail is coming the day after tomorrow.
+            </td>
+
+            <td>
+              <span class="b">Posten kommer i overmorgen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0074<p><div class="r">-01-</div></td>
+
+            <td>
+              The day before yesterday I went to bed at midnight.
+            </td>
+
+            <td>
+              <span class="b">I forgårs gik jeg i seng ved midnat.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0075<p><div class="r">-01-</div></td>
+
+            <td>
+              Tomorrow night I will be in Portugal.
+            </td>
+
+            <td>
+              <span class="b">I morgen aften skal jeg i Portugal.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0076<p><div class="r">-01-</div></td>
+
+            <td>
+              Last night he was wearing a suit at the party.
+            </td>
+
+            <td>
+              <span class="b">I aftes var han iført jakkesæt til festen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0077<p><div class="r">-01-</div></td>
+
+            <td>
+              I speak to people who sit next to me on an airplane.
+            </td>
+
+            <td>
+              <span class="b">Jeg taler med folk, der sidder ved siden af mig i et fly.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0078<p><div class="r">-01-</div></td>
+
+            <td>
+              I wear jeans to class.
+            </td>
+
+            <td>
+              <span class="b">Jeg går i jeans til undervisningen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0079<p><div class="r">-01-</div></td>
+
+            <td>
+              She reads poetry in her spare time.
+            </td>
+
+            <td>
+              <span class="b">Hun læser poesi i sin fritid.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0080<p><div class="r">-01-</div></td>
+
+            <td>
+              I don't believe tbe things I read in newspapers.
+            </td>
+
+            <td>
+              <span class="b">Jeg tror ikke på de ting, jeg læser i aviser.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0081<p><div class="r">-01-</div></td>
+
+            <td>
+              You* get up before nine o'clock in tbe morning.
+            </td>
+
+            <td>
+              <span class="b">I står op før klokken ni om morgenen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0082<p><div class="r">-01-</div></td>
+
+            <td>
+              He calls his family or a friend if he feels homesick or lonely.
+            </td>
+
+            <td>
+              <span class="b">Han ringer til sin familie eller en ven, hvis han føler hjemve eller ensom.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0083<p><div class="r">-01-</div></td>
+
+            <td>
+              They have chocolate ice cream for dessert.
+            </td>
+
+            <td>
+              <span class="b">De har chokoladeis til dessert.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0084<p><div class="r">-01-</div></td>
+
+            <td>
+              I generally turn on the news in the morning.
+            </td>
+
+            <td>
+              <span class="b">Jeg tænder generelt for nyhederne om morgenen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0085<p><div class="r">-01-</div></td>
+
+            <td>
+              I always brush my teeth.
+            </td>
+
+            <td>
+              <span class="b">Jeg børster altid mine tænder.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0086<p><div class="r">-01-</div></td>
+
+            <td>
+              I seldom make my bed.
+            </td>
+
+            <td>
+              <span class="b">Jeg reder sjældent min seng.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0087<p><div class="r">-01-</div></td>
+
+            <td>
+              I usually take a shower. I never take a bath.
+            </td>
+
+            <td>
+              <span class="b">Jeg plejer tage et brusebad. Jeg tager aldrig et bad.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0088<p><div class="r">-01-</div></td>
+
+            <td>
+              When I get ready to go to bed, I turn off the lights.
+            </td>
+
+            <td>
+              <span class="b">Når jeg gør mig klar til at gå i seng, slukker jeg lyset.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0089<p><div class="r">-01-</div></td>
+
+            <td>
+              When I travel abroad, I take no luggage with me.
+            </td>
+
+            <td>
+              <span class="b">Når jeg rejser til udlandet, tager jeg ingen bagage med.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0090<p><div class="r">-01-</div></td>
+
+            <td>
+              I'm learning new vocabulary.
+            </td>
+
+            <td>
+              <span class="b">Jeg lærer nyt ordforråd.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0091<p><div class="r">-01-</div></td>
+
+            <td>
+              When I'm on vacation, I spend time watching people.
+            </td>
+
+            <td>
+              <span class="b">Når jeg er på ferie, bruger jeg tid på at se folk.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0092<p><div class="r">-01-</div></td>
+
+            <td>
+              When their airplane flight is delayed, they play cards.
+            </td>
+
+            <td>
+              <span class="b">Når deres fly er forsinket, spiller de kort.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0093<p><div class="r">-01-</div></td>
+
+            <td>
+              When you* use a computer, you* need to stand up every half an hour.
+            </td>
+
+            <td>
+              <span class="b">Når I bruger en computer, skal I stå op hver halve time.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0094<p><div class="r">-01-</div></td>
+
+            <td>
+              At the dinner table, they tell a lot of jokes.
+            </td>
+
+            <td>
+              <span class="b">Ved middagsbordet fortæller de en masse vittigheder.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0095<p><div class="r">-01-</div></td>
+
+            <td>
+              To celebrate his daughter's birthday, he cooks a special meal.
+            </td>
+
+            <td>
+              <span class="b">For at fejre sin datters fødselsdag laver han et særligt måltid.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0096<p><div class="r">-01-</div></td>
+
+            <td>
+              When children misbehave, their parents step in.
+            </td>
+
+            <td>
+              <span class="b">Når børn opfører sig dårligt, træder deres forældre til.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0097<p><div class="r">-01-</div></td>
+
+            <td>
+              When we meet someone for the first time, we feel enthusiastic.
+            </td>
+
+            <td>
+              <span class="b">Når vi møder nogen for første gang, føler vi os entusiastiske.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0098<p><div class="r">-01-</div></td>
+
+            <td>
+              When couples want to have fun, they play games.
+            </td>
+
+            <td>
+              <span class="b">Når par vil have det sjovt, spiller de spil.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0099<p><div class="r">-01-</div></td>
+
+            <td>
+              At weddings, you see black and white everywhere.
+            </td>
+
+            <td>
+              <span class="b">Ved bryllupper ser man sort og hvid overalt.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0100<p><div class="r">-01-</div></td>
+
+            <td>
+              There is a fly on the outside of the window.
+            </td>
+
+            <td>
+              <span class="b">Der er en flue på ydersiden af vinduet.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0101<p><div class="r">-01-</div></td>
+
+            <td>
+              Don't speak loudly!
+            </td>
+
+            <td>
+              <span class="b">Tal ikke højt!</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0102<p><div class="r">-01-</div></td>
+
+            <td>
+              She sings beautifully!
+            </td>
+
+            <td>
+              <span class="b">Hun synger smukt!</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0103<p><div class="r">-01-</div></td>
+
+            <td>
+              He sings songs to his children.
+            </td>
+
+            <td>
+              <span class="b">Han synger sange for sine børn.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0104<p><div class="r">-01-</div></td>
+
+            <td>
+              They sew very well.
+            </td>
+
+            <td>
+              <span class="b">De syr meget godt.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0105<p><div class="r">-01-</div></td>
+
+            <td>
+              They sing in a chorus.
+            </td>
+
+            <td>
+              <span class="b">De synger i et kor.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0106<p><div class="r">-01-</div></td>
+
+            <td>
+              Plants grow.
+            </td>
+
+            <td>
+              <span class="b">Planter vokser.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0107<p><div class="r">-01-</div></td>
+
+            <td>
+              Doctors help sick people.
+            </td>
+
+            <td>
+              <span class="b">Læger hjælper syge mennesker.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0108<p><div class="r">-01-</div></td>
+
+            <td>
+              Planets revolve around the sun.
+            </td>
+
+            <td>
+              <span class="b">Planeter kredser om solen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0109<p><div class="r">-01-</div></td>
+
+            <td>
+              A dictionary lists words in alphabetical order.
+            </td>
+
+            <td>
+              <span class="b">En ordbog lister ord i alfabetisk rækkefølge.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0110<p><div class="r">-01-</div></td>
+
+            <td>
+              Mr. Lee likes to go to the park in the spring. He takes the bus. He sits on a bench near a pond and feeds the birds. Ducks swim toward him for food, and pigeons land all around him.
+            </td>
+
+            <td>
+              <span class="b">
+                Mr. Lee kan lide at gå i parken om foråret. Han tager bussen. Han sidder på en bænk ved en dam og fodrer fuglene. Ænder svømmer hen til ham for at få mad, og duer lander rundt om ham.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0111<p><div class="r">-01-</div></td>
+
+            <td>
+              She talks fast.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0112<p><div class="r">-01-</div></td>
+
+            <td>
+              She talks fast.<p>
+He wishes to leave now.<p>
+He hopes to return soon.<p>
+They reached the shore in the afternoon.<p>
+They are moving next week.<p>
+They kiss in the mouth.<p>
+They are pushing a cart.<p>
+They wait for the bus every noon.<p>
+She likes mixing drinks.<p>
+The wind is blowing hard.<p>
+She is carrying her baby.
+            </td>
+
+            <td>
+              <span class="b">
+                Hun taler hurtigt.<p>
+Han ønsker at gå nu.<p>
+Han håber snart at vende tilbage.<p>
+De nåede kysten om eftermiddagen.<p>
+De flytter i næste uge.<p>
+De kysser i munden.<p>
+De skubber en vogn.<p>
+De venter på bussen hver middag.<p>
+Hun kan lide at blande drinks.<p>
+Vinden blæser hårdt.<p>
+Hun bærer sin baby.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0113<p><div class="r">-01-</div></td>
+
+            <td>
+              He can't catch the bird.
+            </td>
+
+            <td>
+              <span class="b">Han kan ikke fange fuglen.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0114<p><div class="r">-01-</div></td>
+
+            <td>
+              He's washing his hands.
+            </td>
+
+            <td>
+              <span class="b">Han vasker sine hænder.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0115<p><div class="r">-01-</div></td>
+
+            <td>
+              He misses his children.
+            </td>
+
+            <td>
+              <span class="b">Han savner sine børn.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0116<p><div class="r">-01-</div></td>
+
+            <td>
+              They're fixing the sink.
+            </td>
+
+            <td>
+              <span class="b">De er ved at ordne vasken.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0117<p><div class="r">-01-</div></td>
+
+            <td>
+              The bee buzzed before my eyes.
+            </td>
+
+            <td>
+              <span class="b">Bien summede for mine øjne.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0118<p><div class="r">-01-</div></td>
+
+            <td>
+              Flies fly.
+            </td>
+
+            <td>
+              <span class="b">Fluer flyver.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0119<p><div class="r">-01-</div></td>
+
+            <td>
+              They're paying their debt.
+            </td>
+
+            <td>
+              <span class="b">De betaler deres gæld.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0120<p><div class="r">-01-</div></td>
+
+            <td>
+              Dogs bark.<p>
+              Wood floats.<p>
+              Rivers flow.<p>
+              Mothers worry.<p>
+              Students buy books.<p>
+              Airplanes fly.<p>
+              Ships sail.<p>
+              Foreigners learn Chinese.<p>
+              Sports gamblers watch fottball games.
+            </td>
+
+            <td>
+              <span class="b">
+               Hunde gøer.<p>
+               Træ flyder.<p>
+               Floder løber.<p>
+               Mødre bekymrer sig.<p>
+               Eleverne køber bøger.<p>
+               Flyvemaskiner flyver.<p>
+               Skibe sejler.<p>
+               Udlændinge lærer kinesisk.<p>
+               Sportsgamblere ser fodboldkampe.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0121<p><div class="r">-01-<p>
+              <audio controls>
+  <source src="0121.mp3" type="audio/mpeg">
+</audio>
+            </div></td>
+
+            <td>
+              Music sounds pleasant.<p>
+              Cats sleep a lot.<p>
+              Headlines are the most imporatnt news.<p>
+              Water freezes at 32&deg;F (0&deg;C) and boils at 212&deg;F (100&deg;C).<p>
+              Jill never crosses the street in the middle of a block. She always walks to the corner and uses the pedestrian walkway.<p>
+              Many parts of the world enjoy four seasons: spring, summer, autumn, and winter. Each season last three months and bring changes in the weather.
+            </td>
+
+            <td>
+              <span class="b">
+                Musik lyder behageligt.<p>
+               Katte sover meget.<p>
+               Overskrifter er de vigtigste nyheder.<p>
+               Vand fryser ved 32°F (0°C) og koger ved 212°F (100°C).<p>
+               Jill krydser aldrig gaden midt i en blok. Hun går altid hen til hjørnet og bruger gangbroen.<p>
+               Mange dele af verden nyder fire årstider: forår, sommer, efterår og vinter. Hver sæson varer tre måneder og bringer ændringer i vejret.
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0<p><div class="r">-01-</div></td>
+
+            <td>
+              It snowed in yesterday.
+            </td>
+
+            <td>
+              <span class="b">Det sneede i går.</span>
+            </td>
+        </tr>
+        -->
+
+
+
+
+        <!-- ................. -->
+ 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>English</th>
+                <th>dansk</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
