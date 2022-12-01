@@ -1,0 +1,6203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nouns + adjectives</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    .aud {}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=10%>#<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=45%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+        <tr valign=top>
+            <td>0001 <span class="r">-n-</span></td>
+
+            <td>
+              invitation (er)
+            </td>
+
+            <td>
+              <span class="b">
+                invitation
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0002 <span class="r">-n-</span></td>
+
+            <td>
+              gæst (er)
+            </td>
+
+            <td>
+              <span class="b">
+                guest
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0003 <span class="r">-n-</span></td>
+
+            <td>
+              fest (er)
+            </td>
+
+            <td>
+              <span class="b">
+                party
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0004 <span class="r">-n-</span></td>
+
+            <td>
+              øvelse (r)
+            </td>
+
+            <td>
+              <span class="b">
+                exercise
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0005 <span class="r">-n-</span></td>
+
+            <td>
+              klass (er)
+            </td>
+
+            <td>
+              <span class="b">
+                class
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0006 <span class="r">-n-</span></td>
+
+            <td>
+              grup (per)
+            </td>
+
+            <td>
+              <span class="b">
+                group
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0007 <span class="r">-n- -sp-</span></td>
+
+            <td>
+              skik og brug
+            </td>
+
+            <td>
+              <span class="b">
+                custom
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0008 <span class="r">-n-</span></td>
+
+            <td>
+              middag (e)
+            </td>
+
+            <td>
+              <span class="b">
+                dinner
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0009 <span class="r">-a- -n-</span></td>
+
+            <td>
+              dansk (e)
+            </td>
+
+            <td>
+              <span class="b">
+                Danish
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0010 <span class="r">-n-</span></td>
+
+            <td>
+              familie (r)
+            </td>
+
+            <td>
+              <span class="b">
+                family
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0011 <span class="r">-n-*</span></td>
+
+            <td>
+              ur (e)
+            </td>
+
+            <td>
+              <span class="b">
+                clock, watch
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0012 <span class="r">-n-</span></td>
+
+            <td>
+              klokke (r)
+            </td>
+
+            <td>
+              <span class="b">
+                bell
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0013 <span class="r">-n-*</span></td>
+
+            <td>
+              hjemland (e)
+            </td>
+
+            <td>
+              <span class="b">
+                home country, homeland
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0014 <span class="r">-n-</span></td>
+
+            <td>
+              tradition (er)
+            </td>
+
+            <td>
+              <span class="b">
+                tradition
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0015 <span class="r">-n- -2g-</span></td>
+
+            <td>
+              vært (er)<p>
+              værtinde (r)
+            </td>
+
+            <td>
+              <span class="b">
+                host<p>
+                hostess
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0016 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              udtryk &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                expression
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0017 <span class="r">-a-</span></td>
+
+            <td>
+              fast (e)
+            </td>
+
+            <td>
+              <span class="b">
+                standard
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0018 <span class="r">-n-</span></td>
+
+            <td>
+              dør (en)
+            </td>
+
+            <td>
+              <span class="b">
+                door
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0019 <span class="r">-n-</span></td>
+
+            <td>
+              buket (ter)
+            </td>
+
+            <td>
+              <span class="b">
+                bouquet
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0020 <span class="r">-n-</span></td>
+
+            <td>
+              blomst (er)
+            </td>
+
+            <td>
+              <span class="b">
+                flower
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0021 <span class="r">-n-</span></td>
+
+            <td>
+              flaske (r)
+            </td>
+
+            <td>
+              <span class="b">
+                bottle
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0022 <span class="r">-n-</span></td>
+
+            <td>
+              vin (e)
+            </td>
+
+            <td>
+              <span class="b">
+                wine
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0023 <span class="r">-a- -2g-</span></td>
+
+            <td>
+              ven (ner)<p>
+              veninder (r)
+            </td>
+
+            <td>
+              <span class="b">
+                friend
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0024 <span class="r">-n-*</span></td>
+
+            <td>
+              salt (e)
+            </td>
+
+            <td>
+              <span class="b">
+                salt
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0025 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              besøg &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                visit
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0026 <span class="r">-a-</span></td>
+
+            <td>
+              færdig (e)
+            </td>
+
+            <td>
+              <span class="b">
+                done
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0027 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              par &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                pair, couple
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0028 <span class="r">-n-</span></td>
+
+            <td>
+              dag (e)
+            </td>
+
+            <td>
+              <span class="b">
+                day
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0029 <span class="r">-n-</span></td>
+
+            <td>
+              gade (r)
+            </td>
+
+            <td>
+              <span class="b">
+                street
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0030 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              svar &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                answer
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0031 <span class="r">-n-*</span></td>
+
+            <td>
+              hus (e)
+            </td>
+
+            <td>
+              <span class="b">
+                house
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0032 <span class="r">-n-</span></td>
+
+            <td>
+              by (er)
+            </td>
+
+            <td>
+              <span class="b">
+                city, town
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0033 <span class="r">-n-</span></td>
+
+            <td>
+              lejlighed (er)
+            </td>
+
+            <td>
+              <span class="b">
+                apartment
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0034 <span class="r">-n-* -irrpl-</span></td>
+
+            <td>
+              centrum/center<p>
+              centre
+            </td>
+
+            <td>
+              <span class="b">
+                center
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0035 <span class="r">-a-</span></td>
+
+            <td>
+              glad (e)
+            </td>
+
+            <td>
+              <span class="b">
+                glad, happy
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0036 <span class="r">-n-</span></td>
+
+            <td>
+              nabo (er)
+            </td>
+
+            <td>
+              <span class="b">
+                neighbor
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0037 <span class="r">-a-</span></td>
+
+            <td>
+              træt (te)
+            </td>
+
+            <td>
+              <span class="b">
+                tired
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0038 <span class="r">-n- -md-</span></td>
+
+            <td>
+              tøj &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                noise
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0039 <span class="r">-n-</span></td>
+
+            <td>
+              lyd (e)
+            </td>
+
+            <td>
+              <span class="b">
+                sound
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0040 <span class="r">-n- -md-</span></td>
+
+            <td>
+              brug &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                use
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0041 <span class="r">-a- -unc-</span></td>
+
+            <td>
+              mere
+            </td>
+
+            <td>
+              <span class="b">
+                more
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0042 <span class="r">-n- -unc-</span></td>
+
+            <td>
+              plads
+            </td>
+
+            <td>
+              <span class="b">
+                room, space
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0043 <span class="r">-a- -irrpl-</span></td>
+
+            <td>
+              eiget (egne)
+            </td>
+
+            <td>
+              <span class="b">
+                own
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0044 <span class="r">-a-</span></td>
+
+            <td>
+              stor (e)
+            </td>
+
+            <td>
+              <span class="b">
+                big, large
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0045 <span class="r">-a-</span></td>
+
+            <td>
+              dejlig (e)
+            </td>
+
+            <td>
+              <span class="b">
+                lovely
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0046 <span class="r">-n-</span></td>
+
+            <td>
+              have (r)
+            </td>
+
+            <td>
+              <span class="b">
+                garden
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0047 <span class="r">-n-</span></td>
+
+            <td>
+              sø (er)
+            </td>
+
+            <td>
+              <span class="b">
+                lake
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0048 <span class="r">-n-</span></td>
+
+            <td>
+              ø (er)
+            </td>
+
+            <td>
+              <span class="b">
+                island
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0049 <span class="r">-n-</span></td>
+
+            <td>
+              skov (e)
+            </td>
+
+            <td>
+              <span class="b">
+                forest
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0050 <span class="r">-a- -irrpl-</span></td>
+
+            <td>
+              gammel, gamle
+            </td>
+
+            <td>
+              <span class="b">
+                old
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0051 <span class="r">-a-</span></td>
+
+            <td>
+              god (e)
+            </td>
+
+            <td>
+              <span class="b">
+                good
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0052 <span class="r">-n-</span></td>
+
+            <td>
+              telefon (er)
+            </td>
+
+            <td>
+              <span class="b">
+                phone
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0053 <span class="r">-a-</span></td>
+
+            <td>
+              ny (e)
+            </td>
+
+            <td>
+              <span class="b">
+                new
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0054 <span class="r">-a-</span></td>
+
+            <td>
+              fin (e)
+            </td>
+
+            <td>
+              <span class="b">
+                fine
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0055 <span class="r">-a-</span></td>
+
+            <td>
+              rigtig (e)
+            </td>
+
+            <td>
+              <span class="b">
+                correct, right
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0056 <span class="r">-a-</span></td>
+
+            <td>
+              let (te)
+            </td>
+
+            <td>
+              <span class="b">
+                light (not heavy)
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0057 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              lys &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                light
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0058 <span class="r">-a-</span></td>
+
+            <td>
+              lys (e)
+            </td>
+
+            <td>
+              <span class="b">
+                bright, fair, pale
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0059 <span class="r">-n- -day-</span></td>
+
+            <td>
+              torsdag
+            </td>
+
+            <td>
+              <span class="b">
+                Thursday
+              </span>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0060 <span class="r">-n- -day-</span></td>
+
+            <td>
+              tirsdag
+            </td>
+
+            <td>
+              <span class="b">
+                Thuesday
+              </span>
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0061 <span class="r">-n- -day-</span></td>
+
+            <td>
+              onsdag
+            </td>
+
+            <td>
+              <span class="b">
+                Wednesday
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0062 <span class="r">-n- -irrpl-</span></td>
+
+            <td>
+              svigermor<p>
+              svigermødre
+            </td>
+
+            <td>
+              <span class="b">
+                mother-in-law
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0063 <span class="r">-n-</span></td>
+
+            <td>
+              weekend (er)
+            </td>
+
+            <td>
+              <span class="b">
+                weekend
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0064 <span class="r">-n-* -irrpl-</span></td>
+
+            <td>
+              eksempel<p>
+              eksempler
+            </td>
+
+            <td>
+              <span class="b">
+                example
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0065 <span class="r">-n- -unc- -md-</span></td>
+
+            <td>
+              tid &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                time
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0066 <span class="r">-n-</span></td>
+
+            <td>
+              gang (e)
+            </td>
+
+            <td>
+              <span class="b">
+                time
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0067 <span class="r">-n-</span></td>
+
+            <td>
+              kop (per)
+            </td>
+
+            <td>
+              <span class="b">
+                cup
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0068 <span class="r">-n-</span></td>
+
+            <td>
+              kaffe (r)
+            </td>
+
+            <td>
+              <span class="b">
+                coffee
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0069 <span class="r">-n-</span></td>
+
+            <td>
+              frokost (er)
+            </td>
+
+            <td>
+              <span class="b">
+                lunch
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0070 <span class="r">-n-</span></td>
+
+            <td>
+              morgen (er)
+            </td>
+
+            <td>
+              <span class="b">
+                morning
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0071 <span class="r">-a-</span></td>
+
+            <td>
+              konkret (e)
+            </td>
+
+            <td>
+              <span class="b">
+                concrete
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0072 <span class="r">-n-</span></td>
+
+            <td>
+              mulighed (er)
+            </td>
+
+            <td>
+              <span class="b">
+                possibility
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0073 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              forslag &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                suggestion
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0074 <span class="r">-a-</span></td>
+
+            <td>
+              alternativ (e)
+            </td>
+
+            <td>
+              <span class="b">
+                alternative
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0075 <span class="r">-n-</span></td>
+
+            <td>
+              tekst (er)
+            </td>
+
+            <td>
+              <span class="b">
+                text
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0076 <span class="r">-a-</span></td>
+
+            <td>
+              opmærksom (me)
+            </td>
+
+            <td>
+              <span class="b">
+                attentive
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0077 <span class="r">-n-</span></td>
+
+            <td>
+              udtale (r)
+            </td>
+
+            <td>
+              <span class="b">
+                pronunciation
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0078 <span class="r">-a- -md-</span></td>
+
+            <td>
+              lysegrå &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                light gray
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0079 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              ord &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                word
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0080 <span class="r">-n-</span></td>
+
+            <td>
+              dialog (er)
+            </td>
+
+            <td>
+              <span class="b">
+                dialog
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0081 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              spørgsmål &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                question
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0082 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              sted (er)
+            </td>
+
+            <td>
+              <span class="b">
+                place
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0083 <span class="r">-n-</span></td>
+
+            <td>
+              aftale (r)
+            </td>
+
+            <td>
+              <span class="b">
+                agreement
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0084 <span class="r">-n-*</span></td>
+
+            <td>
+              punkt (er)
+            </td>
+
+            <td>
+              <span class="b">
+                point
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0085 <span class="r">-n-</span></td>
+
+            <td>
+              rolle (r)
+            </td>
+
+            <td>
+              <span class="b">
+                role
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0086 <span class="r">-n-</span></td>
+
+            <td>
+              partner (e)
+            </td>
+
+            <td>
+              <span class="b">
+                partner
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0087 <span class="r">-n-*</span></td>
+
+            <td>
+              tidspunkt (er)
+            </td>
+
+            <td>
+              <span class="b">
+                (specific) time
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0088 <span class="r">-n-* -irrpl-</span></td>
+
+            <td>
+              komma (er)
+            </td>
+
+            <td>
+              <span class="b">
+                comma
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0089 <span class="r">-n-*</span></td>
+
+            <td>
+              punktum (mer)
+            </td>
+
+            <td>
+              <span class="b">
+                period, full stop
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0090 <span class="r">-n-</span></td>
+
+            <td>
+              nøgle (r)
+            </td>
+
+            <td>
+              <span class="b">
+                key
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0091 <span class="r">-n-* -irrpl-</span></td>
+
+            <td>
+              pronomen<p>
+              pronominer
+            </td>
+
+            <td>
+              <span class="b">
+                pronoun
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0092 <span class="r">-n-*</span></td>
+
+            <td>
+              subjekt (er)
+            </td>
+
+            <td>
+              <span class="b">
+                subject (grammar)
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0093 <span class="r">-n-*</span></td>
+
+            <td>
+              objekt (er)
+            </td>
+
+            <td>
+              <span class="b">
+                object (grammar)
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0094 <span class="r">-a-</span></td>
+
+            <td>
+              refleksiv (e)
+            </td>
+
+            <td>
+              <span class="b">
+                reflexive
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0095 <span class="r">-a- -md-</span></td>
+
+            <td>
+              passende &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                appropriate
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0096 <span class="r">-n- -md-</span></td>
+
+            <td>
+              selv &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                self
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0097 <span class="r">-n-</span></td>
+
+            <td>
+              sætning (er)
+            </td>
+
+            <td>
+              <span class="b">
+                sentence (grammar)
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0098 <span class="r">-n- -irrpl-</span></td>
+
+            <td>
+              mand<p>
+              mænd
+            </td>
+
+            <td>
+              <span class="b">
+                man, husband
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0099 <span class="r">-n-</span></td>
+
+            <td>
+              kone (r)
+            </td>
+
+            <td>
+              <span class="b">
+                wife
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0100 <span class="r">-a-</span></td>
+
+            <td>
+              possessiv (e)
+            </td>
+
+            <td>
+              <span class="b">
+                possessive
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0101 <span class="r">-n-</span></td>
+
+            <td>
+              oversigt (er)
+            </td>
+
+            <td>
+              <span class="b">
+                table (grammar), overview
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0102 <span class="r">-n-*</span></td>
+
+            <td>
+              stykke (r)
+            </td>
+
+            <td>
+              <span class="b">
+                piece
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0103 <span class="r">-n-</span></td>
+
+            <td>
+              bil (er)
+            </td>
+
+            <td>
+              <span class="b">
+                car
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0104 <span class="r">-n-* -md-</span></td>
+
+            <td>
+              tog &mdash;
+            </td>
+
+            <td>
+              <span class="b">
+                train
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>0105 <span class="r">-n-</span></td>
+
+            <td>
+              station (er)
+            </td>
+
+            <td>
+              <span class="b">
+                station
+              </span>
+            </td>
+        </tr>
+
+<!--
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00 <span class="r">--</span></td>
+
+            <td>
+              i
+            </td>
+
+            <td>
+              <span class="b">
+                i
+              </span>
+            </td>
+        </tr>
+
+
+        -->
+
+
+
+
+        <!-- ................. -->
+ 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>dansk</th>
+                <th>English</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
