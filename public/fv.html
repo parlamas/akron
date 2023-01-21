@@ -1,0 +1,6288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v1st</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+
+ .b {color:blue;}
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="tooltip"><span style="font-size:11pt; color:beige;">Isidoros Parlamas</span> &rarr; How to search...
+  <span class="tooltiptext">
+  <center><span class="l">-m-</span> modal verbs <span style="color:white;">&bull;</span> 
+                    <span class="l">*</span> irregular verbs <span style="color:white;">&bull;</span> 
+                    <span class="l">-er-</span> perfect with "være"<hr></center>
+                
+                        
+                        <span class="c">To find a verb, type <span style="color:beige;">-infinitive-</span>, using either only English letters or Danish letters. For example, to find READ, you can type either <span style="color:beige;">-laese-</span> or <span style="color:beige;">-læse-</span> or <span style="color:beige;">-read-</span>; to find UNDERSTAND, type <span style="color:beige;">-forsta-</span> or <span style="color:beige;">-forstå-</span> or <span style="color:beige;">-understand-</span>; to find DO, type <span style="color:beige;">-gore-</span> or <span style="color:beige;">-gøre-</span> or <span style="color:beige;">-do-</span>.</span><p>
+
+                            To find 2-letter verbs, type <span style="color:white;">2-</span>; to find irregular verbs, type <span style="color:white;">-irr-</span>; to find regular verbs, type <span style="color:white;">-reg-</span>; to find verbs that take <span style="color:white;">være</span> in the perfect tenses, type <span style="color:white;">er-</span>.<p>
+                        To see which, if any, verbs start with the same 3 letters, type <span style="color:white;">3 first letters-</span>; for example, <span style="color:white;">bet-</span> will filter out <span style="color:white;">betyle</span> and <span style="color:white;">betale</span>.<p>
+                            
+</div><p>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=8%>number<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=13%>inf<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=13%>imp<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=13%>pres<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=13%>past<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=13%>parti<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=13%>eng<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr valign=top>
+            <td>001<p>
+                -r-
+                
+             </td>
+
+            <td>
+                hedde
+            </td>
+
+            <td>
+                hed
+            </td>
+
+            <td>
+                hedder
+             </td>
+
+            <td>
+                heddede
+            </td>
+
+            <td>
+                heddet
+            </td>
+
+            <td class="b">
+                be called<p>
+                one's name be
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>002<p>
+                -er- -irr-
+                
+             </td>
+
+            <td>
+                komme
+            </td>
+
+            <td>
+                kom
+            </td>
+
+            <td>
+                kommer
+             </td>
+
+            <td>
+                kom
+            </td>
+
+            <td>
+                kommet
+            </td>
+
+            <td class="b">
+                come
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>003<p>
+                -t-
+                
+             </td>
+
+            <td>
+                tale
+            </td>
+
+            <td>
+                tal
+            </td>
+
+            <td>
+                taler
+             </td>
+
+            <td>
+                talte
+            </td>
+
+            <td>
+                talt
+            </td>
+
+            <td class="b">
+                speak
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>004<p>
+                traene<p>
+                    -r-
+             </td>
+
+            <td>
+                træne
+            </td>
+
+            <td>
+                træn
+            </td>
+
+            <td>
+                træner
+             </td>
+
+            <td>
+                trænede
+            </td>
+
+            <td>
+                trænet
+            </td>
+
+            <td class="b">
+                train<p>
+                practice
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>005<p>  
+                laese<p>
+                -irr-
+             </td>
+
+            <td>
+                læse
+            </td>
+
+            <td>
+                læs
+            </td>
+
+            <td>
+                læser
+             </td>
+
+            <td>
+                læst
+            </td>
+
+            <td>
+                læst
+            </td>
+
+            <td class="b">
+                read<p>
+                study
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>006<p>
+                jhaelpe<p>
+                    -r-
+             </td>
+
+            <td>
+                jhælpe
+            </td>
+
+            <td>
+                hjælp
+            </td>
+
+            <td>
+                hjælper
+             </td>
+
+            <td>
+                hjælpede
+            </td>
+
+            <td>
+                hjælpet
+            </td>
+
+            <td class="b">
+                help
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>007<p>
+                -t-
+                
+             </td>
+
+            <td>
+                udtale
+            </td>
+
+            <td>
+                udtal
+            </td>
+
+            <td>
+                udtaler
+             </td>
+
+            <td>
+                udtalte
+            </td>
+
+            <td>
+                udtalt
+            </td>
+
+            <td class="b">
+                pronounce
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>008<p>
+                bemaerke<p>
+                    -r-
+             </td>
+
+            <td>
+                bemærke
+            </td>
+
+            <td>
+                bemærk
+            </td>
+
+            <td>
+                bemærker
+             </td>
+
+            <td>
+                bemærkede
+            </td>
+
+            <td>
+                bemærket
+            </td>
+
+            <td class="b">
+                observe<p>
+                notice
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>009<p>
+                -r-
+                
+             </td>
+
+            <td>
+                lukke
+            </td>
+
+            <td>
+                luk
+            </td>
+
+            <td>
+                lukker
+             </td>
+
+            <td>
+                lukkede
+            </td>
+
+            <td>
+                lukket
+            </td>
+
+            <td class="b">
+                close
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>010<p>
+                ga<p>
+                    -irr- -er-
+             </td>
+
+            <td>
+                gå
+            </td>
+
+            <td>
+                gå
+            </td>
+
+            <td>
+                går
+             </td>
+
+            <td>
+                gik
+            </td>
+
+            <td>
+                gået
+            </td>
+
+            <td class="b">
+                go
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>011<p>
+                -r-
+                
+             </td>
+
+            <td>
+                snakke
+            </td>
+
+            <td>
+                snak
+            </td>
+
+            <td>
+                snakker
+             </td>
+
+            <td>
+                snakkede
+            </td>
+
+            <td>
+                snakket
+            </td>
+
+            <td class="b">
+                talk
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>012<p>
+            -r- 
+                
+             </td>
+
+            <td>
+                lytte
+            </td>
+
+            <td>
+                lyt
+            </td>
+
+            <td>
+                lytter
+             </td>
+
+            <td>
+                lyttede
+            </td>
+
+            <td>
+                lyttet
+            </td>
+
+            <td class="b">
+                listen
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>013<p>
+                -irr-
+                
+             </td>
+
+            <td>
+                gentage
+            </td>
+
+            <td>
+                gentag
+            </td>
+
+            <td>
+                gentager
+             </td>
+
+            <td>
+                gentog
+            </td>
+
+            <td>
+                gentaget
+            </td>
+
+            <td class="b">
+                repeat
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>014<p>
+                -irr-
+                
+             </td>
+
+            <td>
+                se
+            </td>
+
+            <td>
+                se
+            </td>
+
+            <td>
+                ser
+             </td>
+
+            <td>
+                så
+            </td>
+
+            <td>
+                set
+            </td>
+
+            <td class="b">
+                see
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>015<p>
+                -r-
+                
+             </td>
+
+            <td>
+                stave
+            </td>
+
+            <td>
+                stav
+            </td>
+
+            <td>
+                staver
+             </td>
+
+            <td>
+                stavede
+            </td>
+
+            <td>
+                stavet
+            </td>
+
+            <td class="b">
+                spell
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>016<p>
+                -r-
+                
+             </td>
+
+            <td>
+                lave
+            </td>
+
+            <td>
+                lav
+            </td>
+
+            <td>
+                laver
+             </td>
+
+            <td>
+                lavede
+            </td>
+
+            <td>
+                lavet
+            </td>
+
+            <td class="b">
+                make
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>017<p>
+                -irr-
+                
+             </td>
+
+            <td>
+                skrive
+            </td>
+
+            <td>
+                skriv
+            </td>
+
+            <td>
+                skriver
+             </td>
+
+            <td>
+                skrev
+            </td>
+
+            <td>
+                skrevet
+            </td>
+
+            <td class="b">
+                write
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>018<p> 
+                praesentere<p>
+                    -r-
+             </td>
+
+            <td>
+                præsentere
+            </td>
+
+            <td>
+                præsenter
+            </td>
+
+            <td>
+                præsenterer
+             </td>
+
+            <td>
+                præsenterede
+            </td>
+
+            <td>
+                præsenteret
+            </td>
+
+            <td class="b">
+                present<p>
+                introduce
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>019<p>
+                laere<p>
+                    -t-
+             </td>
+
+            <td>
+                lære ... at kende (get to know ...)
+            </td>
+
+            <td>
+                lær
+            </td>
+
+            <td>
+                lærer
+             </td>
+
+            <td>
+                lærte
+            </td>
+
+            <td>
+                lært
+            </td>
+
+            <td class="b">
+                get to know
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>020<p>
+                -r-
+                
+             </td>
+
+            <td>
+                svare
+            </td>
+
+            <td>
+                svar
+            </td>
+
+            <td>
+                svarer
+             </td>
+
+            <td>
+                svarede
+            </td>
+
+            <td>
+                svaret
+            </td>
+
+            <td class="b">
+                answer
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>021<p>
+                indsaette                
+             </td>
+
+            <td>
+                indsætte
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                insert
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>022<p>
+                -m-<p>
+                vaere
+                
+             </td>
+
+            <td>
+                være
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>023<p>
+            -m-  
+                
+             </td>
+
+            <td>
+                have
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                have
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>024
+                
+             </td>
+
+            <td>
+                vise
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                show
+            </td>
+
+        </tr>
+
+        <tr valign=top>
+            <td>025
+                
+             </td>
+
+            <td>
+                placere
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                put<p>
+                place
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>026<p>
+                ove
+             </td>
+
+            <td>
+                øve
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                practice
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>027  
+                
+             </td>
+
+            <td>
+                sige
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                say
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>028  
+                
+             </td>
+
+            <td>
+                bo
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                live<p>
+                reside
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>029  
+                
+             </td>
+
+            <td>
+                dele
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                share
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>030<p>
+                saette
+                
+             </td>
+
+            <td>
+                sætte
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                put
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>031<p>
+                gehore
+             </td>
+
+            <td>
+                gehøre
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                belong
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>032  
+                
+             </td>
+
+            <td>
+                finde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                find
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>033<p>
+                sporge
+                
+             </td>
+
+            <td>
+                spørge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                ask
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>034<p>
+                fortaelle
+                
+             </td>
+
+            <td>
+                fortælle
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                tell
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>035  
+                
+             </td>
+
+            <td>
+                udfylde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                fill in<p>
+                fill out
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>036  
+                
+             </td>
+
+            <td>
+                tro
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                think<p>
+                believe<p>
+                (opinion)
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>037<p>
+                -m- 
+             </td>
+
+            <td>
+                ville
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                will<p>
+                would<p>
+                want
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+            <td>038
+                
+             </td>
+
+            <td>
+                blive
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                become<p>
+                get
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>039<p>
+                gennemga
+                
+             </td>
+
+            <td>
+                gennemgå
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                review
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>040
+                
+             </td>
+
+            <td>
+                tage
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                take<p>
+                go
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>041
+                
+             </td>
+
+            <td>
+                takke
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                thank
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>042
+                
+             </td>
+
+            <td>
+                pege på
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                point
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>043
+                
+             </td>
+
+            <td>
+                kende
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                know<p>
+                (by experience)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>044
+                
+             </td>
+
+            <td>
+                vide
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                know<p>
+                (data/info)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>045<p>
+                laegge
+             </td>
+
+            <td>
+                lægge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                lay<p>
+                make up
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>046
+                
+             </td>
+
+            <td>
+                savne
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                miss
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>047
+                
+             </td>
+
+            <td>
+                betyde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                mean<p>
+                (for words)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>048
+                
+             </td>
+
+            <td>
+                betyde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                mean<p>
+                (for words)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>049<p>
+                forsta
+             </td>
+
+            <td>
+                forstå
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                understand
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>050
+                
+             </td>
+
+            <td>
+                bruge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                use
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>051
+                
+             </td>
+
+            <td>
+                interviewe
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                interview
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>052
+                
+             </td>
+
+            <td>
+                skifte
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                switch<p>
+                change
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>053<p>
+                -m-
+             </td>
+
+            <td>
+                kunne
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                can<p>
+                beable to
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>054
+                
+             </td>
+
+            <td>
+                arbejde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                work
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>055
+                
+             </td>
+
+            <td>
+                møde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                meet<p>
+                start
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>056
+                
+             </td>
+
+            <td>
+                få fri
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                finish<p>
+                work, school
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>057<p>
+                laere
+             </td>
+
+            <td>
+                lære
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                learn
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>058<p>
+                -m-
+             </td>
+
+            <td>
+                kunne godt/ikke lide
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                like
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>059
+                
+             </td>
+
+            <td>
+                synes
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                think<p>
+                belief, conviction
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>060
+                
+             </td>
+
+            <td>
+                ligge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be located
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>061
+                
+             </td>
+
+            <td>
+                cykle
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                ride a bicycle
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>062<p>
+                kore
+             </td>
+
+            <td>
+                køre
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                drive<p>
+                start (moving)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>063<p>
+                -er-
+             </td>
+
+            <td>
+                aspirere
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                aspirate
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>064<p>
+                -m-<p>
+                matte
+             </td>
+
+            <td>
+                måtte
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                have to
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>065
+                
+             </td>
+
+            <td>
+                forberede
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                prepare
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>066
+                
+             </td>
+
+            <td>
+                begynde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                begin<p>
+                start p. 27
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>067<p>
+                besoge
+             </td>
+
+            <td>
+                besøge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                visit
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>068
+             </td>
+
+            <td>
+                studere
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                study
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>069<p>
+                taenke
+             </td>
+
+            <td>
+                tænke
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                think
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>070
+             </td>
+
+            <td>
+                holde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                hold<p>
+                have
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>071
+             </td>
+
+            <td>
+                give
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                give
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>072
+             </td>
+
+            <td>
+                angive
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                specify
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>073
+             </td>
+
+            <td>
+                supplere
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                supplement<p>
+                replace<p>
+                modify<p>
+                substitute
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>074
+             </td>
+
+            <td>
+                ringe
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                ring<p>
+                call
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>075
+             </td>
+
+            <td>
+                vågne
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                wake up
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>076
+                sta<p>
+             </td>
+
+            <td>
+                stå op
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                get up
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>077
+             </td>
+
+            <td>
+                børste
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                brush
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>078<p>
+                -rfx-
+             </td>
+
+            <td>
+                sminke sig
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                make up
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>079<p>
+                -rfx-
+             </td>
+
+            <td>
+                barbere sig
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                shave
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>080
+             </td>
+
+            <td>
+                vække
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                wake sb up
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>081
+             </td>
+
+            <td>
+                drikke
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                drink
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>082
+             </td>
+
+            <td>
+                aflevere
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                deliver<p>
+                take to a place
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>083
+             </td>
+
+            <td>
+                at tage af sted hjemmefra
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                leave home
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>084
+             </td>
+
+            <td>
+                at tage på arbejde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                go to work
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>085
+             </td>
+
+            <td>
+                at tage tøj på
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                get dressed
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>086
+             </td>
+
+            <td>
+                at tage brusebad
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                take a shower
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>087<p>
+                daekke
+             </td>
+
+            <td>
+                at dække
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                cover
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>088
+             </td>
+
+            <td>
+                huske
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                remember
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>089<p>
+                -rfx-
+             </td>
+
+            <td>
+                vaske sig
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                wash up
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>090<p>
+                -m-
+             </td>
+
+            <td>
+                skulle
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                have to<p>
+                be supposed to
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>091
+             </td>
+
+            <td>
+                have sulten
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be hungry
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>092<p>
+                hore
+             </td>
+
+            <td>
+                høre
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                hear<p>
+                listen to
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>093
+             </td>
+
+            <td>
+                passe på
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                watch out for
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>094<p>
+                vaere
+             </td>
+
+            <td>
+                være frisk
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be/feel fit<p>
+                have energy
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>095<p>
+                kobe
+             </td>
+
+            <td>
+                købe
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                buy
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>096
+             </td>
+
+            <td>
+                slapper af
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                rest<p>
+                calm down
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>097
+             </td>
+
+            <td>
+                spille
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                play
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>098
+             </td>
+
+            <td>
+                hente
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                pick up
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>099
+             </td>
+
+            <td>
+                rydder op
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                clean up<p>
+                tidy
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>100<p>
+                gore
+             </td>
+
+            <td>
+                gøre
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                do
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>101<p>
+                gore
+             </td>
+
+            <td>
+                gøre ren
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                clean
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>102
+             </td>
+
+            <td>
+                vaske op
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                wash the dishes
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>103<p>
+                gore
+             </td>
+
+            <td>
+                gøre en tur
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                go for a walk
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>104<p>
+                fa
+             </td>
+
+            <td>
+                få gæster
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                have visitors/guests over...
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>105
+             </td>
+
+            <td>
+                se fjernsyn
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                watch TV
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>106<p>
+                ga
+             </td>
+
+            <td>
+                gå i seng
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                go to bed
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>107
+             </td>
+
+            <td>
+                sove
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                sleep
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>108
+             </td>
+
+            <td>
+                bytte
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                swap
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>109
+             </td>
+
+            <td>
+                have travlt
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be busy
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>110<p>
+                kobe
+             </td>
+
+            <td>
+                købe ind
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                go shopping<p>
+                do the shopping
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>111
+             </td>
+
+            <td>
+                elske
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                love
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>112
+             </td>
+
+            <td>
+                sidde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                sit<p>
+                be atteched onto a surface
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>113
+             </td>
+
+            <td>
+                tjekke
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                check (out, in)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>114
+             </td>
+
+            <td>
+                vinde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                win
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>115<p>
+                skaende(s)
+             </td>
+
+            <td>
+                skænde(s)
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                quarrel<p>
+                argue
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>116<p>
+                lane
+             </td>
+
+            <td>
+                låne
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                borrow<p>
+                lend
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>117
+             </td>
+
+            <td>
+                forklare
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                explain
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>118
+             </td>
+
+            <td>
+                vorsvinde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                disappear
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>119
+             </td>
+
+            <td>
+                sende
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                send
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>120
+             </td>
+
+            <td>
+                passe
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                take care of
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>121
+             </td>
+
+            <td>
+                plane
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                plan
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>122<p>
+                onske
+             </td>
+
+            <td>
+                ønske
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                wish
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>123
+             </td>
+
+            <td>
+                beslutte
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                decide
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>124
+             </td>
+
+            <td>
+                invitere
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                invite
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>125<p>
+                lobe
+             </td>
+
+            <td>
+                løbe en tur
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                go for a run<p>
+                go jogging
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>126
+             </td>
+
+            <td>
+                starte
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                start
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>127<p>
+                -rfx-
+             </td>
+
+            <td>
+                glæde sig
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                look forward to
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>128<p>
+                -rfx-
+             </td>
+
+            <td>
+                hygge sig
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                have a good time
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>129
+             </td>
+
+            <td>
+                danse
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                dance
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>130
+             </td>
+
+            <td>
+                der være
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                there be
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>131
+             </td>
+
+            <td>
+                storsuge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                vacuum
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>132
+             </td>
+
+            <td>
+                være færdig på
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be done with
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>133
+             </td>
+
+            <td>
+                regne
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                rain
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>134
+             </td>
+
+            <td>
+                stå på
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                get on/in
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>135
+             </td>
+
+            <td>
+                gå ind
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                go in
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>136
+             </td>
+
+            <td>
+                sætte sig
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                sit down
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>137
+             </td>
+
+            <td>
+                skulle af
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                get off
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>138
+             </td>
+
+            <td>
+                rejse sig
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                stand up<p>
+                rise from
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>139
+             </td>
+
+            <td>
+                trykke
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                press
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>140
+             </td>
+
+            <td>
+                standse
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                stop
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>141
+             </td>
+
+            <td>
+                komme ud
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                get out
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>142
+             </td>
+
+            <td>
+                komme forbi
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                get/pass through
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>143
+             </td>
+
+            <td>
+                stå af
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                get off
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>144
+             </td>
+
+            <td>
+                kommer for sent
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be late
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>145
+             </td>
+
+            <td>
+                skynde sig
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                hurry up
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>146
+             </td>
+
+            <td>
+                åbne
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                open
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>147
+             </td>
+
+            <td>
+                understrege
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                emphasize
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>148
+             </td>
+
+            <td>
+                beskrive
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                describe
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>149
+             </td>
+
+            <td>
+                vælge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                choose
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>150
+             </td>
+
+            <td>
+                befinde sig på
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be at a specific place
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>151
+             </td>
+
+            <td>
+                smage
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                taste
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>152
+             </td>
+
+            <td>
+                være ked af noget
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be sad about sth
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>153
+             </td>
+
+            <td>
+                være glad for noget
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be fond of sth
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>154
+             </td>
+
+            <td>
+                behagge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                please
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>155
+             </td>
+
+            <td>
+                udtrykke
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                express
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>156
+             </td>
+
+            <td>
+                mængle
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                lack
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>157
+             </td>
+
+            <td>
+                koste
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                cost
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>158
+             </td>
+
+            <td>
+                udsælge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                sell out
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>159
+             </td>
+
+            <td>
+                bede
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                ask
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>160
+             </td>
+
+            <td>
+                vente
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                wait
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>161
+             </td>
+
+            <td>
+                pakke ind
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                wrap up
+            </td>
+        </tr>
+
+
+         <tr valign=top>
+            <td>162
+             </td>
+
+            <td>
+                betale
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                pay
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>163
+             </td>
+
+            <td>
+                kage
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                cake (shape as)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>164
+             </td>
+
+            <td>
+                dyrke
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                grow, till<p>
+                admire<p>
+                engage regularly in an activity
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>165
+             </td>
+
+            <td>
+                leve
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                live
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>166
+             </td>
+
+            <td>
+                interessere sig for
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be interested in
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>167
+             </td>
+
+            <td>
+                motionere
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                work out
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>168
+             </td>
+
+            <td>
+                ryge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                smoke
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>169<p>
+                svomme
+             </td>
+
+            <td>
+                svømme
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                swim
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>170<p>
+                -m-
+             </td>
+
+            <td>
+                gide
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                bother with
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>171<p>
+                haenge
+             </td>
+
+            <td>
+                hænge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                hang
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>172
+             </td>
+
+            <td>
+                vende
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                face<p>
+                look over (e.g. beach)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>173
+             </td>
+
+            <td>
+                surfe
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                surf
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>174
+             </td>
+
+            <td>
+                nyde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                enjoy
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>175<p>
+                -m-
+             </td>
+
+            <td>
+                lege
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                play
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>176
+             </td>
+
+            <td>
+                larme
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                make noise
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>177<p>
+                -er-
+             </td>
+
+            <td>
+                flytte
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                move (to)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>178<p>
+                prove
+             </td>
+
+            <td>
+                prøve
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                try
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>179
+             </td>
+
+            <td>
+                bestå af
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                consist of
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>180
+             </td>
+
+            <td>
+                opholde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                stay
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>181
+             </td>
+
+            <td>
+                reduktionere
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                reduce
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>182
+             </td>
+
+            <td>
+                stoppe
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                stop
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>183<p>
+                dromme
+             </td>
+
+            <td>
+                drømme
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                dream
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>184
+             </td>
+
+            <td>
+                sige op
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                quit
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>185<p>
+                soge
+             </td>
+
+            <td>
+                søge
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                look for
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>186
+             </td>
+
+            <td>
+                lyne (det)
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                the be lightning
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>187
+             </td>
+
+            <td>
+                tordne (det)
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                there be thunders
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>188
+             </td>
+
+            <td>
+                skinne
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                shine
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>189<p>
+                blaese
+             </td>
+
+            <td>
+                blæse
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                be windy
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>190
+             </td>
+
+            <td>
+                lyde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                sound
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>191
+             </td>
+
+            <td>
+                bade
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                bathe
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>192
+             </td>
+
+            <td>
+                sne
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                snow
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>193
+             </td>
+
+            <td>
+                fryse
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                freeze
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>194
+             </td>
+
+            <td>
+                svede
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                sweat
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>195<p>
+                haber
+             </td>
+
+            <td>
+                håbe
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                hope
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>196
+             </td>
+
+            <td>
+                kalde
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                call<p>
+                be called
+            </td>
+        </tr>
+
+
+
+    <!--phrases-->
+
+
+        <tr valign=top>
+            <td width=8%>197
+             </td>
+
+            <td width=46%>
+                kalde
+            </td>
+
+            <td width=46%>
+                ...........
+            </td>
+
+            <td width=0%>
+                
+             </td>
+
+            <td width=0%>
+                
+            </td>
+
+            <td width=0%>
+                
+            </td>
+
+            <td width=0%>
+            </td>
+        </tr>
+
+        
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Number</th>
+                <th>inf</th>
+                <th>imp</th>
+                <th>pres</th>
+                <th>past</th>
+                <th>parti</th>
+                <th>eng</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
