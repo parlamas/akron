@@ -8,12 +8,29 @@
 
 <style>
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
 
- .b {color:blue;}
-.b{color:blue;}
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
 
-.r{color:red;}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 body {font-size:12pt; text-align:justify;}
 </style>
@@ -22,6 +39,10 @@ body {font-size:12pt; text-align:justify;}
 </head>
 
 <body topmargin=10 leftmargin=50 rightmargin=50>
+
+  <div class="tooltip">Uskrevne regler er svære at forstå
+  <span class="tooltiptext">Unwritten rules are difficult to understand</span>
+</div>
 
   <center><b>Uskrevne regler er svære at forstå</b></center><hr>
 
