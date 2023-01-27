@@ -7,24 +7,72 @@
     <title>2023-01-25</title>
 
 <style>
-.extra { 
-    display: none;
-}
 
-span:hover .extra {
-    display: inline-block;
-}
+
+a.tooltip{
+    position:relative;
+    }
+    a.tooltip:hover{
+    text-decoration:none;
+    }
+    a.tooltip:after{
+    content: attr(tip);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:90%;
+    line-height:1.2em;
+    color:#fff;
+    width:200px;
+    padding:5px 10px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    background:#c00d3f;
+    background:-webkit-linear-gradient(#c00d3f, #7b0a2a);
+    background:-moz-linear-gradient(#c00d3f, #7b0a2a);
+    background:-o-linear-gradient(#c00d3f, #7b0a2a);
+    background:-ms-linear-gradient(#c00d3f, #7b0a2a);
+    background:linear-gradient(#c00d3f, #7b0a2a);
+    -moz-box-shadow: 3px 3px 4px rgba(0,0,0, .65);
+    -webkit-box-shadow: 3px 3px 4px rgba(0,0,0, .65);
+    box-shadow: 3px 3px 4px rgba(0,0,0, .65);
+    position:absolute;
+    top:27px;
+    left:-10px;
+    display:none;
+    }
+    a.tooltip:before{
+    z-index:1000;
+    position:absolute;
+    content:"";
+    top:15px;
+    left:0px;
+    border-right:7px transparent solid;
+    border-left:7px transparent solid;
+    display:none;
+    }
+    a.tooltip:hover{
+    z-index:1000;
+    position:relative;
+    color:#8325f7;
+    }
+    a.tooltip:hover:after{
+    display:block;
+    }
+    a.tooltip:hover:before{
+    display:block;
+    }
+
 </style>
 
 
 </head>
 
 <body topmargin=10 leftmargin=50 rightmargin=50>
-<span title="Here I am to save the day!">English</span> <span title="Hola amigo">castellano</span>
+
 
 <center><b>Uskrevne regler er svære at forstå</b></center><p>
 
-
+<span><a class="tooltip" href="#" tip="Finally, it is not a good idea to offer your colleagues food out of your lunch box, but offering them sweets is quite acceptable. Don't wait for your  boss to show up on time and start you on a task. It takes a lot of work on your part, as a newly arrived refugee in Denmark, to find your way around the labor market as it is. Unwritten rules in particular can be difficult to tackle.">English</a></span>
 
   <hr>
 
