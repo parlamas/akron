@@ -8,49 +8,7 @@
 
 <style>
 
-.tooltip-text {
-  visibility: hidden;
-  position: absolute;
-  z-index: 1;
-  width: 100px;
-  color: white;
-  font-size: 12px;
-  background-color: #192733;
-  border-radius: 10px;
-  padding: 10px 15px 10px 15px;
-}
 
-.hover-text:hover .tooltip-text {
-  visibility: visible;
-}
-
-#top {
-  top: -40px;
-  left: -50%;
-}
-
-#bottom {
-  top: 25px;
-  left: -50%;
-}
-
-#left {
-  top: -8px;
-  right: 120%;
-}
-
-#right {
-  top: -8px;
-  left: 120%;
-}
-
-.hover-text {
-  position: relative;
-  display: inline-block;
-  margin: 40px;
-  font-family: Avenir;
-  text-align: center;
-}
 
 </style>
 
@@ -62,9 +20,10 @@
 
 <center>
   <b>Uskrevne regler er svære at forstå</b><br>
-  <span class="hover-text">hover me
-  <span class="tooltip-text" id="top">I'm a tooltip!</span>
-</span>
+  
+  <a href="if1.html" style="overflow: hidden;" target="_blank" onClick="window.open('if1.html','if1','resizable,height=260,width=370,left=50,top=400,scrollbars=0'); return false;">New Page</a>
+
+
     <span><a style="text-decoration:none; font-size:10pt;" class="tooltip" href="#" tip="Unwritten rules are difficult to understand">e</a></span> 
     <span><a style="text-decoration:none; font-size:10pt;" class="tooltip" href="#" tip="Las reglas no escritas son difíciles de entender">ñ</a></span>
     <span><a style="text-decoration:none; font-size:10pt;" class="tooltip" href="#" tip="Неписані правила важко зрозуміти">ї</a></span> 
