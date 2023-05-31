@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>t</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+
+ .b {color:blue;}
+
+ div {padding:10px; text-align:justify; background-color:#f5eeed; color:black; font-size:10pt;}
+
+ .i {padding:10px; text-align:justify; background-color:beige; color:black; font-size:10pt;}
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    <!--
+
+    <div class="tooltip"><span style="font-size:11pt; color:beige;">Isidoros Parlamas</span> &rarr; How to search...
+  <span class="tooltiptext">
+  <center><span class="l">-m-</span> modal verbs <span style="color:white;">&bull;</span> 
+                    <span class="l">*</span> irregular verbs <span style="color:white;">&bull;</span> 
+                    <span class="l">-er-</span> perfect with "være"<hr></center>
+                
+                        
+                        <span class="c">To find a verb, type <span style="color:beige;">-infinitive-</span>, using either only English letters or Danish letters. For example, to find READ, you can type either <span style="color:beige;">-laese-</span> or <span style="color:beige;">-læse-</span> or <span style="color:beige;">-read-</span>; to find UNDERSTAND, type <span style="color:beige;">-forsta-</span> or <span style="color:beige;">-forstå-</span> or <span style="color:beige;">-understand-</span>; to find DO, type <span style="color:beige;">-gore-</span> or <span style="color:beige;">-gøre-</span> or <span style="color:beige;">-do-</span>.</span><p>
+
+                            To find 2-letter verbs, type <span style="color:white;">2-</span>; to find irregular verbs, type <span style="color:white;">-irr-</span>; to find regular verbs, type <span style="color:white;">-reg-</span>; to find verbs that take <span style="color:white;">være</span> in the perfect tenses, type <span style="color:white;">er-</span>.<p>
+                        To see which, if any, verbs start with the same 3 letters, type <span style="color:white;">3 first letters-</span>; for example, <span style="color:white;">bet-</span> will filter out <span style="color:white;">betyle</span> and <span style="color:white;">betale</span>.<p>
+                            
+</div><p>
+-->
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=100%>content<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr valign=top>
+            <td>0001<p>
+
+                <div class="i">i en forstad <span class="r">&rarr;</span> <span class="b">in a suburb</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0002<p>
+
+                <div class="i">på landet <span class="r">&rarr;</span> <span class="b">in the country(side)</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0003<p>
+
+                <div class="i">i byen <span class="r">&rarr;</span> <span class="b">in the city</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0004<p>
+
+                <div class="i">om ti år <span class="r">&rarr;</span> <span class="b">in ten years<span class="b"></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0005<p>
+
+                <div class="i">Hvor ville du helst bo? <span class="r">&rarr;</span> <span class="b">Where would you prefer to/rather live?</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0006<p>
+
+                <div class="i">... hvis du kunne vælge frit <span class="r">&rarr;</span> <span class="b">... if you could choose freely</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0007<p>
+
+                <div class="i">at tage hensyn til <span class="r">&rarr;</span> <span class="b">to take into account</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0008<p>
+
+                <div class="i">ægtefælle <span class="r">&rarr;</span> <span class="b">spouse</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0009<p>
+
+                <div class="i">centralt i landet <span class="r">&rarr;</span> <span class="b">in the center/middle of the country</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0010<p>
+
+                <div class="i">at præge &bull; r &bull; de &bull; t <span class="r">&rarr;</span> <span class="b">characterize</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0011<p>
+
+                <div class="i">belligenhed <span class="r">&rarr;</span>  <span class="b">location</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0012<p>
+
+                <div class="i">om sommeren <span class="r">&rarr;</span> <span class="b">in the summer</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0013<p>
+
+                <div class="i">at charmere &bull; r &bull; de &bull; t <span class="r">&rarr;</span> <span class="b">to charm</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0014<p>
+
+                <div class="i">livlig <span class="r">&rarr;</span> <span class="b">lively</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>015<p>
+
+                <div class="i">eventuelt <span class="r">&rarr;</span> <span class="b">possibly/if possible</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0016<p>
+
+                <div class="i">kedelig <span class="r">&rarr;</span> <span class="b">boring</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i">lidt af det hele <span class="r">&rarr;</span> <span class="b">a little bit of everything</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0018<p>
+
+                <div class="i">at befinde sig &bull; r &bull; fandt &bull; fundet <span class="r">&rarr;</span> <span class="b">find oneself</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0019<p>
+
+                <div class="i">at larme &bull; r &bull; de &bull; t <span class="r">&rarr;</span> <span class="b">to make noise</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0020<p>
+
+                <div class="i">at omgive &bull; r &bull; omgav &bull; t <span class="r">&rarr;</span> <span class="b">to surround</span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0021*<p>
+
+                <div class="i">... vand og skov i byens mange parker, "friluftsbadet" og* ved bådehavnen. <span class="r">&rarr;</span> <span class="b">water and forest in the city's many parks, the open-air swimming pool and at the boat harbour.</span></div>
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0022<p>
+
+                <div class="i">På trods af byens størrelse præges mentaliteten af et "alle-kenderalle forhold" og et sammenhold, der kan sammenlignes med en landsbys. <span class="r">&rarr;</span> <span class="b">Despite the size of the city, the mentality is characterized by an "all-general relationship" and a unity that can be compared to that of a village. </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+        <tr valign=top>
+            <td>0017<p>
+
+                <div class="i"> <span class="r">&rarr;</span> <span class="b"> </span></div>
+                
+             </td>
+        </tr>
+
+æøå
+    <!--phrases-->
+        
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>content</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
