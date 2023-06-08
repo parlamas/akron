@@ -41,8 +41,9 @@ ol li {font-size:10pt;}
 
  .tooltip {
   position: relative;
+  left:-100px;
+  top:0px;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
@@ -56,6 +57,8 @@ ol li {font-size:10pt;}
 
   /* Position the tooltip */
   position: absolute;
+  top:0px;
+  left:0px;
   z-index: 1;
 }
 
@@ -78,28 +81,25 @@ ol li {font-size:10pt;}
 <body>
 	<center>
 
-<!--video 1-->
-		<div style="z-index:100; position:absolute; top:180px; left:615px; width:320px; height:20px; background-color:red;"></div>
+<!--audio 1-->
 
 	<div>
-		<video width="320" height="240" controls>
-  			<source src="v/A001.mp4" type="video/mp4">
-		</video>
 		
+		<audio controls>
+  			<source src="v/a001.mp3" type="audio/mpeg">
+		</audio>
 
-	<div style="width:250px;" class="tooltip">1<p>klik på videoen for at se<p>Hold musen over her for at se tekst<span class="tooltiptext">... tro, det bliver sommertid, hvis ikke jeg selv gi'r et skub.</span></div>
+	<div style="width:250px;" class="tooltip">1. Hold musen over her for at se tekst<span class="tooltiptext">... tro, det bliver sommertid,<br>hvis ikke jeg selv gi'r et skub.</span></div>
 	</div><hr>
 
-<!--video 2-->
-
-<div style="z-index:100; position:absolute; top:490px; left:615px; width:320px; height:20px; background-color:red;"></div>
+<!--audio 2-->
 
 	<div>
-		<video width="320" height="240" controls>
-  			<source src="v/A002.mp4" type="video/mp4">
-		</video>
+		<audio controls>
+  			<source src="v/a002.mp3" type="audio/mpeg">
+		</audio>
 		
-		<div style="width:250px;" class="tooltip">2<p>klik på videoen for at se<p>Hold musen over her for at se tekst<span class="tooltiptext">Der er noget helt specielt ved at være<br>lærer, følge børnenes udvikling-<br>få dem til at tage udfordringene<br>og se dem lykkes med dem.</span></div>
+		<div style="width:250px;" class="tooltip">2. Hold musen over her for at se tekst<span class="tooltiptext">Der er noget helt specielt ved at være<br>lærer, følge børnenes udvikling-<br>få dem til at tage udfordringene<br>og se dem lykkes med dem.</span></div>
 	</div><hr>
 
 </body>
