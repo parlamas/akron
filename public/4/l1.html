@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen-01</title>
+
+<style>
+
+    .u1 {border-bottom: 2px dotted #000; border-color:red; text-decoration: none;}
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:yellow; background-color:black; padding-left:5px; padding-right:5px; padding-bottom:3px; padding-top:3px;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .li {color:lime;}
+    .r {color:red;}
+    .g {color:green; font-weight:bold;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+    .cy {color:cyan;}
+    .wh {color:white;}
+    .sp {background-color:brown; color:beige;}
+    .x {color:white; font-size:1px;}
+
+    sub {color:red; font-size:8pt;}
+
+    sup {color:red; font-size:8pt;}
+body {font-size:10pt;}
+ol li {font-size:10pt;}
+
+
+
+ .b {color:blue;}
+
+ div {width:35%;padding:10px; text-align:justify; background-color:white; color:black; font-size:10pt;}
+
+ .i {padding:10px; text-align:justify; background-color:beige; color:black; font-size:10pt;}
+
+ .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 15px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+    
+</style>
+
+<link rel="icon" href="https://horistics.com/a/i/new.ico" type="image/icon type">
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+	<center>
+
+<!--video 1-->
+		<div style="z-index:100; position:absolute; top:180px; left:615px; width:320px; height:20px; background-color:red;"></div>
+
+	<div>
+		<video width="320" height="240" controls>
+  			<source src="v/A001.mp4" type="video/mp4">
+		</video>
+		
+
+	<div class="tooltip">1<p>klik på videoen for at se<p>Hold musen over her for at se tekst<span class="tooltiptext">... tro, det bliver sommertid, hvis ikke jeg selv gi'r et skub.</span></div>
+	</div><hr>
+
+<!--video 2-->
+
+<div style="z-index:100; position:absolute; top:490px; left:615px; width:320px; height:20px; background-color:red;"></div>
+
+	<div>
+		<video width="320" height="240" controls>
+  			<source src="v/A002.mp4" type="video/mp4">
+		</video>
+		
+		<div class="tooltip">2<p>klik på videoen for at se<p>Hold musen over her for at se tekst<span class="tooltiptext">Der er noget helt specielt ved at være<br>lærer, følge børnenes udvikling-<br>få dem til at tage udfordringene<br>og se dem lykkes med dem.</span></div>
+	</div><hr>
+
+</body>
+</html>
+
