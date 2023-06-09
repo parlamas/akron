@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ac</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .u1 {border-bottom: 2px dotted #000; border-color:red; text-decoration: none;}
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:yellow; background-color:black; padding-left:5px; padding-right:5px; padding-bottom:3px; padding-top:3px;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .li {color:lime;}
+    .r {color:red;}
+    .g {color:green; font-weight:bold;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+    .cy {color:cyan;}
+    .wh {color:white; font-size:1px;}
+    .sp {background-color:brown; color:beige;}
+    .x {color:white; font-size:1px;}
+    .aa {background-color:white;}
+
+    sub {color:red; font-size:8pt;}
+
+    sup {color:red; font-size:8pt;}
+body {font-size:10pt;}
+ol li {font-size:10pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:200px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:left;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+
+ .b {color:blue;}
+
+ div {padding:10px; text-align:justify; background-color:white; color:black; font-size:10pt;}
+
+ .i {padding:10px; text-align:justify; background-color:beige; color:black; font-size:10pt;}
+    
+</style>
+
+<link rel="icon" href="i/new.ico" type="image/icon type">
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+<!--
+    <div class="tooltip"><span style="font-size:9.5pt; color:beige; text-align:left;">How to search...</span> 
+  <span class="tooltiptext">
+    here
+  </div><p>
+-->
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=6%>#<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+
+                <th width=47%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+
+                <th width=47%>dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                I thanked <span class="u1">the woman</span> who helped me.
+             </td>
+             <td class="b">
+                Jeg takkede <span class="u1">kvinden,</span> der/som hjalp mig.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00002 <span class="wh">-2-</span></td>
+             <td>
+                <span class="u1">The book</span> which is on the table is mine.
+             </td>
+             <td class="b">
+                <span class="u1">Bogen</span> der/som ligger på bordet er min.
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00003 <span class="wh">-3-</span></td>
+             <td>
+                I saw <span class="u1">the man</span> who closed tho door.
+             </td>
+             <td class="b">
+                Jeg så <span class="u1">manden,</span> der/som lukkede døren.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00004 <span class="wh">-4-</span></td>
+             <td>
+                <span class="u1">The girl</span> who won the race is happy.
+             </td>
+             <td class="b">
+                <span class="u1">Pigen,</span> der/som vandt løbet, er glad.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00005 <span class="wh">-5-</span></td>
+             <td>
+                <span class="u1">The student</span> who sits next to me is from China.
+             </td>
+             <td class="b">
+                <span class="u1">Den studerende,</span> der/som sidder ved siden af mig, er fra Kina.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00006 <span class="wh">-6-</span></td>
+             <td>
+                <span class="u1">The students</span> who are sitting in the front row are from the US.
+             </td>
+             <td class="b">
+                <span class="u1">De studerende,</span> der/som sidder på forreste række, er fra USA.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00007 <span class="wh">-7-</span></td>
+             <td>
+                <span class="u1">The sentences</span> which we are studying contain adjective clauses.<p>
+
+                We are studying <span class="u1">the sentences</span> which contain relative clauses.
+             </td>
+             <td class="b">    
+               <span class="u1">De sætninger,</span> som vi studerer, indeholder adjektivklausuler.<p>
+
+              Vi studerer <span class="u1">de sætninger,</span> der/som indeholder relative sætninger.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00008 <span class="wh">-8-</span></td>
+             <td>
+                I am using <span class="u1">a sentence</span> which contains an adjective clause.<p>
+                <span class="u1">The sentence</span> I am using contains an adjective clause.
+             </td>
+             <td class="b">
+                Jeg bruger <span class="u1">en sætning,</span> der/som indeholder en adjektivklausul.<p>
+                <span class="u1">Sætningen,</span> jeg bruger, indeholder en adjektivsætning.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00009 <span class="wh">-9-</span></td>
+             <td>
+                <span class="u1">Algebra problems</span> contain letters which stand for unknown numbers.
+             </td>
+             <td class="b">
+                <span class="u1">Algebraproblemer</span> indeholder bogstaver, der/som står for ukendte tal.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00010 <span class="wh">-10-</span></td>
+             <td>
+                <span class="u1">The taxi driver</span> who took me to the airport was friendly.
+             </td>
+             <td class="b">
+                <span class="u1">Taxachaufføren,</span> der/som tog mig til lufthavnen, var venlig.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00011 <span class="wh">-11-</span></td>
+             <td>
+                <span class="u1">The man</span> whom/who/that/&mdash; I saw was Mr. Trendt.
+             </td>
+             <td class="b">
+                <span class="u1">Den mand,</span> jeg så, var hr. Trendt.
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00012 <span class="wh">-12-</span></td>
+             <td>
+                <span class="u1">The movie</span> which/that/&mdash; we saw last night wasn't very good.
+             </td>
+             <td class="b">
+                <span class="u1">Filmen,</span> som vi så i går aftes, var ikke særlig god.
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00013 <span class="wh">-13-</span></td>
+             <td>
+                She is <span class="u1">the woman</span> about whom I told you.<p>
+
+                She is <span class="u1">the woman</span> who/that/&mdash; I told you about.
+             </td>
+             <td class="b">
+                Hun er <span class="u1">kvinden,</span> som jeg fortalte dig om.<p>
+
+                Hun er <span class="u1">kvinden,</span> jeg fortalte dig om.
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00014 <span class="wh">-14-</span></td>
+             <td>
+                <span class="u1">The meeting</span> I went to was interesting.<p>
+                I went to <span class="u1">a meeting</span> which was interesting.
+             </td>
+             <td class="b">
+                <span class="u1">Mødet</span> jeg var til var interessant.<p>
+                Jeg tog til <span class="u1">et møde,</span> der/som var interessant.
+             </td>
+        </tr>
+<!--
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>00001 <span class="wh">-1-</span></td>
+             <td>
+                ?
+             </td>
+             <td class="b">
+                ?
+             </td>
+        </tr>
+-->
+        <!--end of work-->
+
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>English</th>
+                <th>dansk</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
