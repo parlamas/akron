@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rep-Soc</title>
+
+<style>
+table tr td {font-size:15pt; text-align:justify;}
+
+a {text-decoration:none;}
+
+.s {font-size:10pt;}
+
+. {color:blue;}
+
+sup {color:red;}
+
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {color:white; font-size:1pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=15%>Section<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=85%>Text<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>        
+
+            <!--327a beginning-->
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/a<p>
+                <span class="b">Classical Greek</span><br>
+                (original text)<p>
+                -Πλάτων-<br>-Plato-<span class="w"></span></td>
+            <td>Σωκράτης<p>
+κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος τοῦ Ἀρίστωνος προσευξόμενός τε τῇ θεῷ καὶ ἅμα τὴν ἑορτὴν βουλόμενος θεάσασθαι τίνα τρόπον ποιήσουσιν ἅτε νῦν πρῶτον ἄγοντες. καλὴ μὲν οὖν μοι καὶ ἡ τῶν ἐπιχωρίων πομπὴ ἔδοξεν εἶναι, οὐ μέντοι ἧττον ἐφαίνετο πρέπειν ἣν οἱ Θρᾷκες ἔπεμπον.<p>
+    <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0167%3Abook%3D1%3Asection%3D327a" target="_blank">Analysis</a>
+</td>
+</tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/b<p>
+                <span class="b">Modern Greek</span><p>
+                -Ι. Παρλαμάς-<br>-I. Parlamas-<span class="w"></span></td>
+            <td>Σωκράτης<p>
+Χθες κατέβηκα στον Πειραιά με τον Γλαύκωνα, τον γιο του Αρίστωνα, και για να προσευχηθώ στη Θεά αλλά και γιατί ήθελα να δω πώς θα εξιλισσόταν η γιορτή αφού αυτή ήταν η πρώτη φορά. Νομίζω ότι η παρέλαση των εντοπίων ήταν πολύ όμορφη, αλλά και των Θρακών ήταν εξ ίσου καλή, αν οχι και καλύτερη.</td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/c<p>
+                <span class="b">English v1</span><p>
+                -Ι. Παρλαμάς-<br>-I. Parlamas-<span class="w"></span></td>
+            <td>Socrates<p>
+I went down yesterday to the Piraeus with Glaucon, the son of Ariston, to pray to the goddess and also because I wanted to see in what manner the locals would celebrate the festival, since this was the first time. I was delighted with the procession of the locals, but that of the Thracians was equally, if not more, beautiful.
+</td>
+</tr>
+
+<tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/d<p>
+                <span class="b">English v2</span><p>
+                Benjamin Jowett<span class="w"></span></td>
+            <td>Socrates<p>
+I went down yesterday to the Piraeus with Glaucon the son of Ariston, that I might offer up my prayers to the goddess; and also because I wanted to see in what manner they would celebrate the festival, which was a new thing. I was delighted with the procession of the inhabitants; but that of the Thracians was equally, if not more, beautiful.
+</td>
+</tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/e<p>
+                <span class="b">English v3</span><p>
+                    -Perseus Project-<span class="w"></span></td>
+            <td>Socrates<p>
+I<sup>1</sup> went down yesterday to the Peiraeus<sup>2</sup> with Glaucon, the son of Ariston, to pay my devotions<sup>3</sup> to the Goddess,<sup>4</sup> and also because I wished to see how they would conduct the festival since this was the first time.<sup>5</sup> I thought the procession of the citizens very fine, but it was no better than the show, made by the marching of the Thracian contingent.<p>
+<a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0168" target="_blank">analysis</a>
+        </td>
+    </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/f<p>
+                <span class="b">Castellano</span><p>
+                -Ι. Παρλαμάς-<br>-I.Parlamas-<span class="w"></span></td>
+            <td>Socrates<p>
+                Ayer fui al Pireo con Glaucon, el hijo de Aristón, para rezar a la diosa y también porque quería ver de qué manera los lugareños celebrarían la festividad, ya que era la primera vez. Quedé encantado con la procesión de los locales, pero la de los tracios fue igualmente, si no más, hermosa.
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/g</span><p>Google<p>
+                <span class="b">Portuguese</span><span class="w"></span></td>
+            <td>Socrates<p>
+                Ontem, desci até o Pireu com Glaucon, filho de Ariston, para rezar à deusa e também porque queria ver de que maneira os moradores locais celebrariam o festival, já que era a primeira vez. Fiquei encantado com a procissão dos moradores, mas a dos trácios foi igualmente, se não mais, bonita.
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/h<p>Google<p>
+                <span class="b">French</span><span class="w"></span></td>
+            <td>Socrates<p>
+                Hier, je suis descendu au Pirée avec Glaucon, le fils d'Ariston, pour prier la déesse et aussi parce que je voulais voir comment les habitants célébreraient le festival, étant donné que c'était la première fois. J'ai été enchanté par la procession des habitants, mais celle des Thraces était tout aussi, voire plus, magnifique.
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/i<p>Google<p>
+                <span class="b">German</span><span class="w"></span></td>
+            <td>Sokrates<p>
+                Gestern ging ich mit Glaukon, dem Sohn des Ariston, zum Hafen von Piräus, um zur Göttin zu beten und auch, weil ich sehen wollte, wie die Einheimischen das Fest feiern würden, da dies das erste Mal war. Ich war begeistert von der Prozession der Einheimischen, aber die der Thraker war ebenso, wenn nicht sogar noch schöner.
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327a</span>/j<p>Google<p>
+                <span class="b">Italian</span><span class="w"></span></td>
+            <td>Socrates<p>
+            Ieri sono sceso al Pireo con Glaucone, il figlio di Aristone, per pregare la dea e anche perché volevo vedere in che modo gli abitanti avrebbero festeggiato il festival, dato che era la prima volta. Sono rimasto incantato dalla processione degli abitanti, ma quella dei Traci era altrettanto, se non di più, splendida.</td>
+        </tr><!--327a end-->
+
+
+        <!--327b beginning--><tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/a<p>
+                <span class="b">Classical Greek</span><br>
+                (original text)<p>
+                -Πλάτων- -Plato-<span class="w"></span></td>
+            <td>Σωκράτης<p>
+                προσευξάμενοι δὲ καὶ θεωρήσαντες ἀπῇμεν πρὸς τὸ ἄστυ. κατιδὼν οὖν πόρρωθεν ἡμᾶς οἴκαδε ὡρμημένους Πολέμαρχος ὁ Κεφάλου ἐκέλευσε δραμόντα τὸν παῖδα περιμεῖναί ἑ κελεῦσαι. καί μου ὄπισθεν ὁ παῖς λαβόμενος τοῦ ἱματίου, κελεύει ὑμᾶς, ἔφη, Πολέμαρχος περιμεῖναι. καὶ ἐγὼ μετεστράφην τε καὶ ἠρόμην ὅπου αὐτὸς εἴη. οὗτος, ἔφη, ὄπισθεν προσέρχεται: ἀλλὰ περιμένετε. ἀλλὰ περιμενοῦμεν, ἦ δ᾽ ὃς ὁ Γλαύκων.<p>
+    <a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0167%3Abook%3D1%3Asection%3D327b" target="_blank">Analysis</a>
+</td>
+</tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/b<p>
+                <span class="b">Modern Greek</span><p>
+                -Ι. Παρλαμάς-<br>-I. Parlamas-<span class="w"></span></td>
+            <td>Σωκράτης<p>
+                Όταν τελειώσαμε τις προσευχές μας και είδαμε το θέαμα, στραφήκαμε προς την κατεύθυνση της πόλης. Και την στιγμή εκείνη, ο Πολέμαρχος, ο γιος του Κέφαλου, έτυχε να μας δει από μακριά καθώς ξεκινάγαμε για το σπίτι μας, και είπε στον υπηρέτη του να τρέξει και να μας ζητήσει να τον περιμένουμε. Ο υπηρέτης με τράβηξε από πίσω και μου είπε: Ο Πολέμαρχος θέλει να τον περιμένετε.<br>
+                Γύρισα και τον ρώτησα πού ήταν ο κυριός του.<br>
+                Εκεί είναι, είπε ο νεαρός, έρχεται πίσω σας, αρκεί να περιμένετε.<br>
+                Βεβαίως και θα περιμένουμε, είπε ο Γλαύκων.
+</td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/c<p>
+                <span class="b">English v1</span><p>
+                -Ι. Παρλαμάς-<br>-I. Parlamas-<span class="w"></span></td>
+            <td>Socrates<p>
+            When we had finished our prayers and viewed the spectacle, we turned in the direction of the city. At that instant, Polemarchus, the son of Cephalus,  happened to catch sight of us from a distance as we were starting on our way home, and told his servant to run and ask us to wait for him. The servant took hold of me by the cloak behind, and said: Polemarchus wants you to wait.<br>
+            I turned around and asked him where his master was.<br>
+            There he is, said the youth, coming after you, if you will only wait.<br>
+            Of course we will, said Glaucon.
+</td>
+</tr>
+
+<tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/d<p>
+                <span class="b">English v2</span><p>
+                Benjamin Jowett<span class="w"></span></td>
+            <td>Socrates<p>
+                When we had finished our prayers and viewed the spectacle, we turned in the direction of the city; and at that instant Polemarchus the son of Cephalus chanced to catch sight of us from a distance as we were starting on our way home, and told his servant to run and bid us wait for him. The servant took hold of me by the cloak behind, and said: Polemarchus desires you to wait.<br>
+                I turned round, and asked him where his master was.<br>
+                There he is, said the youth, coming after you, if you will only wait.<br>
+                Certainly we will, said Glaucon;
+</td>
+</tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/e<p>
+                <span class="b">English v3</span><p>
+                    -Perseus Project-<span class="w"></span></td>
+            <td>Socrates<p>
+                After we had said our prayers and seen the spectacle we were starting for town when Polemarchus, the son of Cephalus, caught sight of us from a distance as we were hastening homeward<sup>1</sup> and ordered his boy<sup>2</sup> run and bid us to wait<sup>3</sup> for him, and the boy caught hold<sup>4</sup> of my himation from behind and said, “Polemarchus wants you to wait.” And I turned around and asked where his master<sup>5</sup> was. “There he is,” he said, “behind you, coming this way. Wait for him.” “So we will,” said Glaucon,<p>
+<a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0168%3Abook%3D1%3Asection%3D327b" target="_blank">analysis</a>
+        </td>
+    </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/f<p>
+                <span class="b">Castellano</span><p>
+                -Ι. Παρλαμάς-<br>-I. Parlamas-<span class="w"></span></td>
+            <td>Socrates<p>
+                Cuando terminamos nuestras oraciones y contemplamos el espectáculo, nos giramos en dirección a la ciudad; y en ese instante, Polemarco, el hijo de Céfalo, nos vio a lo lejos mientras comenzábamos nuestro camino de regreso a casa, y le dijo a su sirviente que corriera y nos pidiera que esperáramos por él. El sirviente me agarró por el manto por detrás y dijo: Polemarco quiere que esperen.<br>
+                Me giré y le pregunté dónde estaba su amo.<br>
+                Allí está, dijo el joven, viniendo detrás de Uds., si tan sólo esperen.<br>
+                Por supuesto que vamos a esperar, dijo Glaucon.
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/g<p>
+                <span class="b">Portuguese</span><p>
+                    Google<span class="w"></span></td>
+            <td>Socrates<p>
+                Quando tínhamos terminado nossas orações e observado o espetáculo, viramos na direção da cidade; e naquele instante, Polemarco, filho de Céfalo, nos avistou à distância, quando começávamos nosso caminho de volta para casa, e disse a seu servo para correr e pedir que esperássemos por ele. O servo me segurou pelo manto por trás e disse: Polemarco quer que vocês esperem.<br>
+                Eu me virei e perguntei onde seu mestre estava.<br>
+                Ali está ele, disse o jovem, vindo atrás de vocês, se ao menos esperarem.<br>
+                Claro que esperaremos, disse Glaucon.
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/h<p>Google<p>
+                <span class="b">French</span><span class="w"></span></td>
+            <td>Socrates<p>
+                Lorsque nous avions terminé nos prières et admiré le spectacle, nous nous sommes tournés en direction de la ville ; et à cet instant, Polémarque, le fils de Céphale, nous aperçut de loin alors que nous commencions notre chemin de retour vers la maison, et dit à son serviteur de courir nous demander d'attendre pour lui. Le serviteur me saisit par le manteau par-derrière et dit : Polémarque veut que vous attendiez.<br>
+                Je me suis retourné et lui ai demandé où se trouvait son maître.<br>
+                Le voilà, dit le jeune homme, il vient derrière vous, si vous voulez bien attendre.<br>
+                Bien sûr, nous le ferons, dit Glaucon.
+            </td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/i<p>Google<p>
+                <span class="b">German</span><span class="w"></span></td>
+            <td>Sokrates<p>
+                Als wir unsere Gebete beendet hatten und das Spektakel betrachteten, wandten wir uns in Richtung der Stadt; und in diesem Moment erblickte uns Polemarchos, der Sohn des Kephalos, aus der Ferne, als wir uns auf den Heimweg machten, und befahl seinem Diener, zu uns zu laufen und uns zu bitten, auf ihn zu warten. Der Diener hielt mich am Umhang fest und sagte: Polemarchos möchte, dass du wartest.<br>
+                Ich drehte mich um und fragte ihn, wo sein Herr sei.<br>
+                Dort ist er, sagte der Jüngling, er kommt hinter euch her, wenn ihr nur wartet.<br>
+                Natürlich werden wir das, sagte Glaukon.
+           </td>
+        </tr>
+
+        <tr valign=top>
+            <td class="s">1.<span class="r">327b</span>/j<p>Google<p>
+                <span class="b">Italian</span><span class="w"></span></td>
+            <td>Socrates<p>
+                Quando avevamo terminato le nostre preghiere e osservato lo spettacolo, ci voltammo in direzione della città. In quel momento, Polemarchus, figlio di Cefalo, ci scorse da lontano mentre stavamo iniziando il nostro cammino verso casa, e disse al suo servitore di correre e chiederci di aspettarlo. Il servo mi afferrò per il mantello da dietro e disse: "Polemarchus vuole che aspettiate".<br>
+                 Mi voltai e gli chiesi dove fosse il suo padrone.<br>
+                "Lì è", disse il giovane, "sta venendo dietro di voi, se solo aspettate".<br>
+                "Certamente lo faremo", disse Glaucone.
+           </td>
+        </tr>
+
+ 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Section</th>
+                <th>Text</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
